@@ -74,7 +74,7 @@ table = events.select(from_json(events.value, schema) \
 
 # spark-submit --class demo --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0,org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 consumer.py
 
-# Mongo Sink from Spark Streaming
+# Sink Kafka Stream to MongoDB using PySpark Structured Streaming
 
 query = table.writeStream.foreachBatch(write_mongo_row).start()
 query.awaitTermination()

@@ -4,6 +4,9 @@
 topic_name = "test-topic"
 
 from pyspark.sql import SparkSession
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
+from pyspark.sql.functions import from_json
+from pyspark.sql.types import *
 
 
 def write_mongo_row(df, epoch_id):
@@ -51,6 +54,45 @@ df = spark \
 
 events = df.selectExpr("CAST(value AS STRING)")
 
+# print(events)
+
+# schema = StructType([ \
+#     StructField("tweet_id", StringType(), True), \
+#     StructField("created_at", StringType(), True), \
+#     StructField("text", StringType(), True), \
+#     StructField("screen_name", StringType(), True), \
+#     StructField("user_created_at", StringType(), True), \
+#     StructField("user_location", StringType(), True), \
+#     StructField("user_id", StringType(), True), \
+#     StructField("geo", StringType(), True), \
+#     StructField("is_truncated", StringType(), True), \
+#     StructField("tweet_contributors", StringType(), True), \
+#     StructField("place", StringType(), True), \
+#     StructField("coordinates", IntegerType(), True) \
+#     ])
+
+schema = StructType([ \
+    StructField("id", StringType(), True), \
+    StructField("created_at", StringType(), True), \
+    StructField("text", StringType(), True), \
+
+    ])
+
+
+# id :
+# created_at:
+# tweet:
+# location:
+# etc
+#
+
+table = events.select(from_json(events.value, schema) \
+    .alias("tmp")) \
+    .select("tmp.*")
+# Api -> Flask -> Mongo Server
+# return group by location count
+
+
 # for message in consumer:
 # tweets = json.loads(json.dumps(message.value))
 # print(message.text)
@@ -64,10 +106,10 @@ events = df.selectExpr("CAST(value AS STRING)")
 # spark-submit --class demo --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0 <filename>.py
 # spark-submit --class demo --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0,org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 consumer.py
 
-query = events.writeStream.foreachBatch(write_mongo_row).start()
+query = table.writeStream.foreachBatch(write_mongo_row).start()
 query.awaitTermination()
 
-# query = events \
+# query = table \
 #     .writeStream \
 #     .outputMode("append") \
 #     .option("truncate", False) \

@@ -38,7 +38,8 @@ topic_name = "test-topic"
     # producer.send(topic_name,str.encode(strs))
     # producer.send(topic_name,b"Hello-World")
 
-producer.send(topic_name,b'Hello-world')
+# while True:
+#     producer.send(topic_name,b'Hello-world')
 
 
 

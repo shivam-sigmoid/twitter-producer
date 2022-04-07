@@ -59,7 +59,7 @@ brew services start mongodb-community
 
 #### Mongo Compass
 
-![Download Link](https://www.mongodb.com/docs/compass/current/install)
+[Download Link](https://www.mongodb.com/docs/compass/current/install)
 ## To Run
 
 - Run app/producer python file. (Twitter to Kafka)

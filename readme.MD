@@ -3,9 +3,19 @@
 
 Twitter Producer gets data from Twitter based on some keywords and put them in a Kafka topic, and then consumes with streaming service and sink in to some database then creating a API service to get required data from database server.
 
-# Design
+# Basic Architecture
 
 ![structure](./architecture/Twitter-Producer.drawio.png)
+
+## Tech stack
+- Python version: 3.10.1
+- IDE: PyCharmCE
+- MongoDB migrated distribution
+- Kafka Distribution
+- PySpark - Spark Streaming
+- GUI tool: MongoDB Compass
+- TO UPDATE API SERVICE TECH
+
 ## Installation of Required Services
 
 ### Kafka (Brew)
@@ -76,4 +86,4 @@ spark-submit --class demo --packages org.apache.spark:spark-sql-kafka-0-10_2.12:
 
 
 
-### To Add More like API service part
+### TO ADD MORE API SERVICE PART

@@ -71,11 +71,20 @@ events = df.selectExpr("CAST(value AS STRING)")
 # #     StructField("coordinates", IntegerType(), True) \
 # #     ])
 #
+# schema = StructType([ \
+#     StructField("id", StringType(), True), \
+#     StructField("created_at", StringType(), True), \
+#     StructField("text", StringType(), True), \
+#     StructField("user", StringType(), True) \
+#     ])
+
 schema = StructType([ \
     StructField("id", StringType(), True), \
     StructField("created_at", StringType(), True), \
     StructField("text", StringType(), True), \
-    StructField("user", StringType(), True) \
+    StructField('user', StructType([
+        StructField('location', StringType(), True)
+    ]))
     ])
 #
 #

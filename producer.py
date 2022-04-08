@@ -45,7 +45,13 @@ class TwitterStreamer():
 # class ListenerTS(StreamListener):
 class ListenerTS(tweepy.Stream):
     def on_data(self, raw_data):
+        # my_json = raw_data.decode('utf8').replace("'", '"')
+        # data = json.loads(my_json)
+        # s = json.dumps(data, indent=4, sort_keys=True)
+        # print(s)
+
         print(raw_data)
+
         # raw_data = str(raw_data)
         producer.send(topic_name, raw_data)
 

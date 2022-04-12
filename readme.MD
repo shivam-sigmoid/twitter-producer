@@ -14,7 +14,8 @@ Twitter Producer gets data from Twitter based on some keywords and puts them in 
 - Kafka Distribution
 - PySpark - Spark Streaming
 - GUI tool: MongoDB Compass
-- TO UPDATE API SERVICE TECH
+- Flask
+- Postman
 
 ## Installation of Required Services
 
@@ -88,6 +89,7 @@ or
 spark-submit --class demo --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0,org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 consumer.py
 ```
 
-
-
-### TO ADD MORE API SERVICE PART
+- Start Server (Flask app API to Mongo Server)
+```bash
+python3 server/app.py
+```

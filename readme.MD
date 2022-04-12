@@ -15,7 +15,7 @@ Twitter Producer gets data from Twitter based on some keywords and puts them in 
 - PySpark - Spark Streaming
 - GUI tool: MongoDB Compass
 - Flask
-- Postman
+- Postman - API Testing tool
 
 ## Installation of Required Services
 
@@ -55,11 +55,13 @@ kafka-console-producer --broker-list localhost:9092 --topic test-topic
 > hello-world
 > I am twitter producer
 # Create consumer console in another terminal
-kafka-console-consumer --bootstrap-server localhost:9092 --topic test-topic --from-beginning
+kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
 hello-world
 I am twitter producer
 # To delete Kafka Topic
-Kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic <topic_name>
+kafka-topics --bootstrap-server localhost:9092 --delete --topic <topic_name>
+# To list down all the topics
+kafka-topics --list --bootstrap-server localhost:9092
 ```
 
 ### MongoDB

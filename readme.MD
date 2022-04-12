@@ -1,7 +1,7 @@
 
 # Twitter Producer
 
-Twitter Producer gets data from Twitter based on some keywords and put them in a Kafka topic, and then consumes with streaming service and sink in to some database then creating a API service to get required data from database server.
+Twitter Producer gets data from Twitter based on some keywords and puts them in a Kafka topic, and then consumes with streaming service and sink into some database then creates an API service to get required data from the database server.
 
 # Basic Architecture
 
@@ -57,6 +57,8 @@ kafka-console-producer --broker-list localhost:9092 --topic test-topic
 kafka-console-consumer --bootstrap-server localhost:9092 --topic test-topic --from-beginning
 hello-world
 I am twitter producer
+# To delete Kafka Topic
+Kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic <topic_name>
 ```
 
 ### MongoDB
@@ -81,6 +83,8 @@ python3 app/producer.py
 - Start Consumer Service with Spark Submit (Kafka to Mongo with Spark Streaming)
 
 ```bash
+python3 app/consumer.py
+or
 spark-submit --class demo --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0,org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 consumer.py
 ```
 

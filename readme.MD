@@ -5,7 +5,7 @@ Twitter Producer gets data from Twitter based on some keywords and puts them in 
 
 # Basic Architecture
 
-![structure](./architecture/Twitter-Producer.drawio.png)
+![structure](./architecture/Twitter-Producer.png)
 
 ## Tech stack
 - Python version: 3.10.1

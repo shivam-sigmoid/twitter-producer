@@ -102,4 +102,4 @@ def task_2():
     return flask.jsonify(tweets_dict)
 
 
-app.run(debug=True, port=5050)
+app.run(debug=True, port=5000)

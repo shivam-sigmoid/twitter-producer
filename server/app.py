@@ -88,9 +88,11 @@ def task_2():
 
     tweets = db.tweets.aggregate([
         {"$match": {"location": {"$exists": "true"}}},
-        {"$group": {"_id": {"Country": "$location"}, "tweets_per_day_per_Country": {"$sum": 1}}},
-        {"$group": {"_id": {"$dateToString": {"format": "%Y-%m-%d", "date": "$date"}}, "tweets_per_day": {"$sum": 1}}},
-        {"$project": {"_id.date": 1, "_id.Country": 1, "tweets_per_day": 1, "tweets_per_day_per_Country": 1}}
+        {"$group": {"_id": {"Country": "$location", "date": "$date"}, "tweets_per_day_per_Country": {"$sum": 1}}},
+        # {"$group": {"_id": {"$dateToString": {"format": "%Y-%m-%d", "date": "$date"}}, "tweets_per_day": {"$sum":
+        # 1}}},
+        {"$project": {"_id.date": 1, "_id.Country": 1, "tweets_per_day": 1, "tweets_per_day_per_Country": 1}},
+        {"$sort": {"tweets_per_day_per_Country": -1}}
     ])
     tweets_dict = dict()
     i = 0

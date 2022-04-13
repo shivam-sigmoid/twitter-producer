@@ -97,11 +97,12 @@ def task_2():
     tweets_dict = dict()
     i = 0
     for tweet in tweets:
-        print(tweet)
+        # print(tweet)
         tweets_dict[i] = {k: v for k, v in tweet.items()}
         i += 1
     # print(tweets_dict)
     return flask.jsonify(tweets_dict)
 
 
-app.run(debug=True, port=5000)
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)

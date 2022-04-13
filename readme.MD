@@ -49,13 +49,13 @@ advertised.listeners=PLAINTEXT://localhost:9092
 brew services start zookeeper
 brew services start kafka
 # Create kafka topic
-kafka-topics --create --topic test-topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4
+kafka-topics --create --topic <topic_name> --bootstrap-server localhost:9092 --replication-factor 1 --partitions 4
 # Create producer console
 kafka-console-producer --broker-list localhost:9092 --topic test-topic
 > hello-world
 > I am twitter producer
 # Create consumer console in another terminal
-kafka-console-consumer --bootstrap-server localhost:9092 --topic <topic_name> --from-beginning
+kafka-console-consumer --bootstrap-server localhost:9092 --topic test-topic --from-beginning
 hello-world
 I am twitter producer
 # To delete Kafka Topic

@@ -1,9 +1,10 @@
 import tweepy
 # from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
-from tweepy import Stream
-from kafka import KafkaProducer
-import json
+
+# from tweepy import Stream
+# from kafka import KafkaProducer
+# import json
 
 bearer_token = "AAAAAAAAAAAAAAAAAAAAAHl2bAEAAAAAJkTLa5NrJbPKg1Z3WE0DqAw6TRM%3DsKXH8eXWBsMyeHod08PHeki6c783x1BPo2YvtZHE2RHiYAp8In"
 consumer_key = "siIbnTn8GcBUsfySy0VmjyR7A"
@@ -23,15 +24,22 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-from kafka import KafkaProducer
+# from kafka import KafkaProducer
 
-producer = KafkaProducer(bootstrap_servers='localhost:9092')  # Same port as your Kafka server
+# producer = KafkaProducer(bootstrap_servers='localhost:9092')  # Same port as your Kafka server
 
-topic_name = "test-topic"
+# topic_name = "test-topic"
 
-# for tweet in api.search_tweets(q="Python", lang="en", rpp=10):
+queryTopic = "(precaution OR precautions OR covid-19 OR covid OR corona) (from:WHO) lang:en"
+for tweet in api.search_tweets(q=queryTopic, result_type="mixed", count=100, tweet_mode='extended'):
     # print(type(tweet))
     # print(dict(tweet))
+    # print(tweet)
+    if 'retweeted_status' in tweet._json:
+        print(tweet._json['retweeted_status']['full_text'])
+    else:
+        print(tweet.full_text)
+    print("============================================")
     # print(f"{tweet.user.name}:{tweet.text}")
     # strs = str(tweet.text)
     # producer.send(topic_name, json.dumps(tweet.text).encode('utf-8'))
@@ -40,7 +48,6 @@ topic_name = "test-topic"
 
 # while True:
 #     producer.send(topic_name,b'Hello-world')
-
 
 
 # client = tweepy.Client(bearer_token=bearer_token)

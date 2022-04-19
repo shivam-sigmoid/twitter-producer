@@ -27,6 +27,10 @@ mongodb_client = PyMongo(app)
 db = mongodb_client.db
 
 
+# Location need to be uniformed as per country basis
+
+
+
 @app.route("/get_tweets")
 def get_tweets():
     tweets = db.tweets.find()

@@ -3,12 +3,10 @@ from tweepy import Stream
 from kafka import KafkaProducer
 import json
 
-
 consumer_key = "siIbnTn8GcBUsfySy0VmjyR7A"
 consumer_secret = "PBH7bOVRrv7gEiksWhvczVdFYjiHLIogv3RxQHpfV65gfjI36F"
 access_token = "1510924415642791938-DXjvrckvFFT05fiAXQ5oUDmmrqpN98"
 access_token_secret = "VOuZDj8EMGbyfQx2Aen4h7FLAsuxSsZmp4Ry5WanCUni8"
-
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
 topic_name = "covid_topic"
@@ -16,6 +14,7 @@ topic_name = "covid_topic"
 
 class twitterAuth():
     """SET UP TWITTER AUTHENTICATION"""
+
     def authenticateTwitterApp(self):
         auth = OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
@@ -24,6 +23,7 @@ class twitterAuth():
 
 class TwitterStreamer():
     """SET UP STREAMER"""
+
     def __init__(self):
         self.twitterAuth = twitterAuth()
 
@@ -46,4 +46,3 @@ class ListenerTS(Stream):
 if __name__ == "__main__":
     TS = TwitterStreamer()
     TS.stream_tweets()
-

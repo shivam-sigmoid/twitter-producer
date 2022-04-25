@@ -2,6 +2,11 @@ from flask_pymongo import PyMongo
 import flask
 import bson
 import json
+import nltk
+import re
+import itertools
+import collections
+from nltk.corpus import stopwords
 
 
 def object_id_from_int(n):
@@ -28,7 +33,6 @@ db = mongodb_client.db
 
 
 # Location need to be uniformed as per country basis
-
 
 
 @app.route("/get_tweets")
@@ -89,7 +93,6 @@ def task_1():
 
 @app.route("/task_2")
 def task_2():
-
     tweets = db.tweets.aggregate([
         {"$match": {"location": {"$exists": "true"}}},
         {"$group": {"_id": {"Country": "$location", "date": "$date"}, "tweets_per_day_per_Country": {"$sum": 1}}},
@@ -106,6 +109,67 @@ def task_2():
         i += 1
     # print(tweets_dict)
     return flask.jsonify(tweets_dict)
+
+
+@app.route("/task_3")
+def task_3():
+    tweets = db.tweets.find()
+    all_tweets = []
+    for tweet in tweets:
+        all_tweets.append(tweet['full_text'])
+
+    def remove_url(txt):
+        return " ".join(re.sub("([^0-9A-Za-z \t])|(\w+:\/\/\S+)", "", txt).split())
+
+    all_tweets_no_urls = [remove_url(tweet) for tweet in all_tweets]
+    words_in_tweet = [tweet.lower().split() for tweet in all_tweets_no_urls]
+    all_words_no_urls = list(itertools.chain(*words_in_tweet))
+    nltk.download('stopwords')
+    stop_words = set(stopwords.words('english'))
+    tweets_nsw = []
+    for w in all_words_no_urls:
+        if w not in stop_words:
+            tweets_nsw.append(w)
+
+    tweets_nsw_nc = []
+    collection_words = ['covid', 'covid19']
+    for w in tweets_nsw:
+        if w not in collection_words:
+            tweets_nsw_nc.append(w)
+
+    counts_nsw = collections.Counter(tweets_nsw_nc)
+    return flask.jsonify(counts_nsw.most_common(100))
+
+
+@app.route("/task_4/<loc>")
+def task_4(loc):
+    query = {"location": str(loc)}
+    tweets = db.tweets.find(query)
+    all_tweets = []
+    for tweet in tweets:
+        all_tweets.append(tweet['full_text'])
+
+    def remove_url(txt):
+        return " ".join(re.sub("([^0-9A-Za-z \t])|(\w+:\/\/\S+)", "", txt).split())
+
+    all_tweets_no_urls = [remove_url(tweet) for tweet in all_tweets]
+    words_in_tweet = [tweet.lower().split() for tweet in all_tweets_no_urls]
+    all_words_no_urls = list(itertools.chain(*words_in_tweet))
+    nltk.download('stopwords')
+    stop_words = set(stopwords.words('english'))
+    tweets_nsw = []
+    for w in all_words_no_urls:
+        if w not in stop_words:
+            tweets_nsw.append(w)
+
+    tweets_nsw_nc = []
+    collection_words = ['covid', 'covid19']
+    for w in tweets_nsw:
+        if w not in collection_words:
+            tweets_nsw_nc.append(w)
+
+    counts_nsw = collections.Counter(tweets_nsw_nc)
+    return flask.jsonify(counts_nsw.most_common(100))
 
 
 if __name__ == "__main__":

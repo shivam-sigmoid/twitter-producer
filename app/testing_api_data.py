@@ -9,6 +9,7 @@ def get_country(loc):
         geolocator = Nominatim(user_agent=user_ag)
         location = geolocator.geocode(loc)
         address = location.address
+        # print(address)
         address_split = address.split(',')
         country = address_split[-1].lstrip()
         return country
@@ -16,4 +17,4 @@ def get_country(loc):
         return loc
 
 
-print(get_country("khagaul"))
+print(get_country("pathsala"))

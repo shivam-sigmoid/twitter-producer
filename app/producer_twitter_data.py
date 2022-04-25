@@ -1,12 +1,16 @@
 from tweepy import OAuthHandler
 from tweepy import Stream
 from kafka import KafkaProducer
+import configparser
 import json
+config = configparser.ConfigParser()
+config.read('config.ini')
 
-consumer_key = "siIbnTn8GcBUsfySy0VmjyR7A"
-consumer_secret = "PBH7bOVRrv7gEiksWhvczVdFYjiHLIogv3RxQHpfV65gfjI36F"
-access_token = "1510924415642791938-DXjvrckvFFT05fiAXQ5oUDmmrqpN98"
-access_token_secret = "VOuZDj8EMGbyfQx2Aen4h7FLAsuxSsZmp4Ry5WanCUni8"
+consumer_key  = config['twitter']['api_key']
+consumer_secret= config['twitter']['api_key_secret']
+
+access_token = config['twitter']['access_token']
+access_token_secret = config['twitter']['access_token_secret']
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
 topic_name = "covid_topic"
@@ -38,7 +42,7 @@ class ListenerTS(Stream):
         decoded = json.loads(raw_data)
         if not decoded['text'].startswith('RT'):
             json_str = json.dumps(decoded).encode('utf-8')
-            # print(json_str)
+            print(json_str)
             producer.send('covid_topic', value=json_str)
         return True
 

@@ -1,7 +1,7 @@
 import json
 
 import requests as r
-
+import pytz
 import pymongo
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -20,7 +20,7 @@ for x,y in json_data.items():
     # print(pytz.country_names[x])
     # print(y['measures_taken'])
     dic = dict()
-    dic['country'] = x
+    dic['country'] = pytz.country_names[x]
     dic['measures_taken'] = y['measures_taken']
     data_list.append(dic)
 

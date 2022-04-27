@@ -7,7 +7,20 @@ import re
 import itertools
 import collections
 from nltk.corpus import stopwords
-import pytz
+from random import randint
+from geopy.geocoders import Nominatim
+
+
+def get_country(loc):
+    user_ag = 'user_me_{}'.format(randint(10000, 99999))
+    geolocator = Nominatim(user_agent=user_ag)
+    location = geolocator.geocode(loc,language='en')
+    if location is None:
+        return loc
+    address = location.address
+    address_split = address.split(',')
+    country = address_split[-1].lstrip()
+    return country
 
 
 def object_id_from_int(n):
@@ -176,10 +189,12 @@ def task_4(loc):
 
 @app.route("/task_5/<country>")
 def task_5(country):
-    query = {"country": str(country)}
+    cnt = get_country(country)
+    print(cnt)
+    query = {"country": str(cnt)}
     infos = db.measures.find(query)
     data_list = []
-    data_list.append(pytz.country_names[country])
+    data_list.append(cnt)
     for info in infos:
         data_list.append(info['measures_taken'])
     return flask.jsonify(data_list)

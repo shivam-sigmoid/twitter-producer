@@ -1,19 +1,32 @@
 import json
 
-import pytz
-
 import requests as r
 
-print(pytz.country_names['AE'])
+import pymongo
+
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client["twitter_db"]
+col = db["measures"]
+
 response = r.get("http://covidsurvey.mit.edu:5000/query?country=all&signal=measures_taken")
 
 json_data = json.loads(response.text)
 
-print(json_data)
-# print(json_data['AE']['measures_taken'])
 
-# for k in json_data['AE']['measures_taken']:
-#     print(k)
+data_list = []
+
+for x,y in json_data.items():
+    # print(x)
+    # print(pytz.country_names[x])
+    # print(y['measures_taken'])
+    dic = dict()
+    dic['country'] = x
+    dic['measures_taken'] = y['measures_taken']
+    data_list.append(dic)
+
+col.insert_many(data_list)
+
+
 
 # task_3
 # mongo query 3:

@@ -16,16 +16,18 @@ def update_week_diseaseSh():
         ]
     )
 
+
 def get_week_num(date):
     l1 = str(date).split()
     return datetime.date(l1[2], l1[1], l1[0]).isocalendar().week
+
 
 def get_data_api7():
     for c in countries:
         URL = "https://disease.sh/v3/covid-19/historical"
         lastdays = 60
         PARAMS = {'lastdays': lastdays}
-        URL = URL+'/'+c.alpha3
+        URL = URL + '/' + c.alpha3
         raw_data = requests.get(url=URL, params=PARAMS)
         data = raw_data.json()
         try:
@@ -42,6 +44,7 @@ def get_data_api7():
             col.insert_many(data_list)
         except:
             print(f'Data for the Country {c.name} is not available!')
+
 
 if __name__ == "__main__":
     get_data_api7()

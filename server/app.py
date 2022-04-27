@@ -7,6 +7,7 @@ import re
 import itertools
 import collections
 from nltk.corpus import stopwords
+import pytz
 
 
 def object_id_from_int(n):
@@ -172,6 +173,18 @@ def task_4(loc):
     counts_nsw = collections.Counter(tweets_nsw_nc)
     return flask.jsonify(counts_nsw.most_common(100))
 
+
+@app.route("/task_5/<country>")
+def task_5(country):
+    query = {"country": str(country)}
+    infos = db.measures.find(query)
+    data_list = []
+    data_list.append(pytz.country_names[country])
+    for info in infos:
+        data_list.append(info['measures_taken'])
+    return flask.jsonify(data_list)
+
+
 @app.route("/task_7/<int:week_num>")
 def task_7(week_num):
     rankings = db.disease_sh.aggregate([
@@ -199,6 +212,7 @@ def task_7_all():
         rankings_dict[i] = {k: v for k, v in ranking.items()}
         i += 1
     return flask.jsonify(rankings_dict)
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)

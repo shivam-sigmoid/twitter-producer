@@ -10,17 +10,17 @@ db = client["twitter_db"]
 def get_country(loc):
     if 'usa' in loc.lower():
         return 'United States'
-    if 'england' in loc.lower():
+    elif 'england' in loc.lower():
         return 'United Kingdom'
-    if 'london' in loc.lower():
+    elif 'london' in loc.lower():
         return 'United Kingdom'
-    if 'scotland' in loc.lower():
+    elif 'scotland' in loc.lower():
         return 'United Kingdom'
-    if 'india' in loc.lower():
+    elif 'india' in loc.lower():
         return 'India'
-    if 'mumbai' in loc.lower():
+    elif 'mumbai' in loc.lower():
         return 'India'
-    if 'bangalore' in loc.lower():
+    elif 'bangalore' in loc.lower():
         return 'India'
     # user_ag = 'user_me_{}'.format(randint(10000, 99999))
     # geolocator = Nominatim(user_agent=user_ag)

@@ -75,20 +75,34 @@ brew services start mongodb-community
 #### Mongo Compass
 
 [Download Link](https://www.mongodb.com/docs/compass/current/install)
+
+#### Download NLTK
+
+```bash
+python3 utils/utils_to_download_nltk.py
+```
 ## To Run
+
+
+
 
 - Run app/producer python file. (Twitter to Kafka)
 
 ```bash
-python3 app/producer.py
+python3 app/producer_twitter_data.py
 ```
 
 - Start Consumer Service with Spark Submit (Kafka to Mongo with Spark Streaming)
 
 ```bash
-python3 app/consumer.py
+python3 app/consumer_twitter_data.py
 or
 spark-submit --class demo --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.2.0,org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 consumer.py
+```
+
+- Correct Country
+```bash
+python3 utils/update_country.py
 ```
 
 - Start Server (Flask app API to Mongo Server)

@@ -109,3 +109,12 @@ python3 utils/update_country.py
 ```bash
 python3 server/app.py
 ```
+
+## To Test
+
+```commandline
+Run Python tests in tests
+- Flask Server | test_flask.py
+- Mongo Connection | test_mongo.py
+Set up test configuration within IDE
+```

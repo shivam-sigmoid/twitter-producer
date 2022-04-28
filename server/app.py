@@ -158,6 +158,7 @@ def task_3():
 @app.route("/task_4/<loc>")
 def task_4(loc):
     # print(loc)
+    loc = get_country(loc)
     query = {"location": str(loc)}
     tweets = db.tweets.find(query)
     all_tweets = []

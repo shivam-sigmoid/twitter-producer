@@ -34,7 +34,7 @@ class TwitterStreamer():
     def stream_tweets(self):
         while True:
             stream = ListenerTS(consumer_key, consumer_secret, access_token, access_token_secret)
-            stream.filter(track=["covid", "corona", "covid-19"], stall_warnings=True, languages=["en"])
+            stream.filter(track=["covid", "corona", "covid-19","donation","donate"], stall_warnings=True, languages=["en"])
 
 
 class ListenerTS(Stream):

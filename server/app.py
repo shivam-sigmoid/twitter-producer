@@ -194,7 +194,7 @@ def task_5(country):
     # print(cnt)
     query = {"country": str(cnt)}
     infos = db.measures.find(query)
-    data_list = []
+    data_list = list()
     data_list.append(cnt)
     for info in infos:
         data_list.append(info['measures_taken'])

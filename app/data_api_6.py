@@ -9,4 +9,4 @@ for tweet in tweets:
     print(tweet)
 
 
-# db.tweets.find({ full_text: { $regex: /(donation|contribution|contri)/i } })
+ # db.tweets.find({ full_text: { $regex: /(donation|contribution|contri)/i } })

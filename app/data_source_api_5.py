@@ -45,7 +45,7 @@ col.insert_many(data_list)
 # db.tweets.aggregate([
 # { $project: { location:"$location", words: { $split: ["$full_text", " "] } } },
 # { $unwind: "$words" },
-# { $match : { words: { $nin: ["a", "I", "are", "is", "to", "the", "of", "and", "in", "RT", "was","on" , "for"]} } },
+# { $match : { words: { $nin: ['',"a", "I", "are", "is", "to", "the", "of", "and", "in", "RT", "was","on" , "for"]} } },
 # { $group: { _id: {location:"$location", tweet: "$words"},total: { "$sum": 1 } } },
 # { $sort: { total : -1 } }
 # ])

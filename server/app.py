@@ -191,7 +191,7 @@ def task_4(loc):
 @app.route("/task_5/<country>")
 def task_5(country):
     cnt = get_country(country)
-    print(cnt)
+    # print(cnt)
     query = {"country": str(cnt)}
     infos = db.measures.find(query)
     data_list = []

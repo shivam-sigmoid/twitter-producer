@@ -32,7 +32,7 @@ col.insert_many(data_list)
 # mongo query 3:
 #
 # db.tweets.aggregate([
-#   { $project: { words: { $split: ["$text", " "] } } },
+#   { $project: { words: { $split: ["$full_text", " "] } } },
 #   { $unwind: "$words" },
 #   { $match : { words: { $nin: ["a", "I", "are", "is", "to", "the", "of", "and"]} } },
 #   { $group: { _id: "$words" , total: { "$sum": 1 } } },
@@ -40,3 +40,12 @@ col.insert_many(data_list)
 #   { $limit: 100 }
 # ]);
 
+# task_4
+
+# db.tweets.aggregate([
+# { $project: { location:"$location", words: { $split: ["$full_text", " "] } } },
+# { $unwind: "$words" },
+# { $match : { words: { $nin: ["a", "I", "are", "is", "to", "the", "of", "and", "in", "RT", "was","on" , "for"]} } },
+# { $group: { _id: {location:"$location", tweet: "$words"},total: { "$sum": 1 } } },
+# { $sort: { total : -1 } }
+# ])

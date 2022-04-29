@@ -19,10 +19,10 @@ books = [
 ]
 
 
-@app.route("/bookapi/books")
-def get_books():
-    """ function to get all books """
-    return jsonify({"Books": books})
+# @app.route("/bookapi/books")
+# def get_books():
+#     """ function to get all books """
+#     return jsonify({"Books": books})
 
 
 @pytest.fixture

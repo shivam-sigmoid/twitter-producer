@@ -19,12 +19,6 @@ books = [
 ]
 
 
-@app.route("/bookapi/books")
-def get_books():
-    """ function to get all books """
-    # return jsonify({"Books": books})
-    return True
-
 
 @pytest.fixture
 def client():
@@ -56,7 +50,14 @@ def test_service_missing_email(client):
     assert resp.status_code == 404
 
 
+@app.route("/bookapi/books")
+def get_books():
+    """ function to get all books """
+    # check this route too
+    # return jsonify({"Books": books})
+    return True
+
+
 def test_get_all_books():
     response = app.test_client().get('/bookapi/books')
     assert response.status_code == 500
-kafka

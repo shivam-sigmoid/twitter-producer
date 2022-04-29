@@ -1,5 +1,5 @@
 import pytest
-# from server.app import app
+from server.app import app
 
 books = [
     {

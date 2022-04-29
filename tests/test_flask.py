@@ -55,6 +55,6 @@ def test_service_missing_email(client):
     assert resp.status_code == 404
 
 
-def test_get_all_books():
-    response = app.test_client().get('/bookapi/books')
-    assert response.status_code == 500
+# def test_get_all_books():
+#     response = app.test_client().get('/bookapi/books')
+#     assert response.status_code == 500

@@ -8,7 +8,27 @@ db = client["twitter_db"]
 
 
 def get_country(loc):
-    if 'usa' in loc.lower():
+    if 'Los Angeles' in loc:
+        return 'United States'
+    elif 'UK' in loc:
+        return 'United Kingdom'
+    elif 'Melbourne' in loc:
+        return 'Australia'
+    elif 'Washington' in loc:
+        return 'United States'
+    elif 'Toronto' in loc:
+        return 'Canada'
+    elif 'New Delhi' in loc:
+        return 'India'
+    elif 'New York' in loc:
+        return 'United States'
+    elif 'Sydney' in loc:
+        return 'Australia'
+    elif 'Perth' in loc:
+        return 'Australia'
+    elif 'San Francisco' in loc:
+        return 'United States'
+    elif 'usa' in loc.lower():
         return 'United States'
     elif 'england' in loc.lower():
         return 'United Kingdom'

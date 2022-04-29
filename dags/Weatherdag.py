@@ -10,11 +10,11 @@ default_args = {
     'retries': 1,
     'retry_delay': timedelta(seconds=5)
 }
-with DAG("Weather_Dag", default_args=default_args, schedule_interval='0 18 * * *',
-         template_searchpath=['/usr/local/airflow/sql_files'], catchup=False) as dag:
-
-
-    task1 >> task2 >> task3
+# with DAG("Weather_Dag", default_args=default_args, schedule_interval='0 18 * * *',
+#          template_searchpath=['/usr/local/airflow/sql_files'], catchup=False) as dag:
+#
+#
+#     task1 >> task2 >> task3
 
 # Macros, Catchup
 # Max active runs

@@ -59,3 +59,4 @@ def test_service_missing_email(client):
 def test_get_all_books():
     response = app.test_client().get('/bookapi/books')
     assert response.status_code == 500
+kafka

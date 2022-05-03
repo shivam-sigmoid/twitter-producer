@@ -14,7 +14,7 @@ from geopy.geocoders import Nominatim
 def get_country(loc):
     user_ag = 'user_me_{}'.format(randint(10000, 99999))
     geolocator = Nominatim(user_agent=user_ag)
-    location = geolocator.geocode(loc,language='en')
+    location = geolocator.geocode(loc, language='en')
     if location is None:
         return loc
     address = location.address
@@ -123,6 +123,29 @@ def task_2():
         i += 1
     # print(tweets_dict)
     return flask.jsonify(tweets_dict)
+
+
+# @app.route("/task_2/<user_input_date>")
+# def task_2_by_date(user_input_date):
+#     user_input_date = str(user_input_date)
+#     user_input_date += 'T18:30:00.000+00:00'
+#     tweets = db.tweets.aggregate([
+#         {"$match": {"location": {"$exists": "true"}}},
+#         {"$group": {"_id": {"Country": "$location", "date": {"$eq": ISODate(user_input_date)}},
+#                     "tweets_per_day_per_Country": {"$sum": 1}}},
+#         # {"$group": {"_id": {"$dateToString": {"format": "%Y-%m-%d", "date": "$date"}}, "tweets_per_day": {"$sum":
+#         # 1}}},
+#         {"$project": {"_id.date": 1, "_id.Country": 1, "tweets_per_day": 1, "tweets_per_day_per_Country": 1}},
+#         {"$sort": {"tweets_per_day_per_Country": -1}}
+#     ])
+#     tweets_dict = dict()
+#     i = 0
+#     for tweet in tweets:
+#         # print(tweet)
+#         tweets_dict[i] = {k: v for k, v in tweet.items()}
+#         i += 1
+#     # print(tweets_dict)
+#     return flask.jsonify(tweets_dict)
 
 
 @app.route("/task_3")

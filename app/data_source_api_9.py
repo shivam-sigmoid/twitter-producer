@@ -30,12 +30,10 @@ for country in countries_list:
     for age in age_group_list:
         query_second = query_first + "&age=" + age
         response = r.get(query_second)
-        lis[age]=json.loads(response.text)
+        lis[age] = json.loads(response.text)
 
     dic["country"] = pytz.country_names[country]
     dic["data"] = lis
     data_list.append(dic)
 
-
 col.insert_many(data_list)
-

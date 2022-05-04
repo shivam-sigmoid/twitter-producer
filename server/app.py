@@ -11,6 +11,7 @@ from random import randint
 from geopy.geocoders import Nominatim
 import datetime
 import dateutil.parser
+import requests
 
 
 # Function for getting the country
@@ -261,11 +262,22 @@ def task_7_all():
 @app.route("/task_9/<country>")
 def task_9(country):
     cnt = get_country(country)
-    # print(cnt)
+    query = "https://goweather.herokuapp.com/weather/"
+    query += country
+    weather_response = requests.get(query)
+    weather_json_data = json.loads(weather_response.text)
+    weather_list = dict()
+    temperature = (''.join(filter(str.isdigit, weather_json_data["temperature"])))
+    weather_list["average_temperature"] = temperature + " Degree Celcius"
+    weather_list["wind_speed"] = weather_json_data["wind"]
+    weather_list["description"] = weather_json_data["description"]
     query = {"country": str(cnt)}
     infos = db.age_weather_data.find(query)
     data_list = list()
+    # Append the Country Name
     data_list.append(cnt)
+    # Append the Country's weather data
+    data_list.append(weather_list)
     for info in infos:
         data_list.append(info['data'])
     return flask.jsonify(data_list)

@@ -9,6 +9,8 @@ import collections
 from nltk.corpus import stopwords
 from random import randint
 from geopy.geocoders import Nominatim
+import datetime
+import dateutil.parser
 
 
 def get_country(loc):
@@ -106,46 +108,36 @@ def task_1():
 
 
 @app.route("/task_2")
-def task_2():
+def task_2_all():
     tweets = db.tweets.aggregate([
         {"$match": {"location": {"$exists": "true"}}},
         {"$group": {"_id": {"Country": "$location", "date": "$date"}, "tweets_per_day_per_Country": {"$sum": 1}}},
-        # {"$group": {"_id": {"$dateToString": {"format": "%Y-%m-%d", "date": "$date"}}, "tweets_per_day": {"$sum":
-        # 1}}},
         {"$project": {"_id.date": 1, "_id.Country": 1, "tweets_per_day": 1, "tweets_per_day_per_Country": 1}},
         {"$sort": {"tweets_per_day_per_Country": -1}}
     ])
     tweets_dict = dict()
     i = 0
     for tweet in tweets:
-        # print(tweet)
         tweets_dict[i] = {k: v for k, v in tweet.items()}
         i += 1
-    # print(tweets_dict)
     return flask.jsonify(tweets_dict)
 
 
-# @app.route("/task_2/<user_input_date>")
-# def task_2_by_date(user_input_date):
-#     user_input_date = str(user_input_date)
-#     user_input_date += 'T18:30:00.000+00:00'
-#     tweets = db.tweets.aggregate([
-#         {"$match": {"location": {"$exists": "true"}}},
-#         {"$group": {"_id": {"Country": "$location", "date": {"$eq": ISODate(user_input_date)}},
-#                     "tweets_per_day_per_Country": {"$sum": 1}}},
-#         # {"$group": {"_id": {"$dateToString": {"format": "%Y-%m-%d", "date": "$date"}}, "tweets_per_day": {"$sum":
-#         # 1}}},
-#         {"$project": {"_id.date": 1, "_id.Country": 1, "tweets_per_day": 1, "tweets_per_day_per_Country": 1}},
-#         {"$sort": {"tweets_per_day_per_Country": -1}}
-#     ])
-#     tweets_dict = dict()
-#     i = 0
-#     for tweet in tweets:
-#         # print(tweet)
-#         tweets_dict[i] = {k: v for k, v in tweet.items()}
-#         i += 1
-#     # print(tweets_dict)
-#     return flask.jsonify(tweets_dict)
+@app.route("/task_2/<raw_date>")
+def task_2(raw_date):
+    print(raw_date)
+    date = dateutil.parser.parse(raw_date)
+    tweets = db.tweets.aggregate([
+        {"$match": {"date": datetime.datetime(date.year, date.month, date.day, 18, 30, 00)}},
+        {"$group": {"_id": {"Country": "$location"}, "tweets_per_day_per_Country": {"$sum": 1}}},
+        {"$sort": {"tweets_per_day_per_Country": -1}}
+    ])
+    tweets_dict = dict()
+    i = 0
+    for tweet in tweets:
+        tweets_dict[i] = {k: v for k, v in tweet.items()}
+        i += 1
+    return flask.jsonify(tweets_dict)
 
 
 @app.route("/task_3")
@@ -254,4 +246,4 @@ def task_7_all():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5005)

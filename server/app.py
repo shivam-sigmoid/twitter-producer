@@ -203,6 +203,16 @@ def task_4(loc):
     return flask.jsonify(counts_nsw.most_common(100))
 
 
+@app.route("/task_5")
+def task_5_all():
+    infos = db.measures.find()
+    data_list = list()
+    for info in infos:
+        data_list.append(info['country'])
+        data_list.append(info['measures_taken'])
+    return flask.jsonify(data_list)
+
+
 @app.route("/task_5/<country>")
 def task_5(country):
     cnt = get_country(country)

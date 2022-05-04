@@ -13,6 +13,8 @@ import datetime
 import dateutil.parser
 
 
+# Function for getting the country
+# with the local, global area names
 def get_country(loc):
     user_ag = 'user_me_{}'.format(randint(10000, 99999))
     geolocator = Nominatim(user_agent=user_ag)
@@ -128,6 +130,7 @@ def task_2(raw_date):
     print(raw_date)
     date = dateutil.parser.parse(raw_date)
     tweets = db.tweets.aggregate([
+        {"$match": {"location": {"$exists": "true"}}},
         {"$match": {"date": datetime.datetime(date.year, date.month, date.day, 18, 30, 00)}},
         {"$group": {"_id": {"Country": "$location"}, "tweets_per_day_per_Country": {"$sum": 1}}},
         {"$sort": {"tweets_per_day_per_Country": -1}}
@@ -253,6 +256,19 @@ def task_7_all():
         rankings_dict[i] = {k: v for k, v in ranking.items()}
         i += 1
     return flask.jsonify(rankings_dict)
+
+
+@app.route("/task_9/<country>")
+def task_9(country):
+    cnt = get_country(country)
+    # print(cnt)
+    query = {"country": str(cnt)}
+    infos = db.age_weather_data.find(query)
+    data_list = list()
+    data_list.append(cnt)
+    for info in infos:
+        data_list.append(info['data'])
+    return flask.jsonify(data_list)
 
 
 if __name__ == "__main__":

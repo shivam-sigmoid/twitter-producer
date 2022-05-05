@@ -53,3 +53,4 @@ jobs:
         export PYTHONPATH=server
         python3 server/app.py
         pytest
+        pkill -f server/app.py

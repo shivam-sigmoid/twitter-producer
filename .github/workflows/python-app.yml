@@ -51,4 +51,7 @@ jobs:
     - name: Test with pytest
       run: |
         export PYTHONPATH=server
+        python3 server/app.py
         pytest
+        script: |
+          kill $(pgrep -f flask)

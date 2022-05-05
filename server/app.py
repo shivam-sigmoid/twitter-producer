@@ -280,7 +280,7 @@ def task_7_all():
 @app.route("/task_9/<country>")
 def task_9(country):
     cnt = get_country(country)
-    weather_details = get_weather(cnt)
+    weather_details = get_weather(country)
     query = {"country": str(cnt)}
     infos = db.age_weather_data.find(query)
     data_list = list()

@@ -53,4 +53,4 @@ jobs:
         export PYTHONPATH=server
         python3 server/app.py
         pytest
-        kill
+        kill $(pgrep -f flask)

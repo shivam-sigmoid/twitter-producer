@@ -11,7 +11,13 @@ from random import randint
 from geopy.geocoders import Nominatim
 import datetime
 import dateutil.parser
-import requests
+from pyowm import OWM
+import configparser
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+WEATHER_API_KEY = config['weather']['api_key']
 
 
 # Function for getting the country
@@ -26,6 +32,21 @@ def get_country(loc):
     address_split = address.split(',')
     country = address_split[-1].lstrip()
     return country
+
+
+# Function to get the weather details of certain location
+def get_weather(cnt):
+    owm = OWM(WEATHER_API_KEY)
+    mgr = owm.weather_manager()
+    observation = mgr.weather_at_place(str(cnt))
+    w = observation.weather
+    weather_list = dict()
+    weather_list["temperature"] = w.temperature('celsius')
+    weather_list["wind_speed"] = w.wind()
+    weather_list["description"] = w.detailed_status
+    weather_list["clouds"] = w.clouds
+    weather_list["humidity"] = w.humidity
+    return weather_list
 
 
 def object_id_from_int(n):
@@ -49,9 +70,6 @@ app = flask.Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/twitter_db"
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
-
-
-# Location need to be uniformed as per country basis
 
 
 @app.route("/get_tweets")
@@ -262,22 +280,14 @@ def task_7_all():
 @app.route("/task_9/<country>")
 def task_9(country):
     cnt = get_country(country)
-    query = "https://goweather.herokuapp.com/weather/"
-    query += country
-    weather_response = requests.get(query)
-    weather_json_data = json.loads(weather_response.text)
-    weather_list = dict()
-    temperature = (''.join(filter(str.isdigit, weather_json_data["temperature"])))
-    weather_list["average_temperature"] = temperature + " Degree Celcius"
-    weather_list["wind_speed"] = weather_json_data["wind"]
-    weather_list["description"] = weather_json_data["description"]
+    weather_details = get_weather(cnt)
     query = {"country": str(cnt)}
     infos = db.age_weather_data.find(query)
     data_list = list()
     # Append the Country Name
     data_list.append(cnt)
     # Append the Country's weather data
-    data_list.append(weather_list)
+    data_list.append(weather_details)
     for info in infos:
         data_list.append(info['data'])
     return flask.jsonify(data_list)

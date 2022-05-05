@@ -14,11 +14,6 @@ import dateutil.parser
 from pyowm import OWM
 import configparser
 
-config = configparser.ConfigParser()
-config.read('config.ini')
-
-WEATHER_API_KEY = config['weather']['api_key']
-
 
 # Function for getting the country
 # with the local, global area names
@@ -36,6 +31,9 @@ def get_country(loc):
 
 # Function to get the weather details of certain location
 def get_weather(cnt):
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    WEATHER_API_KEY = config['weather']['api_key']
     owm = OWM(WEATHER_API_KEY)
     mgr = owm.weather_manager()
     observation = mgr.weather_at_place(str(cnt))

@@ -4,7 +4,7 @@ from kafka import KafkaProducer
 import configparser
 import json
 config = configparser.ConfigParser()
-config.read('weather_config.ini')
+config.read('config.ini')
 
 consumer_key  = config['twitter']['api_key']
 consumer_secret= config['twitter']['api_key_secret']

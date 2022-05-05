@@ -56,6 +56,8 @@ def test_get_all_books():
     response = app.test_client().get('/bookapi/books')
     assert response.status_code == 500
 
+#        script: |
+#          kill $(pgrep -f flask)
 
 # class TestClass(unittest.TestCase):
 #     @pytest.fixture

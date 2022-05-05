@@ -39,6 +39,8 @@ def get_weather(cnt):
     observation = mgr.weather_at_place(str(cnt))
     w = observation.weather
     weather_list = dict()
+    # print(dir(w))
+    weather_list["location"] = cnt.title()
     weather_list["temperature"] = w.temperature('celsius')
     weather_list["wind_speed"] = w.wind()
     weather_list["description"] = w.detailed_status

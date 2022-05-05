@@ -1,4 +1,5 @@
 import pymongo
+import unittest
 
 
 def throw_if_mongodb_is_unavailable(host, port):
@@ -17,9 +18,10 @@ def throw_if_mongodb_is_unavailable(host, port):
             sock.close()
 
 
-def test_mongo_connection():
-    HOST = 'localhost'
-    PORT = 27017
-    throw_if_mongodb_is_unavailable(HOST, PORT)
-    conn = pymongo.MongoClient(HOST, PORT)
-    assert conn.admin.command('ismaster')['ok'] == 1.0
+class TestClass(unittest.TestCase):
+    def test_mongo_connection(self):
+        HOST = 'localhost'
+        PORT = 27017
+        throw_if_mongodb_is_unavailable(HOST, PORT)
+        conn = pymongo.MongoClient(HOST, PORT)
+        assert conn.admin.command('ismaster')['ok'] == 1.0

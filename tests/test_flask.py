@@ -76,9 +76,9 @@ class TestClass(unittest.TestCase):
         resp = app.test_client().get('/get_tweets_geo_enabled')
         assert resp.status_code == 200
 
-    def test_get_tweets(self):
-        resp = app.test_client().get('/get_tweets')
-        assert resp.status_code == 200
+    # def test_get_tweets(self):
+    #     resp = app.test_client().get('/get_tweets')
+    #     assert resp.status_code == 200
 
     def test_task_1(self):
         resp = app.test_client().get('/task_1')

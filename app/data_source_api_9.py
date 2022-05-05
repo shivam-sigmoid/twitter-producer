@@ -37,3 +37,5 @@ for country in countries_list:
     data_list.append(dic)
 
 col.insert_many(data_list)
+
+

@@ -1,5 +1,6 @@
 from flask_pymongo import PyMongo
 import flask
+from flask import render_template
 import bson
 import json
 import nltk
@@ -32,7 +33,7 @@ def get_country(loc):
 # Function to get the weather details of certain location
 def get_weather(cnt):
     config = configparser.ConfigParser()
-    config.read('config.ini')
+    config.read('weather_config.ini')
     WEATHER_API_KEY = config['weather']['api_key']
     owm = OWM(WEATHER_API_KEY)
     mgr = owm.weather_manager()
@@ -70,6 +71,11 @@ app = flask.Flask(__name__)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/twitter_db"
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
+
+
+@app.route("/")
+def hello():
+    return render_template("index.html")
 
 
 @app.route("/get_tweets")

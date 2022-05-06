@@ -14,6 +14,7 @@ import datetime
 import dateutil.parser
 from pyowm import OWM
 import configparser
+import pandas as pd
 
 
 # Function for getting the country
@@ -252,6 +253,12 @@ def task_5(country):
     for info in infos:
         data_list.append(info['measures_taken'])
     return flask.jsonify(data_list)
+
+
+@app.route("/task_6")
+def task_6():
+    df = pd.read_excel("../data/Donations.xlsx", sheet_name="Overall")
+    return render_template('task_6.html', column_names=df.columns.values, row_data=list(df.values.tolist()), zip=zip)
 
 
 @app.route("/task_7/<int:week_num>")

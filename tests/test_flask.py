@@ -1,7 +1,7 @@
 import pytest
-# from server.app import app
-import flask
-app = flask.Flask(__name__)
+from server.app import app
+# import flask
+# app = flask.Flask(__name__)
 
 books = [
     {
@@ -28,7 +28,7 @@ def client():
 
 def test_index_route():
     response = app.test_client().get('/')
-    assert response.status_code == 404
+    assert response.status_code == 200
 
 
 def test_service_bad_http_method(client):

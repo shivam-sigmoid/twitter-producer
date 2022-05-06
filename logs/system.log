@@ -85,3 +85,45 @@
 2022-05-06 14:53:44,921:WARNING: * Debugger is active!
 2022-05-06 14:53:44,929:INFO: * Debugger PIN: 872-672-597
 2022-05-06 14:53:47,351:INFO:127.0.0.1 - - [06/May/2022 14:53:47] "GET /task_6 HTTP/1.1" 200 -
+2022-05-06 15:32:50,495:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-06 15:32:50,496:INFO: * Restarting with stat
+2022-05-06 15:32:51,781:WARNING: * Debugger is active!
+2022-05-06 15:32:51,793:INFO: * Debugger PIN: 872-672-597
+2022-05-06 15:34:31,749:INFO:GET/200/Task 1
+2022-05-06 15:34:31,774:INFO:127.0.0.1 - - [06/May/2022 15:34:31] "GET /task_1 HTTP/1.1" 200 -
+2022-05-06 15:34:34,993:INFO:GET/200/Task 2
+2022-05-06 15:34:35,033:INFO:127.0.0.1 - - [06/May/2022 15:34:35] "GET /task_2 HTTP/1.1" 200 -
+2022-05-06 15:34:37,344:INFO:GET/200/Task 3
+2022-05-06 15:34:39,492:INFO:127.0.0.1 - - [06/May/2022 15:34:39] "GET /task_3 HTTP/1.1" 200 -
+2022-05-06 15:34:44,662:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-06 15:34:44,663:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-06 15:34:44,663:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=india&format=json&limit=1&accept-language=en
+2022-05-06 15:34:44,664:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-06 15:34:46,788:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=india&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-06 15:34:46,793:INFO:GET/200/Task 4 Location Wise
+2022-05-06 15:34:47,088:INFO:127.0.0.1 - - [06/May/2022 15:34:47] "GET /task_4/india HTTP/1.1" 200 -
+2022-05-06 15:35:08,747:INFO:GET/200/Task 5
+2022-05-06 15:35:08,762:INFO:127.0.0.1 - - [06/May/2022 15:35:08] "GET /task_5 HTTP/1.1" 200 -
+2022-05-06 15:35:12,081:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-06 15:35:12,081:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-06 15:35:12,081:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=ae&format=json&limit=1&accept-language=en
+2022-05-06 15:35:12,082:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-06 15:35:13,657:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=ae&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-06 15:35:13,664:INFO:GET/200/Task 5 Country wise
+2022-05-06 15:35:13,666:INFO:127.0.0.1 - - [06/May/2022 15:35:13] "GET /task_5/ae HTTP/1.1" 200 -
+2022-05-06 15:35:18,539:INFO:GET/200/Task 6
+2022-05-06 15:35:18,541:INFO:127.0.0.1 - - [06/May/2022 15:35:18] "GET /task_6 HTTP/1.1" 200 -
+2022-05-06 15:35:22,608:INFO:GET/200/Task 7
+2022-05-06 15:35:22,624:INFO:127.0.0.1 - - [06/May/2022 15:35:22] "GET /task_7 HTTP/1.1" 200 -
+2022-05-06 15:35:25,317:INFO:GET/200/Task 7 Week Wise
+2022-05-06 15:35:25,319:INFO:127.0.0.1 - - [06/May/2022 15:35:25] "GET /task_7/12 HTTP/1.1" 200 -
+2022-05-06 15:35:29,062:INFO:127.0.0.1 - - [06/May/2022 15:35:29] "[33mGET /task_9 HTTP/1.1[0m" 404 -
+2022-05-06 15:35:32,269:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-06 15:35:32,269:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-06 15:35:32,269:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=kabul&format=json&limit=1&accept-language=en
+2022-05-06 15:35:32,271:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-06 15:35:33,894:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=kabul&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-06 15:35:33,943:DEBUG:Starting new HTTPS connection (1): api.openweathermap.org:443
+2022-05-06 15:35:34,635:DEBUG:https://api.openweathermap.org:443 "GET /data/2.5/weather?APPID=ec6d3b0cbf0523623a3f25cdcdd96263&lang=en&q=kabul HTTP/1.1" 200 490
+2022-05-06 15:35:34,645:INFO:GET/200/Task 9 Country wise
+2022-05-06 15:35:34,648:INFO:127.0.0.1 - - [06/May/2022 15:35:34] "GET /task_9/kabul HTTP/1.1" 200 -

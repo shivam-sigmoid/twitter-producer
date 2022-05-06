@@ -4,7 +4,8 @@ import flask
 from flask import render_template
 from flask_pymongo import PyMongo
 from server.utility_functions import get_weather, get_country, most_common_words, get_task_6_data
-from server.pipelines import get_pipeline_task_1, get_pipeline_task_2, get_pipeline_task_2_date_wise, get_pipeline_task_7, \
+from server.pipelines import get_pipeline_task_1, get_pipeline_task_2, get_pipeline_task_2_date_wise, \
+    get_pipeline_task_7, \
     get_pipeline_task_7_week_wise
 import logging
 
@@ -130,89 +131,121 @@ def task_2(raw_date):
 
 @app.route("/task_3")
 def task_3():
-    tweets = db.tweets.find()
-    return flask.jsonify(most_common_words(tweets))
+    try:
+        tweets = db.tweets.find()
+        logging.info("GET/200/Task 3")
+        return flask.jsonify(most_common_words(tweets))
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_4/<loc>")
 def task_4(loc):
     # print(loc)
-    loc = get_country(loc)
-    query = {"location": str(loc)}
-    tweets = db.tweets.find(query)
-    return flask.jsonify(most_common_words(tweets))
+    try:
+        loc = get_country(loc)
+        query = {"location": str(loc)}
+        tweets = db.tweets.find(query)
+        logging.info("GET/200/Task 4 Location Wise")
+        return flask.jsonify(most_common_words(tweets))
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_5")
 def task_5_all():
-    infos = db.measures.find()
-    data_list = list()
-    for info in infos:
-        data_list.append(info['country'])
-        data_list.append(info['measures_taken'])
-    return flask.jsonify(data_list)
+    try:
+        infos = db.measures.find()
+        data_list = list()
+        for info in infos:
+            data_list.append(info['country'])
+            data_list.append(info['measures_taken'])
+        logging.info("GET/200/Task 5")
+        return flask.jsonify(data_list)
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_5/<country>")
 def task_5(country):
-    cnt = get_country(country)
-    # print(cnt)
-    query = {"country": str(cnt)}
-    infos = db.measures.find(query)
-    data_list = list()
-    data_list.append(cnt)
-    for info in infos:
-        data_list.append(info['measures_taken'])
-    return flask.jsonify(data_list)
+    try:
+        cnt = get_country(country)
+        # print(cnt)
+        query = {"country": str(cnt)}
+        infos = db.measures.find(query)
+        data_list = list()
+        data_list.append(cnt)
+        for info in infos:
+            data_list.append(info['measures_taken'])
+        logging.info("GET/200/Task 5 Country wise")
+        return flask.jsonify(data_list)
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_6")
 def task_6():
-    data_lst = get_task_6_data()
-    response_data = dict()
-    i = 1
-    for data in data_lst:
-        response_data[i] = {k: v for k, v in data.items()}
-        i += 1
-    return flask.jsonify(response_data)
+    try:
+        data_lst = get_task_6_data()
+        response_data = dict()
+        i = 1
+        for data in data_lst:
+            response_data[i] = {k: v for k, v in data.items()}
+            i += 1
+        logging.info("GET/200/Task 6")
+        return flask.jsonify(response_data)
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_7/<int:week_num>")
 def task_7(week_num):
-    rankings = db.disease_sh.aggregate(get_pipeline_task_7_week_wise(week_num))
-    rankings_dict = dict()
-    i = 1
-    for ranking in rankings:
-        rankings_dict[i] = {k: v for k, v in ranking.items()}
-        i += 1
-    return flask.jsonify(rankings_dict)
+    try:
+        rankings = db.disease_sh.aggregate(get_pipeline_task_7_week_wise(week_num))
+        rankings_dict = dict()
+        i = 1
+        for ranking in rankings:
+            rankings_dict[i] = {k: v for k, v in ranking.items()}
+            i += 1
+        logging.info("GET/200/Task 7 Week Wise")
+        return flask.jsonify(rankings_dict)
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_7")
 def task_7_all():
-    rankings = db.disease_sh.aggregate(get_pipeline_task_7())
-    rankings_dict = dict()
-    i = 1
-    for ranking in rankings:
-        rankings_dict[i] = {k: v for k, v in ranking.items()}
-        i += 1
-    return flask.jsonify(rankings_dict)
+    try:
+        rankings = db.disease_sh.aggregate(get_pipeline_task_7())
+        rankings_dict = dict()
+        i = 1
+        for ranking in rankings:
+            rankings_dict[i] = {k: v for k, v in ranking.items()}
+            i += 1
+        logging.info("GET/200/Task 7")
+        return flask.jsonify(rankings_dict)
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_9/<country>")
 def task_9(country):
-    cnt = get_country(country)
-    weather_details = get_weather(country)
-    query = {"country": str(cnt)}
-    infos = db.age_weather_data.find(query)
-    data_list = list()
-    # Append the Country Name
-    data_list.append(cnt)
-    # Append the Country's weather data
-    data_list.append(weather_details)
-    for info in infos:
-        data_list.append(info['data'])
-    return flask.jsonify(data_list)
+    try:
+        cnt = get_country(country)
+        weather_details = get_weather(country)
+        query = {"country": str(cnt)}
+        infos = db.age_weather_data.find(query)
+        data_list = list()
+        # Append the Country Name
+        data_list.append(cnt)
+        # Append the Country's weather data
+        data_list.append(weather_details)
+        for info in infos:
+            data_list.append(info['data'])
+        logging.info("GET/200/Task 9 Country wise")
+        return flask.jsonify(data_list)
+    except Exception as e:
+        logging.error(e)
 
 
 if __name__ == "__main__":

@@ -1,13 +1,12 @@
-from flask_pymongo import PyMongo
+import json
+import bson
 import flask
 from flask import render_template
-import bson
-import json
-import datetime
-import dateutil.parser
-import pandas as pd
-from utility_functions import get_weather, get_country, most_common_words
-from pipelines import get_pipeline_task_1, get_pipeline_task_2
+from flask_pymongo import PyMongo
+from utility_functions import get_weather, get_country, most_common_words,get_task_6_data
+from pipelines import get_pipeline_task_1, get_pipeline_task_2, get_pipeline_task_2_date_wise, get_pipeline_task_7, \
+    get_pipeline_task_7_week_wise
+
 
 def object_id_from_int(n):
     s = str(n)
@@ -33,8 +32,13 @@ db = mongodb_client.db
 
 
 @app.route("/")
-def hello():
+def home():
     return render_template("index.html")
+
+
+# @app.route("/documentation")
+# def documentation():
+#     return render_template("documentation.html")
 
 
 @app.route("/get_tweets")
@@ -102,13 +106,7 @@ def task_2_all():
 @app.route("/task_2/<raw_date>")
 def task_2(raw_date):
     print(raw_date)
-    date = dateutil.parser.parse(raw_date)
-    tweets = db.tweets.aggregate([
-        {"$match": {"location": {"$exists": "true"}}},
-        {"$match": {"date": datetime.datetime(date.year, date.month, date.day, 18, 30, 00)}},
-        {"$group": {"_id": {"Country": "$location"}, "tweets_per_day_per_Country": {"$sum": 1}}},
-        {"$sort": {"tweets_per_day_per_Country": -1}}
-    ])
+    tweets = db.tweets.aggregate(get_pipeline_task_2_date_wise(raw_date))
     tweets_dict = dict()
     i = 0
     for tweet in tweets:
@@ -157,17 +155,13 @@ def task_5(country):
 
 @app.route("/task_6")
 def task_6():
-    df = pd.read_excel("../data/Donations.xlsx", sheet_name="Overall")
+    df = get_task_6_data()
     return render_template('task_6.html', column_names=df.columns.values, row_data=list(df.values.tolist()), zip=zip)
 
 
 @app.route("/task_7/<int:week_num>")
 def task_7(week_num):
-    rankings = db.disease_sh.aggregate([
-        {"$match": {"week": week_num}},
-        {"$group": {"_id": {"Country": "$country"}, "rank": {"$sum": "$rank"}}},
-        {"$sort": {"rank": -1}}
-    ])
+    rankings = db.disease_sh.aggregate(get_pipeline_task_7_week_wise(week_num))
     rankings_dict = dict()
     i = 1
     for ranking in rankings:
@@ -178,10 +172,7 @@ def task_7(week_num):
 
 @app.route("/task_7")
 def task_7_all():
-    rankings = db.disease_sh.aggregate([
-        {"$group": {"_id": {"week": "$week", "Country": "$country"}, "rank": {"$sum": "$rank"}}},
-        {"$sort": {"rank": -1}}
-    ])
+    rankings = db.disease_sh.aggregate(get_pipeline_task_7())
     rankings_dict = dict()
     i = 1
     for ranking in rankings:

@@ -7,6 +7,7 @@ import re
 import itertools
 import collections
 from nltk.corpus import stopwords
+import pandas as pd
 
 
 # Function for getting the country
@@ -70,3 +71,8 @@ def most_common_words(tweets):
     counts_nsw = collections.Counter(tweets_nsw_nc)
     most_common = counts_nsw.most_common(100)
     return most_common
+
+
+def get_task_6_data():
+    df = pd.read_excel("../data/Donations.xlsx", sheet_name="Overall")
+    return df

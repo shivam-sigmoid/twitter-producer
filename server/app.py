@@ -7,7 +7,7 @@ import datetime
 import dateutil.parser
 import pandas as pd
 from utility_functions import get_weather, get_country, most_common_words
-
+from pipelines import get_pipeline_task_1, get_pipeline_task_2
 
 def object_id_from_int(n):
     s = str(n)
@@ -77,12 +77,7 @@ def get_tweets_with_geo():
 
 @app.route("/task_1")
 def task_1():
-    tweets = db.tweets.aggregate([
-        {"$match": {"location": {"$exists": "true"}}},
-        {"$group": {"_id": {"Country": "$location"}, "Total_Tweets_Per_Country": {"$sum": 1}}},
-        {"$project": {"_id.Country": 1, "Total_Tweets_Per_Country": 1}},
-        {"$sort": {"Total_Tweets_Per_Country": -1}}
-    ])
+    tweets = db.tweets.aggregate(get_pipeline_task_1())
     tweets_dict = dict()
     i = 0
     for tweet in tweets:
@@ -95,12 +90,7 @@ def task_1():
 
 @app.route("/task_2")
 def task_2_all():
-    tweets = db.tweets.aggregate([
-        {"$match": {"location": {"$exists": "true"}}},
-        {"$group": {"_id": {"Country": "$location", "date": "$date"}, "tweets_per_day_per_Country": {"$sum": 1}}},
-        {"$project": {"_id.date": 1, "_id.Country": 1, "tweets_per_day": 1, "tweets_per_day_per_Country": 1}},
-        {"$sort": {"tweets_per_day_per_Country": -1}}
-    ])
+    tweets = db.tweets.aggregate(get_pipeline_task_2())
     tweets_dict = dict()
     i = 0
     for tweet in tweets:

@@ -1,6 +1,7 @@
 import pytest
 from server.app import app
 
+
 books = [
     {
         "id": 1,

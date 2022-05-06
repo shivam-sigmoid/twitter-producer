@@ -3,9 +3,10 @@ import bson
 import flask
 from flask import render_template
 from flask_pymongo import PyMongo
-from utility_functions import get_weather, get_country, most_common_words,get_task_6_data
+from utility_functions import get_weather, get_country, most_common_words, get_task_6_data
 from pipelines import get_pipeline_task_1, get_pipeline_task_2, get_pipeline_task_2_date_wise, get_pipeline_task_7, \
     get_pipeline_task_7_week_wise
+import logging
 
 
 def object_id_from_int(n):
@@ -81,38 +82,50 @@ def get_tweets_with_geo():
 
 @app.route("/task_1")
 def task_1():
-    tweets = db.tweets.aggregate(get_pipeline_task_1())
-    tweets_dict = dict()
-    i = 0
-    for tweet in tweets:
-        # print(tweet)
-        tweets_dict[i] = {k: v for k, v in tweet.items()}
-        i += 1
-    # print(tweets_dict)
-    return flask.jsonify(tweets_dict)
+    try:
+        tweets = db.tweets.aggregate(get_pipeline_task_1())
+        tweets_dict = dict()
+        i = 0
+        for tweet in tweets:
+            # print(tweet)
+            tweets_dict[i] = {k: v for k, v in tweet.items()}
+            i += 1
+        # print(tweets_dict)
+        logging.info("GET/200/Task 1")
+        return flask.jsonify(tweets_dict)
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_2")
 def task_2_all():
-    tweets = db.tweets.aggregate(get_pipeline_task_2())
-    tweets_dict = dict()
-    i = 0
-    for tweet in tweets:
-        tweets_dict[i] = {k: v for k, v in tweet.items()}
-        i += 1
-    return flask.jsonify(tweets_dict)
+    try:
+        tweets = db.tweets.aggregate(get_pipeline_task_2())
+        tweets_dict = dict()
+        i = 0
+        for tweet in tweets:
+            tweets_dict[i] = {k: v for k, v in tweet.items()}
+            i += 1
+        logging.info("GET/200/Task 2")
+        return flask.jsonify(tweets_dict)
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_2/<raw_date>")
 def task_2(raw_date):
     print(raw_date)
-    tweets = db.tweets.aggregate(get_pipeline_task_2_date_wise(raw_date))
-    tweets_dict = dict()
-    i = 0
-    for tweet in tweets:
-        tweets_dict[i] = {k: v for k, v in tweet.items()}
-        i += 1
-    return flask.jsonify(tweets_dict)
+    try:
+        tweets = db.tweets.aggregate(get_pipeline_task_2_date_wise(raw_date))
+        tweets_dict = dict()
+        i = 0
+        for tweet in tweets:
+            tweets_dict[i] = {k: v for k, v in tweet.items()}
+            i += 1
+        logging.info("GET/200/Task 2 Date Wise")
+        return flask.jsonify(tweets_dict)
+    except Exception as e:
+        logging.error(e)
 
 
 @app.route("/task_3")
@@ -156,7 +169,8 @@ def task_5(country):
 @app.route("/task_6")
 def task_6():
     df = get_task_6_data()
-    return render_template('task_6.html', column_names=df.columns.values, row_data=list(df.values.tolist()), zip=zip)
+    # return render_template('task_6.html', column_names=df.columns.values, row_data=list(df.values.tolist()), zip=zip)
+    return flask.jsonify(df)
 
 
 @app.route("/task_7/<int:week_num>")
@@ -198,4 +212,8 @@ def task_9(country):
 
 
 if __name__ == "__main__":
+    logging.basicConfig(filename='../logs/system.log',
+                        format='%(asctime)s:%(levelname)s:%(message)s',
+                        level=logging.DEBUG)
+    # app.config['LOG_FILE'] = '../logs/system.log'
     app.run(debug=True, port=5005)

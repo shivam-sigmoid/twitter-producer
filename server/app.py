@@ -216,8 +216,8 @@ def task_9(country):
 
 
 if __name__ == "__main__":
-    # logging.basicConfig(filename='../logs/system.log',
-    #                     format='%(asctime)s:%(levelname)s:%(message)s',
-    #                     level=logging.DEBUG)
+    logging.basicConfig(filename='../logs/system.log',
+                        format='%(asctime)s:%(levelname)s:%(message)s',
+                        level=logging.DEBUG)
     # app.config['LOG_FILE'] = '../logs/system.log'
     app.run(debug=True, port=5005)

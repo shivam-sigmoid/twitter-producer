@@ -168,9 +168,13 @@ def task_5(country):
 
 @app.route("/task_6")
 def task_6():
-    df = get_task_6_data()
-    # return render_template('task_6.html', column_names=df.columns.values, row_data=list(df.values.tolist()), zip=zip)
-    return flask.jsonify(df)
+    data_lst = get_task_6_data()
+    response_data = dict()
+    i = 1
+    for data in data_lst:
+        response_data[i] = {k: v for k, v in data.items()}
+        i += 1
+    return flask.jsonify(response_data)
 
 
 @app.route("/task_7/<int:week_num>")
@@ -212,8 +216,8 @@ def task_9(country):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='../logs/system.log',
-                        format='%(asctime)s:%(levelname)s:%(message)s',
-                        level=logging.DEBUG)
+    # logging.basicConfig(filename='../logs/system.log',
+    #                     format='%(asctime)s:%(levelname)s:%(message)s',
+    #                     level=logging.DEBUG)
     # app.config['LOG_FILE'] = '../logs/system.log'
     app.run(debug=True, port=5005)

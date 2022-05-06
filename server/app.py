@@ -5,6 +5,7 @@ from flask import render_template
 from flask_pymongo import PyMongo
 import sys
 sys.path.append("../")
+
 from server.utility_functions import get_weather, get_country, most_common_words, get_task_6_data
 from server.pipelines import get_pipeline_task_1, get_pipeline_task_2, get_pipeline_task_2_date_wise, \
     get_pipeline_task_7, \

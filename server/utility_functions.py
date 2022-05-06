@@ -74,7 +74,7 @@ def most_common_words(tweets):
 
 
 def get_task_6_data():
-    df = pd.read_excel("../data/Donations.xlsx", sheet_name="Overall")
+    # df = pd.read_excel("../data/Donations.xlsx", sheet_name="Overall")
     df_rows = df.values.tolist()
     df_cols = df.columns.values
     dict_lst = []
@@ -82,7 +82,7 @@ def get_task_6_data():
         d = dict()
         d[df_cols[0]] = row[0]
         d[df_cols[1]] = row[1]
-        d[df_cols[2]] = row[2]
+        d[df_cols[2]] = '$' + str(round(row[2], 2)) + " Million"
         dict_lst.append(d)
     return dict_lst
 

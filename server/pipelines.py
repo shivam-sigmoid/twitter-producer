@@ -33,6 +33,15 @@ def get_pipeline_task_2_date_wise(raw_date):
     return pipeline
 
 
+def get_pipeline_task_6_1():
+    pipeline = [
+        {"$group": {"_id": "$source", "CountOfDonations": {"$sum": 1}, "TotalAmountInDollars": {"$sum": "$amount"}}},
+        {"$sort": {"TotalAmountInDollars": -1}},
+        {"$limit": 10}
+    ]
+    return pipeline
+
+
 def get_pipeline_task_7_week_wise(week_num):
     pipeline = [
         {"$match": {"week": week_num}},

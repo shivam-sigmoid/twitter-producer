@@ -4,12 +4,13 @@ import flask
 from flask import render_template
 from flask_pymongo import PyMongo
 import sys
+
 sys.path.append("../")
 
 from server.utility_functions import get_weather, get_country, most_common_words, get_task_6_data
 from server.pipelines import get_pipeline_task_1, get_pipeline_task_2, get_pipeline_task_2_date_wise, \
     get_pipeline_task_7, \
-    get_pipeline_task_7_week_wise
+    get_pipeline_task_7_week_wise, get_pipeline_task_6_1
 import logging
 
 
@@ -201,6 +202,21 @@ def task_6():
         logging.error(e)
 
 
+@app.route("/task_6_1")
+def task_6_1():
+    try:
+        data_list = db.donation.aggregate(get_pipeline_task_6_1())
+        response_data = dict()
+        i = 1
+        for data in data_list:
+            response_data[i] = {k: v for k, v in data.items()}
+            i += 1
+        logging.info("GET/200/Task 6_1")
+        return flask.jsonify(response_data)
+    except Exception as e:
+        logging.error(e)
+
+
 @app.route("/task_7/<int:week_num>")
 def task_7(week_num):
     try:
@@ -255,5 +271,5 @@ if __name__ == "__main__":
     logging.basicConfig(filename='../logs/system.log',
                         format='%(asctime)s:%(levelname)s:%(message)s',
                         level=logging.DEBUG)
-    # app.config['LOG_FILE'] = '../logs/system.log'
+    app.config['LOG_FILE'] = '../logs/system.log'
     app.run(debug=True, port=5005)

@@ -100,4 +100,3 @@ def get_task_6_data():
         logging.error(e)
 
 
-get_task_6_data()

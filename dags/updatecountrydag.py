@@ -14,11 +14,13 @@ default_args = {
 with DAG("Update_Country_Dag", default_args=default_args, schedule_interval='0 18 * * *',
          template_searchpath=['/usr/local/airflow/sql_files'], catchup=False) as dag:
     # task1 = PythonOperator(task_id="correct_country_in_database", python_callable=update_tweets_loc)
+    task1 = BashOperator(task_id="install_requirements",
+                         bash_command='pip3 install pymongo')
 
-    task1 = BashOperator(task_id="correct_country_in_database",
+    task2 = BashOperator(task_id="correct_country_in_database",
                          bash_command='python3 /usr/local/airflow/dags/update_country.py')
 
-    task1
+    task1 >> task2
 
 # Macros, Catchup
 # Max active runs

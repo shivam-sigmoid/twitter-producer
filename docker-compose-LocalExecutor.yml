@@ -40,7 +40,7 @@ services:
             - ./sql_files:/usr/local/airflow/sql_files
             # - ./plugins:/usr/local/airflow/plugins
         ports:
-            - "8080:8080"
+            - "8081:8080"
         command: webserver
         healthcheck:
             test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
@@ -49,3 +49,7 @@ services:
             retries: 3
     redis:
                image: 'redis:3.2.7'
+# network interfaces
+#networks:
+#    port: 27017
+#    bindIp: 127.0.0.1,172.17.0.1

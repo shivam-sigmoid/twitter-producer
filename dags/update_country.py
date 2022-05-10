@@ -3,11 +3,13 @@ from random import randint
 import pymongo
 
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb://host.docker.internal:27017/")
 db = client["twitter_db"]
 
 
 def get_country(loc):
+    if 'Suomi / Finland' in loc:
+        return 'Finland'
 
     if 'Los Angeles' in loc:
         return 'United States'

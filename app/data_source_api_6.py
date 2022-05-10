@@ -14,10 +14,10 @@ data_list = []
 response = r.get(link)
 json_data = json.loads(response.text)
 
-for k, v in json_data.items():
+for key, value in json_data.items():
 
-    for doc in v:
-        print(doc)
+    for doc in value:
+        # print(doc)
         try:
             data_list.append(dict(doc))
         except Exception:

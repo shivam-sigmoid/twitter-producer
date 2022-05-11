@@ -17,6 +17,11 @@ services:
 
     webserver:
         image: puckel/docker-airflow:1.10.9
+#        build:
+#            context: https://github.com/puckel/docker-airflow.git#1.10.9
+#            dockerfile: Dockerfile
+#            args:
+#                PYTHON_DEPS: pymongo==4.1.0
         restart: always
         depends_on:
             - postgres

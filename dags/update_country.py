@@ -10,7 +10,6 @@ db = client["twitter_db"]
 def get_country(loc):
     if 'Suomi / Finland' in loc:
         return 'Finland'
-
     if 'Los Angeles' in loc:
         return 'United States'
     elif "\u0423\u043a\u0440\u0430\u0457\u043d\u0430" in loc:

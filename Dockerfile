@@ -73,20 +73,20 @@ RUN set -ex \
         /usr/share/doc \
         /usr/share/doc-base
 
-# COPY requirements.txt requirements.txt
-# RUN pip install -r requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
 RUN pip3 install pymongo
 
-# COPY script/entrypoint.sh /entrypoint.sh
-# COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
+COPY script/entrypoint.sh /entrypoint.sh
+COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
 
-# RUN chown -R airflow: ${AIRFLOW_USER_HOME}
+RUN chown -R airflow: ${AIRFLOW_USER_HOME}
 
-# EXPOSE 8080 5555 8793
-#
-# USER airflow
-# WORKDIR ${AIRFLOW_USER_HOME}
-# ENTRYPOINT ["/entrypoint.sh"]
-# CMD ["webserver"]
+EXPOSE 8080 5555 8793
+
+USER airflow
+WORKDIR ${AIRFLOW_USER_HOME}
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["webserver"]
 

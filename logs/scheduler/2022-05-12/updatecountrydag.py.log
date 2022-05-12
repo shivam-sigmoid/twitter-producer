@@ -149,3 +149,10 @@ ImportError: cannot import name 'BashOperator' from 'airflow.operators' (/home/a
 [2022-05-12 04:33:43,331] {logging_mixin.py:115} INFO - [2022-05-12 04:33:43,331] {dag.py:2371} INFO - Sync 1 DAGs
 [2022-05-12 04:33:43,344] {logging_mixin.py:115} INFO - [2022-05-12 04:33:43,344] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
 [2022-05-12 04:33:43,351] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.070 seconds
+[2022-05-12 04:34:13,826] {processor.py:153} INFO - Started process (PID=3221) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:34:13,828] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:34:13,830] {logging_mixin.py:115} INFO - [2022-05-12 04:34:13,830] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:34:13,860] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:34:13,881] {logging_mixin.py:115} INFO - [2022-05-12 04:34:13,881] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:34:13,907] {logging_mixin.py:115} INFO - [2022-05-12 04:34:13,907] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:34:13,914] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.094 seconds

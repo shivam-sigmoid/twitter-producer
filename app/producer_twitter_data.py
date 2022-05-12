@@ -3,17 +3,19 @@ from tweepy import Stream
 from kafka import KafkaProducer
 import configparser
 import json
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-consumer_key  = config['twitter']['api_key']
-consumer_secret= config['twitter']['api_key_secret']
+consumer_key = config['twitter']['api_key']
+consumer_secret = config['twitter']['api_key_secret']
 
 access_token = config['twitter']['access_token']
 access_token_secret = config['twitter']['access_token_secret']
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
 topic_name = "covid_topic"
+
 
 # pkill -9 -f app/producer_twitter_data.py
 
@@ -36,7 +38,8 @@ class TwitterStreamer():
     def stream_tweets(self):
         while True:
             stream = ListenerTS(consumer_key, consumer_secret, access_token, access_token_secret)
-            stream.filter(track=["covid", "corona", "covid-19","donation","donate"], stall_warnings=True, languages=["en"])
+            stream.filter(track=["covid", "corona", "covid-19", "donation", "donate"], stall_warnings=True,
+                          languages=["en"])
 
 
 class ListenerTS(Stream):

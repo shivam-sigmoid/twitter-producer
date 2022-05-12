@@ -1,0 +1,151 @@
+[2022-05-12 04:26:45,710] {processor.py:153} INFO - Started process (PID=167) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:26:45,712] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:26:45,714] {logging_mixin.py:115} INFO - [2022-05-12 04:26:45,714] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:26:45,745] {logging_mixin.py:115} INFO - [2022-05-12 04:26:45,740] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/updatecountrydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/updatecountrydag.py", line 5, in <module>
+    from airflow.operators import BashOperator, DummyOperator
+ImportError: cannot import name 'BashOperator' from 'airflow.operators' (/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/__init__.py)
+[2022-05-12 04:26:45,747] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:26:45,765] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.060 seconds
+[2022-05-12 04:27:16,602] {processor.py:153} INFO - Started process (PID=372) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:27:16,603] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:27:16,604] {logging_mixin.py:115} INFO - [2022-05-12 04:27:16,604] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:27:16,635] {logging_mixin.py:115} INFO - [2022-05-12 04:27:16,632] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/updatecountrydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/updatecountrydag.py", line 5, in <module>
+    from airflow.operators import BashOperator, DummyOperator
+ImportError: cannot import name 'BashOperator' from 'airflow.operators' (/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/__init__.py)
+[2022-05-12 04:27:16,637] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:27:16,653] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.055 seconds
+[2022-05-12 04:27:47,485] {processor.py:153} INFO - Started process (PID=576) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:27:47,487] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:27:47,489] {logging_mixin.py:115} INFO - [2022-05-12 04:27:47,489] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:27:47,521] {logging_mixin.py:115} INFO - [2022-05-12 04:27:47,517] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/updatecountrydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/updatecountrydag.py", line 5, in <module>
+    from airflow.operators import BashOperator, DummyOperator
+ImportError: cannot import name 'BashOperator' from 'airflow.operators' (/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/__init__.py)
+[2022-05-12 04:27:47,522] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:27:47,535] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.054 seconds
+[2022-05-12 04:28:18,089] {processor.py:153} INFO - Started process (PID=784) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:28:18,092] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:28:18,094] {logging_mixin.py:115} INFO - [2022-05-12 04:28:18,094] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:28:18,137] {logging_mixin.py:115} INFO - [2022-05-12 04:28:18,130] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/updatecountrydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/updatecountrydag.py", line 5, in <module>
+    from airflow.operators import BashOperator, DummyOperator
+ImportError: cannot import name 'BashOperator' from 'airflow.operators' (/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/__init__.py)
+[2022-05-12 04:28:18,138] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:28:18,160] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.079 seconds
+[2022-05-12 04:28:48,929] {processor.py:153} INFO - Started process (PID=981) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:28:48,934] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:28:48,936] {logging_mixin.py:115} INFO - [2022-05-12 04:28:48,936] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:28:48,962] {logging_mixin.py:115} INFO - [2022-05-12 04:28:48,956] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/updatecountrydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/updatecountrydag.py", line 5, in <module>
+    from airflow.operators import BashOperator, DummyOperator
+ImportError: cannot import name 'BashOperator' from 'airflow.operators' (/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/__init__.py)
+[2022-05-12 04:28:48,963] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:28:48,984] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.062 seconds
+[2022-05-12 04:29:20,039] {processor.py:153} INFO - Started process (PID=1186) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:29:20,041] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:29:20,048] {logging_mixin.py:115} INFO - [2022-05-12 04:29:20,048] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:29:20,090] {logging_mixin.py:115} INFO - [2022-05-12 04:29:20,084] {dagbag.py:320} ERROR - Failed to import: /opt/airflow/dags/updatecountrydag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 317, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/updatecountrydag.py", line 5, in <module>
+    from airflow.operators import BashOperator, DummyOperator
+ImportError: cannot import name 'BashOperator' from 'airflow.operators' (/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/__init__.py)
+[2022-05-12 04:29:20,094] {processor.py:653} WARNING - No viable dags retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:29:20,119] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.086 seconds
+[2022-05-12 04:29:38,841] {processor.py:153} INFO - Started process (PID=1384) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:29:38,854] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:29:38,856] {logging_mixin.py:115} INFO - [2022-05-12 04:29:38,856] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:29:38,911] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:29:38,985] {logging_mixin.py:115} INFO - [2022-05-12 04:29:38,984] {manager.py:508} INFO - Created Permission View: can read on DAG:Update_Country_Dag
+[2022-05-12 04:29:38,991] {logging_mixin.py:115} INFO - [2022-05-12 04:29:38,991] {manager.py:508} INFO - Created Permission View: can edit on DAG:Update_Country_Dag
+[2022-05-12 04:29:38,995] {logging_mixin.py:115} INFO - [2022-05-12 04:29:38,995] {manager.py:508} INFO - Created Permission View: can delete on DAG:Update_Country_Dag
+[2022-05-12 04:29:38,996] {logging_mixin.py:115} INFO - [2022-05-12 04:29:38,996] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:29:39,007] {logging_mixin.py:115} INFO - [2022-05-12 04:29:39,007] {dag.py:2390} INFO - Creating ORM DAG for Update_Country_Dag
+[2022-05-12 04:29:39,019] {logging_mixin.py:115} INFO - [2022-05-12 04:29:39,018] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:29:39,038] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.204 seconds
+[2022-05-12 04:30:09,328] {processor.py:153} INFO - Started process (PID=1597) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:30:09,330] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:30:09,331] {logging_mixin.py:115} INFO - [2022-05-12 04:30:09,331] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:30:09,371] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:30:09,400] {logging_mixin.py:115} INFO - [2022-05-12 04:30:09,400] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:30:09,427] {logging_mixin.py:115} INFO - [2022-05-12 04:30:09,427] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:30:09,437] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.113 seconds
+[2022-05-12 04:30:39,550] {processor.py:153} INFO - Started process (PID=1802) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:30:39,552] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:30:39,553] {logging_mixin.py:115} INFO - [2022-05-12 04:30:39,553] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:30:39,598] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:30:39,641] {logging_mixin.py:115} INFO - [2022-05-12 04:30:39,641] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:30:39,659] {logging_mixin.py:115} INFO - [2022-05-12 04:30:39,659] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:30:39,677] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.130 seconds
+[2022-05-12 04:31:09,878] {processor.py:153} INFO - Started process (PID=1997) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:31:09,881] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:31:09,883] {logging_mixin.py:115} INFO - [2022-05-12 04:31:09,883] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:31:09,909] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:31:09,926] {logging_mixin.py:115} INFO - [2022-05-12 04:31:09,926] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:31:09,939] {logging_mixin.py:115} INFO - [2022-05-12 04:31:09,939] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:31:09,945] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.071 seconds
+[2022-05-12 04:31:40,520] {processor.py:153} INFO - Started process (PID=2202) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:31:40,522] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:31:40,524] {logging_mixin.py:115} INFO - [2022-05-12 04:31:40,524] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:31:40,560] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:31:40,580] {logging_mixin.py:115} INFO - [2022-05-12 04:31:40,580] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:31:40,593] {logging_mixin.py:115} INFO - [2022-05-12 04:31:40,593] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:31:40,600] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.084 seconds
+[2022-05-12 04:32:11,244] {processor.py:153} INFO - Started process (PID=2405) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:32:11,245] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:32:11,247] {logging_mixin.py:115} INFO - [2022-05-12 04:32:11,247] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:32:11,274] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:32:11,330] {logging_mixin.py:115} INFO - [2022-05-12 04:32:11,330] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:32:11,367] {logging_mixin.py:115} INFO - [2022-05-12 04:32:11,366] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:32:11,381] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.140 seconds
+[2022-05-12 04:32:41,987] {processor.py:153} INFO - Started process (PID=2612) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:32:41,990] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:32:41,992] {logging_mixin.py:115} INFO - [2022-05-12 04:32:41,992] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:32:42,026] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:32:42,047] {logging_mixin.py:115} INFO - [2022-05-12 04:32:42,047] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:32:42,061] {logging_mixin.py:115} INFO - [2022-05-12 04:32:42,061] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:32:42,068] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.087 seconds
+[2022-05-12 04:33:12,614] {processor.py:153} INFO - Started process (PID=2819) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:33:12,618] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:33:12,620] {logging_mixin.py:115} INFO - [2022-05-12 04:33:12,620] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:33:12,644] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:33:12,665] {logging_mixin.py:115} INFO - [2022-05-12 04:33:12,665] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:33:12,679] {logging_mixin.py:115} INFO - [2022-05-12 04:33:12,679] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:33:12,687] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.077 seconds
+[2022-05-12 04:33:43,286] {processor.py:153} INFO - Started process (PID=3025) to work on /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:33:43,288] {processor.py:641} INFO - Processing file /opt/airflow/dags/updatecountrydag.py for tasks to queue
+[2022-05-12 04:33:43,290] {logging_mixin.py:115} INFO - [2022-05-12 04:33:43,290] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:33:43,313] {processor.py:651} INFO - DAG(s) dict_keys(['Update_Country_Dag']) retrieved from /opt/airflow/dags/updatecountrydag.py
+[2022-05-12 04:33:43,331] {logging_mixin.py:115} INFO - [2022-05-12 04:33:43,331] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-12 04:33:43,344] {logging_mixin.py:115} INFO - [2022-05-12 04:33:43,344] {dag.py:2919} INFO - Setting next_dagrun for Update_Country_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-12 04:33:43,351] {processor.py:161} INFO - Processing /opt/airflow/dags/updatecountrydag.py took 0.070 seconds

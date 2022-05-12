@@ -20,7 +20,8 @@ access_token_secret = "VOuZDj8EMGbyfQx2Aen4h7FLAsuxSsZmp4Ry5WanCUni8"
 
 producer = KafkaProducer(bootstrap_servers='host.docker.internal:9092')
 topic_name = "covid_topic"
-
+# print(producer)
+print(producer.config)
 
 # pkill -9 -f app/producer_twitter_data.py
 

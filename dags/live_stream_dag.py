@@ -18,8 +18,10 @@ with DAG("live_stream_Dag", default_args=default_args, schedule_interval='0 18 *
     task2 = BashOperator(task_id="consumer_twitter_data",
                          bash_command='python3 /opt/airflow/dags/consumer_tweets.py')
 
+    # task2
     [task1, task2]
     # task2 >> task1
+    # task1
 
 # Macros, Catchup
 # Max active runs

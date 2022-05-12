@@ -16,7 +16,7 @@ access_token_secret = config['twitter']['access_token_secret']
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
 topic_name = "covid_topic"
 
-
+print(producer.config)
 # pkill -9 -f app/producer_twitter_data.py
 
 

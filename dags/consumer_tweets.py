@@ -42,7 +42,7 @@ spark = SparkSession \
 
 kafka_df = spark.readStream \
     .format("kafka") \
-    .option("kafka.bootstrap.servers", "localhost:9092,host.docker.internal:9092") \
+    .option("kafka.bootstrap.servers", "host.docker.internal:9093") \
     .option("subscribe", "covid_topic") \
     .option("startingOffsets", "earliest") \
     .load()

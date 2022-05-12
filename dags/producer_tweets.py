@@ -18,7 +18,7 @@ consumer_secret = "PBH7bOVRrv7gEiksWhvczVdFYjiHLIogv3RxQHpfV65gfjI36F"
 access_token = "1510924415642791938-DXjvrckvFFT05fiAXQ5oUDmmrqpN98"
 access_token_secret = "VOuZDj8EMGbyfQx2Aen4h7FLAsuxSsZmp4Ry5WanCUni8"
 
-producer = KafkaProducer(bootstrap_servers='host.docker.internal:9092')
+producer = KafkaProducer(bootstrap_servers='host.docker.internal:9093')
 topic_name = "covid_topic"
 # print(producer)
 print(producer.config)

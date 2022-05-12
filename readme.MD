@@ -118,3 +118,21 @@ Run Python tests in tests
 - Mongo Connection | test_mongo.py
 Set up test configuration within IDE
 ```
+## Airflow: Docker command
+- Downloading Airflow Docker Compose File
+```bash
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.3.0/docker-compose.yaml' 
+```
+
+- Building an Image
+```bash
+docker build . --tag extending_airflow:latest
+```
+- Start Airflow Components
+```bash
+docker-compose up -d                                                                 
+```
+- Down Airflow Components
+```bash
+docker-compose down   
+```

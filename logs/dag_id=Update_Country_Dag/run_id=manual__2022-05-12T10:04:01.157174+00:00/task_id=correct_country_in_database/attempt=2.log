@@ -1,0 +1,34 @@
+[2022-05-12 10:04:07,483] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Update_Country_Dag.correct_country_in_database manual__2022-05-12T10:04:01.157174+00:00 [queued]>
+[2022-05-12 10:04:07,488] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Update_Country_Dag.correct_country_in_database manual__2022-05-12T10:04:01.157174+00:00 [queued]>
+[2022-05-12 10:04:07,489] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-12 10:04:07,490] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-05-12 10:04:07,491] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-12 10:04:07,498] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): correct_country_in_database> on 2022-05-12 10:04:01.157174+00:00
+[2022-05-12 10:04:07,501] {standard_task_runner.py:52} INFO - Started process 376 to run task
+[2022-05-12 10:04:07,503] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Update_Country_Dag', 'correct_country_in_database', 'manual__2022-05-12T10:04:01.157174+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/update_country_dag.py', '--cfg-path', '/tmp/tmpvbeic1ud', '--error-file', '/tmp/tmpexin4zzi']
+[2022-05-12 10:04:07,505] {standard_task_runner.py:80} INFO - Job 38: Subtask correct_country_in_database
+[2022-05-12 10:04:07,539] {task_command.py:369} INFO - Running <TaskInstance: Update_Country_Dag.correct_country_in_database manual__2022-05-12T10:04:01.157174+00:00 [running]> on host f302a3557d3b
+[2022-05-12 10:04:07,651] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=Update_Country_Dag
+AIRFLOW_CTX_TASK_ID=correct_country_in_database
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-12T10:04:01.157174+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-05-12T10:04:01.157174+00:00
+[2022-05-12 10:04:07,653] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-12 10:04:07,654] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /Users/shivamraj/Documents/Project/utils/update_country.py']
+[2022-05-12 10:04:07,661] {subprocess.py:85} INFO - Output:
+[2022-05-12 10:04:07,711] {subprocess.py:92} INFO - python3: can't open file '/Users/shivamraj/Documents/Project/utils/update_country.py': [Errno 2] No such file or directory
+[2022-05-12 10:04:07,714] {subprocess.py:96} INFO - Command exited with return code 2
+[2022-05-12 10:04:07,724] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2022-05-12 10:04:07,727] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=Update_Country_Dag, task_id=correct_country_in_database, execution_date=20220512T100401, start_date=20220512T100407, end_date=20220512T100407
+[2022-05-12 10:04:07,735] {standard_task_runner.py:97} ERROR - Failed to execute job 38 for task correct_country_in_database (Bash command failed. The command returned a non-zero exit code 2.; 376)
+[2022-05-12 10:04:07,763] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-05-12 10:04:07,789] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

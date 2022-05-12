@@ -1,0 +1,49 @@
+[2022-05-12 11:03:42,668] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.consumer_twitter_data manual__2022-05-12T11:03:36.254220+00:00 [queued]>
+[2022-05-12 11:03:42,675] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.consumer_twitter_data manual__2022-05-12T11:03:36.254220+00:00 [queued]>
+[2022-05-12 11:03:42,676] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-12 11:03:42,677] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-05-12 11:03:42,677] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-12 11:03:42,686] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): consumer_twitter_data> on 2022-05-12 11:03:36.254220+00:00
+[2022-05-12 11:03:42,690] {standard_task_runner.py:52} INFO - Started process 391 to run task
+[2022-05-12 11:03:42,692] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'live_stream_Dag', 'consumer_twitter_data', 'manual__2022-05-12T11:03:36.254220+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/live_stream_dag.py', '--cfg-path', '/tmp/tmpsrhxr5n1', '--error-file', '/tmp/tmpeajhixgx']
+[2022-05-12 11:03:42,694] {standard_task_runner.py:80} INFO - Job 49: Subtask consumer_twitter_data
+[2022-05-12 11:03:42,731] {task_command.py:369} INFO - Running <TaskInstance: live_stream_Dag.consumer_twitter_data manual__2022-05-12T11:03:36.254220+00:00 [running]> on host cc4b0ff8b138
+[2022-05-12 11:03:42,847] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=live_stream_Dag
+AIRFLOW_CTX_TASK_ID=consumer_twitter_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-12T11:03:36.254220+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-05-12T11:03:36.254220+00:00
+[2022-05-12 11:03:42,849] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-12 11:03:42,850] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/consumer_tweets.py']
+[2022-05-12 11:03:42,859] {subprocess.py:85} INFO - Output:
+[2022-05-12 11:03:43,111] {subprocess.py:92} INFO - /home/***/.local/lib/python3.7/site-packages/pyspark/bin/spark-class: line 71: /usr/lib/jvm/java-11-openjdk-amd64//bin/java: No such file or directory
+[2022-05-12 11:03:43,115] {subprocess.py:92} INFO - /home/***/.local/lib/python3.7/site-packages/pyspark/bin/spark-class: line 96: CMD: bad array subscript
+[2022-05-12 11:03:43,205] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-05-12 11:03:43,206] {subprocess.py:92} INFO -   File "/opt/***/dags/consumer_tweets.py", line 39, in <module>
+[2022-05-12 11:03:43,207] {subprocess.py:92} INFO -     .config("spark.streaming.stopGracefullyOnShutdown", "true") \
+[2022-05-12 11:03:43,208] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/sql/session.py", line 228, in getOrCreate
+[2022-05-12 11:03:43,209] {subprocess.py:92} INFO -     sc = SparkContext.getOrCreate(sparkConf)
+[2022-05-12 11:03:43,211] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/context.py", line 392, in getOrCreate
+[2022-05-12 11:03:43,212] {subprocess.py:92} INFO -     SparkContext(conf=conf or SparkConf())
+[2022-05-12 11:03:43,213] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/context.py", line 144, in __init__
+[2022-05-12 11:03:43,214] {subprocess.py:92} INFO -     SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+[2022-05-12 11:03:43,215] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/context.py", line 339, in _ensure_initialized
+[2022-05-12 11:03:43,216] {subprocess.py:92} INFO -     SparkContext._gateway = gateway or launch_gateway(conf)
+[2022-05-12 11:03:43,217] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/java_gateway.py", line 108, in launch_gateway
+[2022-05-12 11:03:43,218] {subprocess.py:92} INFO -     raise RuntimeError("Java gateway process exited before sending its port number")
+[2022-05-12 11:03:43,219] {subprocess.py:92} INFO - RuntimeError: Java gateway process exited before sending its port number
+[2022-05-12 11:03:43,234] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-05-12 11:03:43,247] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-05-12 11:03:43,250] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=live_stream_Dag, task_id=consumer_twitter_data, execution_date=20220512T110336, start_date=20220512T110342, end_date=20220512T110343
+[2022-05-12 11:03:43,259] {standard_task_runner.py:97} ERROR - Failed to execute job 49 for task consumer_twitter_data (Bash command failed. The command returned a non-zero exit code 1.; 391)
+[2022-05-12 11:03:43,276] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-05-12 11:03:43,375] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

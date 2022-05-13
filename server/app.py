@@ -266,6 +266,7 @@ def task_9(country):
     except Exception as e:
         logging.error(e)
 
+
 # Add
 
 if __name__ == "__main__":

@@ -1,3 +1,7 @@
+FROM wurstmeister/kafka
+RUN cd opt/kafka_2.13-2.8.1/bin/
+RUN kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic covid_topic
+# kafka-topics.sh --list --zookeeper zookeeper:2181
 FROM apache/airflow:2.3.0
 
 USER root

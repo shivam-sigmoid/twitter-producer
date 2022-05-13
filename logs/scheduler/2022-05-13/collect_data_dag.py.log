@@ -79,3 +79,31 @@
 [2022-05-13 10:59:38,506] {logging_mixin.py:115} INFO - [2022-05-13 10:59:38,506] {dag.py:2371} INFO - Sync 1 DAGs
 [2022-05-13 10:59:38,520] {logging_mixin.py:115} INFO - [2022-05-13 10:59:38,520] {dag.py:2919} INFO - Setting next_dagrun for Collect_Data_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
 [2022-05-13 10:59:38,530] {processor.py:161} INFO - Processing /opt/airflow/dags/collect_data_dag.py took 0.123 seconds
+[2022-05-13 11:00:08,755] {processor.py:153} INFO - Started process (PID=2585) to work on /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:00:08,757] {processor.py:641} INFO - Processing file /opt/airflow/dags/collect_data_dag.py for tasks to queue
+[2022-05-13 11:00:08,759] {logging_mixin.py:115} INFO - [2022-05-13 11:00:08,759] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:00:08,775] {processor.py:651} INFO - DAG(s) dict_keys(['Collect_Data_Dag']) retrieved from /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:00:08,798] {logging_mixin.py:115} INFO - [2022-05-13 11:00:08,798] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 11:00:08,814] {logging_mixin.py:115} INFO - [2022-05-13 11:00:08,814] {dag.py:2919} INFO - Setting next_dagrun for Collect_Data_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-13 11:00:08,822] {processor.py:161} INFO - Processing /opt/airflow/dags/collect_data_dag.py took 0.072 seconds
+[2022-05-13 11:00:39,839] {processor.py:153} INFO - Started process (PID=2805) to work on /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:00:39,841] {processor.py:641} INFO - Processing file /opt/airflow/dags/collect_data_dag.py for tasks to queue
+[2022-05-13 11:00:39,843] {logging_mixin.py:115} INFO - [2022-05-13 11:00:39,843] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:00:39,859] {processor.py:651} INFO - DAG(s) dict_keys(['Collect_Data_Dag']) retrieved from /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:00:39,881] {logging_mixin.py:115} INFO - [2022-05-13 11:00:39,881] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 11:00:39,897] {logging_mixin.py:115} INFO - [2022-05-13 11:00:39,897] {dag.py:2919} INFO - Setting next_dagrun for Collect_Data_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-13 11:00:39,905] {processor.py:161} INFO - Processing /opt/airflow/dags/collect_data_dag.py took 0.071 seconds
+[2022-05-13 11:01:10,598] {processor.py:153} INFO - Started process (PID=3028) to work on /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:01:10,600] {processor.py:641} INFO - Processing file /opt/airflow/dags/collect_data_dag.py for tasks to queue
+[2022-05-13 11:01:10,602] {logging_mixin.py:115} INFO - [2022-05-13 11:01:10,602] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:01:10,615] {processor.py:651} INFO - DAG(s) dict_keys(['Collect_Data_Dag']) retrieved from /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:01:10,635] {logging_mixin.py:115} INFO - [2022-05-13 11:01:10,634] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 11:01:10,648] {logging_mixin.py:115} INFO - [2022-05-13 11:01:10,648] {dag.py:2919} INFO - Setting next_dagrun for Collect_Data_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-13 11:01:10,656] {processor.py:161} INFO - Processing /opt/airflow/dags/collect_data_dag.py took 0.061 seconds
+[2022-05-13 11:01:41,351] {processor.py:153} INFO - Started process (PID=3250) to work on /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:01:41,353] {processor.py:641} INFO - Processing file /opt/airflow/dags/collect_data_dag.py for tasks to queue
+[2022-05-13 11:01:41,357] {logging_mixin.py:115} INFO - [2022-05-13 11:01:41,357] {dagbag.py:507} INFO - Filling up the DagBag from /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:01:41,373] {processor.py:651} INFO - DAG(s) dict_keys(['Collect_Data_Dag']) retrieved from /opt/airflow/dags/collect_data_dag.py
+[2022-05-13 11:01:41,395] {logging_mixin.py:115} INFO - [2022-05-13 11:01:41,395] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 11:01:41,417] {logging_mixin.py:115} INFO - [2022-05-13 11:01:41,417] {dag.py:2919} INFO - Setting next_dagrun for Collect_Data_Dag to 2022-05-12T18:00:00+00:00, run_after=2022-05-13T18:00:00+00:00
+[2022-05-13 11:01:41,425] {processor.py:161} INFO - Processing /opt/airflow/dags/collect_data_dag.py took 0.080 seconds

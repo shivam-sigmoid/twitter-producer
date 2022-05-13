@@ -9,6 +9,7 @@ import collections
 from nltk.corpus import stopwords
 import pandas as pd
 import logging
+import ssl
 
 
 # Function for getting the country
@@ -63,6 +64,12 @@ def most_common_words(tweets):
         all_tweets_no_urls = [remove_url(tweet) for tweet in all_tweets]
         words_in_tweet = [tweet.lower().split() for tweet in all_tweets_no_urls]
         all_words_no_urls = list(itertools.chain(*words_in_tweet))
+        try:
+            _create_unverified_https_context = ssl._create_unverified_context
+        except AttributeError:
+            pass
+        else:
+            ssl._create_default_https_context = _create_unverified_https_context
         nltk.download('stopwords')
         stop_words = set(stopwords.words('english'))
         tweets_nsw = []
@@ -98,5 +105,3 @@ def get_task_6_data():
         return dict_lst
     except Exception as e:
         logging.error(e)
-
-

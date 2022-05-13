@@ -136,3 +136,7 @@ docker-compose up -d
 ```bash
 docker-compose down   
 ```
+- Go to Container Shell
+```bash
+docker exec -it [Container Id] bash   
+```

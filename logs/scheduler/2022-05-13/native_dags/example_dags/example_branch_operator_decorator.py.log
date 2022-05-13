@@ -117,3 +117,38 @@
 [2022-05-13 04:03:37,833] {logging_mixin.py:115} INFO - [2022-05-13 04:03:37,833] {dag.py:2371} INFO - Sync 1 DAGs
 [2022-05-13 04:03:37,849] {logging_mixin.py:115} INFO - [2022-05-13 04:03:37,849] {dag.py:2919} INFO - Setting next_dagrun for example_branch_python_operator_decorator to 2022-05-12T00:00:00+00:00, run_after=2022-05-13T00:00:00+00:00
 [2022-05-13 04:03:37,857] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py took 0.062 seconds
+[2022-05-13 06:14:12,756] {processor.py:153} INFO - Started process (PID=258) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:14:12,757] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py for tasks to queue
+[2022-05-13 06:14:12,758] {logging_mixin.py:115} INFO - [2022-05-13 06:14:12,758] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:14:12,771] {processor.py:651} INFO - DAG(s) dict_keys(['example_branch_python_operator_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:14:12,793] {logging_mixin.py:115} INFO - [2022-05-13 06:14:12,793] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 06:14:12,807] {logging_mixin.py:115} INFO - [2022-05-13 06:14:12,807] {dag.py:2919} INFO - Setting next_dagrun for example_branch_python_operator_decorator to 2022-05-12T00:00:00+00:00, run_after=2022-05-13T00:00:00+00:00
+[2022-05-13 06:14:12,816] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py took 0.062 seconds
+[2022-05-13 06:14:43,581] {processor.py:153} INFO - Started process (PID=540) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:14:43,582] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py for tasks to queue
+[2022-05-13 06:14:43,583] {logging_mixin.py:115} INFO - [2022-05-13 06:14:43,583] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:14:43,595] {processor.py:651} INFO - DAG(s) dict_keys(['example_branch_python_operator_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:14:43,612] {logging_mixin.py:115} INFO - [2022-05-13 06:14:43,612] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 06:14:43,625] {logging_mixin.py:115} INFO - [2022-05-13 06:14:43,625] {dag.py:2919} INFO - Setting next_dagrun for example_branch_python_operator_decorator to 2022-05-12T00:00:00+00:00, run_after=2022-05-13T00:00:00+00:00
+[2022-05-13 06:14:43,632] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py took 0.053 seconds
+[2022-05-13 06:15:14,700] {processor.py:153} INFO - Started process (PID=760) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:15:14,701] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py for tasks to queue
+[2022-05-13 06:15:14,702] {logging_mixin.py:115} INFO - [2022-05-13 06:15:14,702] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:15:14,715] {processor.py:651} INFO - DAG(s) dict_keys(['example_branch_python_operator_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:15:14,735] {logging_mixin.py:115} INFO - [2022-05-13 06:15:14,735] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 06:15:14,749] {logging_mixin.py:115} INFO - [2022-05-13 06:15:14,749] {dag.py:2919} INFO - Setting next_dagrun for example_branch_python_operator_decorator to 2022-05-12T00:00:00+00:00, run_after=2022-05-13T00:00:00+00:00
+[2022-05-13 06:15:14,757] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py took 0.059 seconds
+[2022-05-13 06:15:45,530] {processor.py:153} INFO - Started process (PID=1144) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:15:45,531] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py for tasks to queue
+[2022-05-13 06:15:45,532] {logging_mixin.py:115} INFO - [2022-05-13 06:15:45,532] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:15:45,544] {processor.py:651} INFO - DAG(s) dict_keys(['example_branch_python_operator_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:15:45,564] {logging_mixin.py:115} INFO - [2022-05-13 06:15:45,564] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 06:15:45,582] {logging_mixin.py:115} INFO - [2022-05-13 06:15:45,582] {dag.py:2919} INFO - Setting next_dagrun for example_branch_python_operator_decorator to 2022-05-12T00:00:00+00:00, run_after=2022-05-13T00:00:00+00:00
+[2022-05-13 06:15:45,590] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py took 0.062 seconds
+[2022-05-13 06:16:16,748] {processor.py:153} INFO - Started process (PID=1383) to work on /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:16:16,750] {processor.py:641} INFO - Processing file /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py for tasks to queue
+[2022-05-13 06:16:16,752] {logging_mixin.py:115} INFO - [2022-05-13 06:16:16,751] {dagbag.py:507} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:16:16,764] {processor.py:651} INFO - DAG(s) dict_keys(['example_branch_python_operator_decorator']) retrieved from /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py
+[2022-05-13 06:16:16,782] {logging_mixin.py:115} INFO - [2022-05-13 06:16:16,782] {dag.py:2371} INFO - Sync 1 DAGs
+[2022-05-13 06:16:16,798] {logging_mixin.py:115} INFO - [2022-05-13 06:16:16,798] {dag.py:2919} INFO - Setting next_dagrun for example_branch_python_operator_decorator to 2022-05-12T00:00:00+00:00, run_after=2022-05-13T00:00:00+00:00
+[2022-05-13 06:16:16,808] {processor.py:161} INFO - Processing /home/airflow/.local/lib/python3.7/site-packages/airflow/example_dags/example_branch_operator_decorator.py took 0.062 seconds

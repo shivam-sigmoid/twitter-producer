@@ -13,9 +13,9 @@ default_args = {
 
 with DAG("stop_live_stream_Dag", default_args=default_args, schedule_interval='0 18 * * *', catchup=False) as dag:
     task1 = BashOperator(task_id="stop_producer_twitter_data",
-                         bash_command='pkill -9 -f /opt/airflow/dags/producer_tweets.py')
+                         bash_command='pkill -9 -f /opt/airflow/dags/scripts/producer_tweets.py')
 
     task2 = BashOperator(task_id="stop_consumer_twitter_data",
-                         bash_command='pkill -9 -f /opt/airflow/dags/consumer_tweets.py')
+                         bash_command='pkill -9 -f /opt/airflow/dags/scripts/consumer_tweets.py')
 
     [task1, task2]

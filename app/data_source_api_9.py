@@ -1,17 +1,23 @@
 import requests as r
 import json
 import pytz
+import sys
 
+sys.path.append("../")
+from data.API_Links import community_risk_index_url
 # import pymongo
 #
 # client = pymongo.MongoClient("mongodb://localhost:27017/")
 # db = client["twitter_db"]
 # col = db["age_weather_data"]
+# query = "http://covidsurvey.mit.edu:5000/query?gender=all&signal=community_risk_index"
+
 from database import Database
+
 db = Database()
 col = db.create_db_connection("age_weather_data")
 
-query = "http://covidsurvey.mit.edu:5000/query?gender=all&signal=community_risk_index"
+query = community_risk_index_url()
 
 # country=all&age=20-30
 # could be one of all,20-30,31-40,41-50,51-60,61-70, or 71-80, default: all
@@ -40,5 +46,3 @@ for country in countries_list:
     data_list.append(dic)
 
 col.insert_many(data_list)
-
-

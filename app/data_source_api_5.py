@@ -4,7 +4,7 @@ import pytz
 import sys
 sys.path.append("../")
 
-from data.API_Links import measures_taken_url
+from data.API_Links import Measures_Taken_URL
 # import pymongo
 from database import Database
 db = Database()
@@ -15,7 +15,7 @@ col = db.create_db_connection("measures")
 # col = db["measures"]
 # response = r.get("http://covidsurvey.mit.edu:5000/query?country=all&signal=measures_taken")
 
-response = r.get(measures_taken_url())
+response = r.get(Measures_Taken_URL)
 json_data = json.loads(response.text)
 
 

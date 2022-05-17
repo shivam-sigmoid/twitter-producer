@@ -1,19 +1,20 @@
 import json  # to import json module
-import \
-    bson  # importing bson module, bson is the binary encoding of json like documents that MongoDB uses when storing documents in collection
-import \
-    flask  # importing flask because it is python web framework that provides useful tools and features that make creating web application in python easier
-from flask import \
-    render_template  # render_template is a flask function, which is used to generate output from a template file based on the Jinja2 engine that is found in the application's template folder
+# importing bson module, bson is the binary encoding of json
+# like documents that MongoDB uses when storing documents in collection
+import bson
+# importing flask because it is python web framework that
+# provides useful tools and features that make creating web application in python easier
+import flask
+# render_template is a flask function, which is used to generate output from a
+# template file based on the Jinja2 engine that is found in the application's template folder
+from flask import render_template
 from flask_pymongo import PyMongo
 import sys
 
 sys.path.append("../")
 
-from server.utility_functions import get_weather, get_country, most_common_words, get_task_6_data
-from server.pipelines import get_pipeline_task_1, get_pipeline_task_2, get_pipeline_task_2_date_wise, \
-    get_pipeline_task_7, \
-    get_pipeline_task_7_week_wise, get_pipeline_task_6_1, get_pipeline_8_country
+from server.pipelines import Pipelines
+from server.utility_functions import Utils
 import logging
 
 
@@ -91,7 +92,7 @@ def get_tweets_with_geo():
 @app.route("/task_1")
 def task_1():
     try:
-        tweets = db.tweets.aggregate(get_pipeline_task_1())
+        tweets = db.tweets.aggregate(Pipelines.get_pipeline_task_1())
         tweets_dict = dict()
         i = 0
         for tweet in tweets:
@@ -108,7 +109,7 @@ def task_1():
 @app.route("/task_2")
 def task_2_all():
     try:
-        tweets = db.tweets.aggregate(get_pipeline_task_2())
+        tweets = db.tweets.aggregate(Pipelines.get_pipeline_task_2())
         tweets_dict = dict()
         i = 0
         for tweet in tweets:
@@ -124,7 +125,7 @@ def task_2_all():
 def task_2(raw_date):
     print(raw_date)
     try:
-        tweets = db.tweets.aggregate(get_pipeline_task_2_date_wise(raw_date))
+        tweets = db.tweets.aggregate(Pipelines.get_pipeline_task_2_date_wise(raw_date))
         tweets_dict = dict()
         i = 0
         for tweet in tweets:
@@ -141,7 +142,7 @@ def task_3():
     try:
         tweets = db.tweets.find()
         logging.info("GET/200/Task 3")
-        return flask.jsonify(most_common_words(tweets))
+        return flask.jsonify(Utils.most_common_words(tweets))
     except Exception as e:
         logging.error(e)
 
@@ -150,11 +151,11 @@ def task_3():
 def task_4(loc):
     # print(loc)
     try:
-        loc = get_country(loc)
+        loc = Utils.get_country(loc)
         query = {"location": str(loc)}
         tweets = db.tweets.find(query)
         logging.info("GET/200/Task 4 Location Wise")
-        return flask.jsonify(most_common_words(tweets))
+        return flask.jsonify(Utils.most_common_words(tweets))
     except Exception as e:
         logging.error(e)
 
@@ -176,7 +177,7 @@ def task_5_all():
 @app.route("/task_5/<country>")
 def task_5(country):
     try:
-        cnt = get_country(country)
+        cnt = Utils.get_country(country)
         # print(cnt)
         query = {"country": str(cnt)}
         infos = db.measures.find(query)
@@ -193,7 +194,7 @@ def task_5(country):
 @app.route("/task_6")
 def task_6():
     try:
-        data_lst = get_task_6_data()
+        data_lst = Utils.get_task_6_data()
         response_data = dict()
         i = 1
         for data in data_lst:
@@ -208,7 +209,7 @@ def task_6():
 @app.route("/task_6_1")
 def task_6_1():
     try:
-        data_list = db.donation.aggregate(get_pipeline_task_6_1())
+        data_list = db.donation.aggregate(Pipelines.get_pipeline_task_6_1())
         response_data = dict()
         i = 1
         for data in data_list:
@@ -223,7 +224,7 @@ def task_6_1():
 @app.route("/task_7/<int:week_num>")
 def task_7(week_num):
     try:
-        rankings = db.disease_sh.aggregate(get_pipeline_task_7_week_wise(week_num))
+        rankings = db.disease_sh.aggregate(Pipelines.get_pipeline_task_7_week_wise(week_num))
         rankings_dict = dict()
         i = 1
         for ranking in rankings:
@@ -238,7 +239,7 @@ def task_7(week_num):
 @app.route("/task_7")
 def task_7_all():
     try:
-        rankings = db.disease_sh.aggregate(get_pipeline_task_7())
+        rankings = db.disease_sh.aggregate(Pipelines.get_pipeline_task_7())
         rankings_dict = dict()
         i = 1
         for ranking in rankings:
@@ -253,8 +254,8 @@ def task_7_all():
 @app.route("/task_8/<loc>")
 def task_8_country(loc):
     try:
-        country = get_country(loc)
-        p_yr, p_q, p_mon = get_pipeline_8_country(country)
+        country = Utils.get_country(loc)
+        p_yr, p_q, p_mon = Pipelines.get_pipeline_8_country(country)
         yr_data = db.yearly_api_8.aggregate(p_yr)
         q_data = db.quarterly_api_8.aggregate(p_q)
         mon_data = db.monthly_api_8.aggregate(p_mon)
@@ -286,8 +287,8 @@ def task_8_country(loc):
 @app.route("/task_9/<country>")
 def task_9(country):
     try:
-        cnt = get_country(country)
-        weather_details = get_weather(country)
+        cnt = Utils.get_country(country)
+        weather_details = Utils.get_weather(country)
         query = {"country": str(cnt)}
         infos = db.age_weather_data.find(query)
         data_list = list()

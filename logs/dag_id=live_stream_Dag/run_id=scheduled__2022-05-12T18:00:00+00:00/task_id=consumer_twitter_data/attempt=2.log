@@ -1,0 +1,185 @@
+[2022-05-16 10:01:02,485] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-12T18:00:00+00:00 [queued]>
+[2022-05-16 10:01:02,496] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-12T18:00:00+00:00 [queued]>
+[2022-05-16 10:01:02,498] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:01:02,499] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-05-16 10:01:02,500] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:01:02,554] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): consumer_twitter_data> on 2022-05-12 18:00:00+00:00
+[2022-05-16 10:01:02,558] {standard_task_runner.py:52} INFO - Started process 434 to run task
+[2022-05-16 10:01:02,609] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'live_stream_Dag', 'consumer_twitter_data', 'scheduled__2022-05-12T18:00:00+00:00', '--job-id', '161', '--raw', '--subdir', 'DAGS_FOLDER/live_stream_dag.py', '--cfg-path', '/tmp/tmpuhsuv1wp', '--error-file', '/tmp/tmpgfgjiy27']
+[2022-05-16 10:01:02,621] {standard_task_runner.py:80} INFO - Job 161: Subtask consumer_twitter_data
+[2022-05-16 10:01:03,080] {task_command.py:369} INFO - Running <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-12T18:00:00+00:00 [running]> on host 6c2369487cbf
+[2022-05-16 10:01:05,074] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=live_stream_Dag
+AIRFLOW_CTX_TASK_ID=consumer_twitter_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-12T18:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-05-12T18:00:00+00:00
+[2022-05-16 10:01:05,085] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-16 10:01:05,101] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/scripts/consumer_tweets.py']
+[2022-05-16 10:01:05,152] {subprocess.py:85} INFO - Output:
+[2022-05-16 10:01:09,182] {subprocess.py:92} INFO - WARNING: An illegal reflective access operation has occurred
+[2022-05-16 10:01:09,184] {subprocess.py:92} INFO - WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/***/.local/lib/python3.7/site-packages/pyspark/jars/spark-unsafe_2.12-3.2.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+[2022-05-16 10:01:09,186] {subprocess.py:92} INFO - WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+[2022-05-16 10:01:09,187] {subprocess.py:92} INFO - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[2022-05-16 10:01:09,189] {subprocess.py:92} INFO - WARNING: All illegal access operations will be denied in a future release
+[2022-05-16 10:01:09,376] {subprocess.py:92} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.7/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2022-05-16 10:01:09,578] {subprocess.py:92} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2022-05-16 10:01:09,582] {subprocess.py:92} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2022-05-16 10:01:09,590] {subprocess.py:92} INFO - org.apache.spark#spark-streaming-kafka-0-10_2.12 added as a dependency
+[2022-05-16 10:01:09,603] {subprocess.py:92} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2022-05-16 10:01:09,606] {subprocess.py:92} INFO - org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+[2022-05-16 10:01:09,607] {subprocess.py:92} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-2630cd27-d354-4ba3-b109-01dab080560c;1.0
+[2022-05-16 10:01:09,610] {subprocess.py:92} INFO - 	confs: [default]
+[2022-05-16 10:01:19,994] {subprocess.py:92} INFO - 	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.1.0 in central
+[2022-05-16 10:01:21,703] {subprocess.py:92} INFO - 	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.1.0 in central
+[2022-05-16 10:01:23,303] {subprocess.py:92} INFO - 	found org.apache.kafka#kafka-clients;2.6.0 in central
+[2022-05-16 10:01:24,722] {subprocess.py:92} INFO - 	found com.github.luben#zstd-jni;1.4.8-1 in central
+[2022-05-16 10:01:26,312] {subprocess.py:92} INFO - 	found org.lz4#lz4-java;1.7.1 in central
+[2022-05-16 10:01:27,916] {subprocess.py:92} INFO - 	found org.xerial.snappy#snappy-java;1.1.8.2 in central
+[2022-05-16 10:01:31,520] {subprocess.py:92} INFO - 	found org.slf4j#slf4j-api;1.7.30 in central
+[2022-05-16 10:01:35,042] {subprocess.py:92} INFO - 	found org.spark-project.spark#unused;1.0.0 in central
+[2022-05-16 10:01:40,938] {subprocess.py:92} INFO - 	found org.apache.commons#commons-pool2;2.6.2 in central
+[2022-05-16 10:01:42,492] {subprocess.py:92} INFO - 	found org.mongodb.spark#mongo-spark-connector_2.12;3.0.1 in central
+[2022-05-16 10:01:44,047] {subprocess.py:92} INFO - 	found org.mongodb#mongodb-driver-sync;4.0.5 in central
+[2022-05-16 10:01:45,756] {subprocess.py:92} INFO - 	found org.mongodb#bson;4.0.5 in central
+[2022-05-16 10:01:47,403] {subprocess.py:92} INFO - 	found org.mongodb#mongodb-driver-core;4.0.5 in central
+[2022-05-16 10:01:47,463] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.1.0/spark-sql-kafka-0-10_2.12-3.1.0.jar ...
+[2022-05-16 10:01:50,408] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.1.0!spark-sql-kafka-0-10_2.12.jar (2944ms)
+[2022-05-16 10:01:50,411] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/spark/mongo-spark-connector_2.12/3.0.1/mongo-spark-connector_2.12-3.0.1.jar ...
+[2022-05-16 10:01:53,448] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.mongodb.spark#mongo-spark-connector_2.12;3.0.1!mongo-spark-connector_2.12.jar (3038ms)
+[2022-05-16 10:01:53,450] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.1.0/spark-token-provider-kafka-0-10_2.12-3.1.0.jar ...
+[2022-05-16 10:01:53,865] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.1.0!spark-token-provider-kafka-0-10_2.12.jar (416ms)
+[2022-05-16 10:01:53,866] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.6.0/kafka-clients-2.6.0.jar ...
+[2022-05-16 10:01:58,935] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.apache.kafka#kafka-clients;2.6.0!kafka-clients.jar (5061ms)
+[2022-05-16 10:01:58,951] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.6.2/commons-pool2-2.6.2.jar ...
+[2022-05-16 10:01:59,286] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.apache.commons#commons-pool2;2.6.2!commons-pool2.jar (353ms)
+[2022-05-16 10:01:59,288] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/spark-project/spark/unused/1.0.0/unused-1.0.0.jar ...
+[2022-05-16 10:01:59,687] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.spark-project.spark#unused;1.0.0!unused.jar (399ms)
+[2022-05-16 10:01:59,689] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.4.8-1/zstd-jni-1.4.8-1.jar ...
+[2022-05-16 10:02:03,268] {subprocess.py:92} INFO - 	[SUCCESSFUL ] com.github.luben#zstd-jni;1.4.8-1!zstd-jni.jar (3581ms)
+[2022-05-16 10:02:03,274] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.7.1/lz4-java-1.7.1.jar ...
+[2022-05-16 10:02:03,771] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.lz4#lz4-java;1.7.1!lz4-java.jar (499ms)
+[2022-05-16 10:02:03,774] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.8.2/snappy-java-1.1.8.2.jar ...
+[2022-05-16 10:02:04,492] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.8.2!snappy-java.jar(bundle) (720ms)
+[2022-05-16 10:02:04,494] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar ...
+[2022-05-16 10:02:04,831] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.slf4j#slf4j-api;1.7.30!slf4j-api.jar (338ms)
+[2022-05-16 10:02:04,847] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-sync/4.0.5/mongodb-driver-sync-4.0.5.jar ...
+[2022-05-16 10:02:05,141] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.mongodb#mongodb-driver-sync;4.0.5!mongodb-driver-sync.jar (310ms)
+[2022-05-16 10:02:05,143] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/bson/4.0.5/bson-4.0.5.jar ...
+[2022-05-16 10:02:08,296] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.mongodb#bson;4.0.5!bson.jar (3154ms)
+[2022-05-16 10:02:08,298] {subprocess.py:92} INFO - downloading https://repo1.maven.org/maven2/org/mongodb/mongodb-driver-core/4.0.5/mongodb-driver-core-4.0.5.jar ...
+[2022-05-16 10:02:09,095] {subprocess.py:92} INFO - 	[SUCCESSFUL ] org.mongodb#mongodb-driver-core;4.0.5!mongodb-driver-core.jar (798ms)
+[2022-05-16 10:02:09,097] {subprocess.py:92} INFO - :: resolution report :: resolve 37874ms :: artifacts dl 21633ms
+[2022-05-16 10:02:09,098] {subprocess.py:92} INFO - 	:: modules in use:
+[2022-05-16 10:02:09,099] {subprocess.py:92} INFO - 	com.github.luben#zstd-jni;1.4.8-1 from central in [default]
+[2022-05-16 10:02:09,100] {subprocess.py:92} INFO - 	org.apache.commons#commons-pool2;2.6.2 from central in [default]
+[2022-05-16 10:02:09,101] {subprocess.py:92} INFO - 	org.apache.kafka#kafka-clients;2.6.0 from central in [default]
+[2022-05-16 10:02:09,102] {subprocess.py:92} INFO - 	org.apache.spark#spark-sql-kafka-0-10_2.12;3.1.0 from central in [default]
+[2022-05-16 10:02:09,103] {subprocess.py:92} INFO - 	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.1.0 from central in [default]
+[2022-05-16 10:02:09,104] {subprocess.py:92} INFO - 	org.lz4#lz4-java;1.7.1 from central in [default]
+[2022-05-16 10:02:09,106] {subprocess.py:92} INFO - 	org.mongodb#bson;4.0.5 from central in [default]
+[2022-05-16 10:02:09,107] {subprocess.py:92} INFO - 	org.mongodb#mongodb-driver-core;4.0.5 from central in [default]
+[2022-05-16 10:02:09,108] {subprocess.py:92} INFO - 	org.mongodb#mongodb-driver-sync;4.0.5 from central in [default]
+[2022-05-16 10:02:09,109] {subprocess.py:92} INFO - 	org.mongodb.spark#mongo-spark-connector_2.12;3.0.1 from central in [default]
+[2022-05-16 10:02:09,110] {subprocess.py:92} INFO - 	org.slf4j#slf4j-api;1.7.30 from central in [default]
+[2022-05-16 10:02:09,111] {subprocess.py:92} INFO - 	org.spark-project.spark#unused;1.0.0 from central in [default]
+[2022-05-16 10:02:09,112] {subprocess.py:92} INFO - 	org.xerial.snappy#snappy-java;1.1.8.2 from central in [default]
+[2022-05-16 10:02:09,113] {subprocess.py:92} INFO - 	---------------------------------------------------------------------
+[2022-05-16 10:02:09,114] {subprocess.py:92} INFO - 	|                  |            modules            ||   artifacts   |
+[2022-05-16 10:02:09,116] {subprocess.py:92} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2022-05-16 10:02:09,117] {subprocess.py:92} INFO - 	---------------------------------------------------------------------
+[2022-05-16 10:02:09,118] {subprocess.py:92} INFO - 	|      default     |   14  |   13  |   13  |   0   ||   13  |   13  |
+[2022-05-16 10:02:09,120] {subprocess.py:92} INFO - 	---------------------------------------------------------------------
+[2022-05-16 10:02:09,121] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,122] {subprocess.py:92} INFO - :: problems summary ::
+[2022-05-16 10:02:09,123] {subprocess.py:92} INFO - :::: WARNINGS
+[2022-05-16 10:02:09,124] {subprocess.py:92} INFO - 	problem while downloading module descriptor: https://repo1.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.1.0/spark-streaming-kafka-0-10_2.12-3.1.0.pom: Downloaded file size (0) doesn't match expected Content Length (18040) for https://repo1.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.1.0/spark-streaming-kafka-0-10_2.12-3.1.0.pom. Please retry. (431ms)
+[2022-05-16 10:02:09,127] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,129] {subprocess.py:92} INFO - 		module not found: org.apache.spark#spark-streaming-kafka-0-10_2.12;3.1.0
+[2022-05-16 10:02:09,131] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,132] {subprocess.py:92} INFO - 	==== local-m2-cache: tried
+[2022-05-16 10:02:09,134] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,135] {subprocess.py:92} INFO - 	  file:/home/***/.m2/repository/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.1.0/spark-streaming-kafka-0-10_2.12-3.1.0.pom
+[2022-05-16 10:02:09,136] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,137] {subprocess.py:92} INFO - 	  -- artifact org.apache.spark#spark-streaming-kafka-0-10_2.12;3.1.0!spark-streaming-kafka-0-10_2.12.jar:
+[2022-05-16 10:02:09,138] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,140] {subprocess.py:92} INFO - 	  file:/home/***/.m2/repository/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.1.0/spark-streaming-kafka-0-10_2.12-3.1.0.jar
+[2022-05-16 10:02:09,141] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,142] {subprocess.py:92} INFO - 	==== local-ivy-cache: tried
+[2022-05-16 10:02:09,143] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,144] {subprocess.py:92} INFO - 	  /home/***/.ivy2/local/org.apache.spark/spark-streaming-kafka-0-10_2.12/3.1.0/ivys/ivy.xml
+[2022-05-16 10:02:09,145] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,147] {subprocess.py:92} INFO - 	  -- artifact org.apache.spark#spark-streaming-kafka-0-10_2.12;3.1.0!spark-streaming-kafka-0-10_2.12.jar:
+[2022-05-16 10:02:09,148] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,149] {subprocess.py:92} INFO - 	  /home/***/.ivy2/local/org.apache.spark/spark-streaming-kafka-0-10_2.12/3.1.0/jars/spark-streaming-kafka-0-10_2.12.jar
+[2022-05-16 10:02:09,150] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,151] {subprocess.py:92} INFO - 	==== central: tried
+[2022-05-16 10:02:09,152] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,153] {subprocess.py:92} INFO - 	  https://repo1.maven.org/maven2/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.1.0/spark-streaming-kafka-0-10_2.12-3.1.0.pom
+[2022-05-16 10:02:09,156] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,157] {subprocess.py:92} INFO - 	==== spark-packages: tried
+[2022-05-16 10:02:09,158] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,159] {subprocess.py:92} INFO - 	  https://repos.spark-packages.org/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.1.0/spark-streaming-kafka-0-10_2.12-3.1.0.pom
+[2022-05-16 10:02:09,161] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,162] {subprocess.py:92} INFO - 	  -- artifact org.apache.spark#spark-streaming-kafka-0-10_2.12;3.1.0!spark-streaming-kafka-0-10_2.12.jar:
+[2022-05-16 10:02:09,163] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,164] {subprocess.py:92} INFO - 	  https://repos.spark-packages.org/org/apache/spark/spark-streaming-kafka-0-10_2.12/3.1.0/spark-streaming-kafka-0-10_2.12-3.1.0.jar
+[2022-05-16 10:02:09,165] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,166] {subprocess.py:92} INFO - 	impossible to put metadata file in cache: https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.6.0/kafka-clients-2.6.0.pom (2.6.0) (java.io.FileNotFoundException: /home/***/.ivy2/cache/org.apache.kafka/kafka-clients/ivy-2.6.0.xml.original (No such file or directory))
+[2022-05-16 10:02:09,167] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,168] {subprocess.py:92} INFO - 	impossible to put metadata file in cache: https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.4.8-1/zstd-jni-1.4.8-1.pom (1.4.8-1) (java.io.FileNotFoundException: /home/***/.ivy2/cache/com.github.luben/zstd-jni/ivy-1.4.8-1.xml.original (No such file or directory))
+[2022-05-16 10:02:09,169] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,170] {subprocess.py:92} INFO - 	impossible to put metadata file in cache: https://repo1.maven.org/maven2/org/lz4/lz4-java/1.7.1/lz4-java-1.7.1.pom (1.7.1) (java.io.FileNotFoundException: /home/***/.ivy2/cache/org.lz4/lz4-java/ivy-1.7.1.xml.original (No such file or directory))
+[2022-05-16 10:02:09,174] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,175] {subprocess.py:92} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2022-05-16 10:02:09,176] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,177] {subprocess.py:92} INFO - 		::          UNRESOLVED DEPENDENCIES         ::
+[2022-05-16 10:02:09,178] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,180] {subprocess.py:92} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2022-05-16 10:02:09,181] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,182] {subprocess.py:92} INFO - 		:: org.apache.spark#spark-streaming-kafka-0-10_2.12;3.1.0: not found
+[2022-05-16 10:02:09,183] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,184] {subprocess.py:92} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2022-05-16 10:02:09,185] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,187] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,201] {subprocess.py:92} INFO - 
+[2022-05-16 10:02:09,212] {subprocess.py:92} INFO - :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
+[2022-05-16 10:02:09,219] {subprocess.py:92} INFO - Exception in thread "main" java.lang.RuntimeException: [unresolved dependency: org.apache.spark#spark-streaming-kafka-0-10_2.12;3.1.0: not found]
+[2022-05-16 10:02:09,221] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1447)
+[2022-05-16 10:02:09,223] {subprocess.py:92} INFO - 	at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
+[2022-05-16 10:02:09,226] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:308)
+[2022-05-16 10:02:09,228] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:898)
+[2022-05-16 10:02:09,235] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:180)
+[2022-05-16 10:02:09,238] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:203)
+[2022-05-16 10:02:09,240] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:90)
+[2022-05-16 10:02:09,242] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1043)
+[2022-05-16 10:02:09,244] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1052)
+[2022-05-16 10:02:09,246] {subprocess.py:92} INFO - 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2022-05-16 10:02:09,359] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-05-16 10:02:09,360] {subprocess.py:92} INFO -   File "/opt/***/dags/scripts/consumer_tweets.py", line 39, in <module>
+[2022-05-16 10:02:09,361] {subprocess.py:92} INFO -     .config("spark.streaming.stopGracefullyOnShutdown", "true") \
+[2022-05-16 10:02:09,362] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/sql/session.py", line 228, in getOrCreate
+[2022-05-16 10:02:09,363] {subprocess.py:92} INFO -     sc = SparkContext.getOrCreate(sparkConf)
+[2022-05-16 10:02:09,364] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/context.py", line 392, in getOrCreate
+[2022-05-16 10:02:09,366] {subprocess.py:92} INFO -     SparkContext(conf=conf or SparkConf())
+[2022-05-16 10:02:09,367] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/context.py", line 144, in __init__
+[2022-05-16 10:02:09,368] {subprocess.py:92} INFO -     SparkContext._ensure_initialized(self, gateway=gateway, conf=conf)
+[2022-05-16 10:02:09,369] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/context.py", line 339, in _ensure_initialized
+[2022-05-16 10:02:09,373] {subprocess.py:92} INFO -     SparkContext._gateway = gateway or launch_gateway(conf)
+[2022-05-16 10:02:09,375] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/pyspark/java_gateway.py", line 108, in launch_gateway
+[2022-05-16 10:02:09,378] {subprocess.py:92} INFO -     raise RuntimeError("Java gateway process exited before sending its port number")
+[2022-05-16 10:02:09,381] {subprocess.py:92} INFO - RuntimeError: Java gateway process exited before sending its port number
+[2022-05-16 10:02:09,420] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-05-16 10:02:09,450] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-05-16 10:02:09,461] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=live_stream_Dag, task_id=consumer_twitter_data, execution_date=20220512T180000, start_date=20220516T100102, end_date=20220516T100209
+[2022-05-16 10:02:09,505] {standard_task_runner.py:97} ERROR - Failed to execute job 161 for task consumer_twitter_data (Bash command failed. The command returned a non-zero exit code 1.; 434)
+[2022-05-16 10:02:09,629] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-05-16 10:02:09,672] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

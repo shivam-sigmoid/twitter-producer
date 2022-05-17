@@ -1,0 +1,27 @@
+[2022-05-16 10:01:02,459] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Collect_Data_Dag.get_data_src_donations scheduled__2022-05-14T18:00:00+00:00 [queued]>
+[2022-05-16 10:01:02,486] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: Collect_Data_Dag.get_data_src_donations scheduled__2022-05-14T18:00:00+00:00 [queued]>
+[2022-05-16 10:01:02,488] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:01:02,490] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-05-16 10:01:02,501] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:01:02,530] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): get_data_src_donations> on 2022-05-14 18:00:00+00:00
+[2022-05-16 10:01:02,535] {standard_task_runner.py:52} INFO - Started process 433 to run task
+[2022-05-16 10:01:02,559] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'Collect_Data_Dag', 'get_data_src_donations', 'scheduled__2022-05-14T18:00:00+00:00', '--job-id', '159', '--raw', '--subdir', 'DAGS_FOLDER/collect_data_dag.py', '--cfg-path', '/tmp/tmp4s0tuoez', '--error-file', '/tmp/tmp7d7hzvqr']
+[2022-05-16 10:01:02,572] {standard_task_runner.py:80} INFO - Job 159: Subtask get_data_src_donations
+[2022-05-16 10:01:02,838] {task_command.py:369} INFO - Running <TaskInstance: Collect_Data_Dag.get_data_src_donations scheduled__2022-05-14T18:00:00+00:00 [running]> on host 6c2369487cbf
+[2022-05-16 10:01:06,541] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=Collect_Data_Dag
+AIRFLOW_CTX_TASK_ID=get_data_src_donations
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-14T18:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-05-14T18:00:00+00:00
+[2022-05-16 10:01:06,547] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-16 10:01:06,549] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/scripts/dag_data_source_api_6.py']
+[2022-05-16 10:01:06,607] {subprocess.py:85} INFO - Output:
+[2022-05-16 10:01:12,426] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-05-16 10:01:12,476] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=Collect_Data_Dag, task_id=get_data_src_donations, execution_date=20220514T180000, start_date=20220516T100102, end_date=20220516T100112
+[2022-05-16 10:01:12,546] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-05-16 10:01:12,739] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -57,3 +57,26 @@ def get_pipeline_task_7():
         {"$sort": {"rank": -1}}
     ]
     return pipeline
+
+
+def get_pipeline_8_country(country):
+    pipeline_yr = [
+        {"$match": {"country": country}},
+        {"$group": {"_id": {"year": "$year", "Country": "$country"}, "cpi": {"$avg": "$cpi"}, "gdp": {"$avg": "$gdp"},
+                    "shares": {"$avg": "$share"}}},
+        {"$sort": {"gdp": -1}}
+    ]
+    pipeline_q = [
+        {"$match": {"country": country}},
+        {"$group": {"_id": {"quarter": "$quarter", "year": "$year", "Country": "$country"}, "cpi": {"$avg": "$cpi"},
+                    "gdp": {"$avg": "$gdp"},
+                    "shares": {"$avg": "$share"}}},
+        {"$sort": {"gdp": -1}}
+    ]
+    pipeline_mon = [
+        {"$match": {"country": country}},
+        {"$group": {"_id": {"month": "$month_name", "year": "$year", "Country": "$country"}, "cpi": {"$avg": "$cpi"},
+                    "shares": {"$avg": "$share"}}},
+        {"$sort": {"shares": -1}}
+    ]
+    return pipeline_yr, pipeline_q, pipeline_mon

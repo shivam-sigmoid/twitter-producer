@@ -1,0 +1,49 @@
+[2022-05-16 10:01:02,421] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [queued]>
+[2022-05-16 10:01:02,442] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [queued]>
+[2022-05-16 10:01:02,444] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:01:02,445] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-05-16 10:01:02,448] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:01:02,464] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): consumer_twitter_data> on 2022-05-14 18:00:00+00:00
+[2022-05-16 10:01:02,468] {standard_task_runner.py:52} INFO - Started process 431 to run task
+[2022-05-16 10:01:02,473] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'live_stream_Dag', 'consumer_twitter_data', 'scheduled__2022-05-14T18:00:00+00:00', '--job-id', '160', '--raw', '--subdir', 'DAGS_FOLDER/live_stream_dag.py', '--cfg-path', '/tmp/tmp53dd5g6x', '--error-file', '/tmp/tmplb_k61jp']
+[2022-05-16 10:01:02,475] {standard_task_runner.py:80} INFO - Job 160: Subtask consumer_twitter_data
+[2022-05-16 10:01:02,551] {task_command.py:369} INFO - Running <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [running]> on host 6c2369487cbf
+[2022-05-16 10:01:03,990] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=live_stream_Dag
+AIRFLOW_CTX_TASK_ID=consumer_twitter_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-14T18:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-05-14T18:00:00+00:00
+[2022-05-16 10:01:03,997] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-16 10:01:04,005] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/scripts/consumer_tweets.py']
+[2022-05-16 10:01:04,146] {subprocess.py:85} INFO - Output:
+[2022-05-16 10:01:09,168] {subprocess.py:92} INFO - WARNING: An illegal reflective access operation has occurred
+[2022-05-16 10:01:09,172] {subprocess.py:92} INFO - WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/home/***/.local/lib/python3.7/site-packages/pyspark/jars/spark-unsafe_2.12-3.2.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+[2022-05-16 10:01:09,173] {subprocess.py:92} INFO - WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+[2022-05-16 10:01:09,174] {subprocess.py:92} INFO - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[2022-05-16 10:01:09,176] {subprocess.py:92} INFO - WARNING: All illegal access operations will be denied in a future release
+[2022-05-16 10:01:09,380] {subprocess.py:92} INFO - :: loading settings :: url = jar:file:/home/***/.local/lib/python3.7/site-packages/pyspark/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2022-05-16 10:01:09,564] {subprocess.py:92} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2022-05-16 10:01:09,565] {subprocess.py:92} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2022-05-16 10:01:09,572] {subprocess.py:92} INFO - org.apache.spark#spark-streaming-kafka-0-10_2.12 added as a dependency
+[2022-05-16 10:01:09,574] {subprocess.py:92} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2022-05-16 10:01:09,575] {subprocess.py:92} INFO - org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+[2022-05-16 10:01:09,578] {subprocess.py:92} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-8bbc9518-fa95-4e39-9929-4f4d79e90fe1;1.0
+[2022-05-16 10:01:09,582] {subprocess.py:92} INFO - 	confs: [default]
+[2022-05-16 10:01:19,960] {subprocess.py:92} INFO - 	found org.apache.spark#spark-streaming-kafka-0-10_2.12;3.1.0 in central
+[2022-05-16 10:01:24,246] {subprocess.py:92} INFO - 	found org.apache.kafka#kafka-clients;2.6.0 in central
+[2022-05-16 10:01:25,781] {subprocess.py:92} INFO - 	found com.github.luben#zstd-jni;1.4.8-1 in central
+[2022-05-16 10:01:27,641] {subprocess.py:92} INFO - 	found org.lz4#lz4-java;1.7.1 in central
+[2022-05-16 10:01:27,854] {local_task_job.py:221} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2022-05-16 10:01:27,861] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 431. PIDs of all processes in the group: [437, 461, 468, 431]
+[2022-05-16 10:01:27,862] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 431
+[2022-05-16 10:01:27,863] {taskinstance.py:1541} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-05-16 10:01:27,864] {subprocess.py:103} INFO - Sending SIGTERM signal to process group
+[2022-05-16 10:01:28,089] {process_utils.py:75} INFO - Process psutil.Process(pid=461, status='terminated', started='10:01:05') (461) terminated with exit code None
+[2022-05-16 10:01:28,090] {process_utils.py:75} INFO - Process psutil.Process(pid=437, status='terminated', started='10:01:03') (437) terminated with exit code None
+[2022-05-16 10:01:28,091] {process_utils.py:75} INFO - Process psutil.Process(pid=468, status='terminated', started='10:01:05') (468) terminated with exit code None
+[2022-05-16 10:01:28,093] {process_utils.py:75} INFO - Process psutil.Process(pid=431, status='terminated', exitcode=0, started='10:01:01') (431) terminated with exit code 0

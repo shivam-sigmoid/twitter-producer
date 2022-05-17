@@ -423,3 +423,134 @@
 2022-05-17 11:05:16,269:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=hyderabad&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
 2022-05-17 11:05:16,300:INFO:GET/200/Task 7
 2022-05-17 11:05:16,304:INFO:127.0.0.1 - - [17/May/2022 11:05:16] "GET /task_8/hyderabad HTTP/1.1" 200 -
+2022-05-17 13:38:10,318:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-17 13:38:10,319:INFO: * Restarting with stat
+2022-05-17 13:38:11,475:WARNING: * Debugger is active!
+2022-05-17 13:38:11,481:INFO: * Debugger PIN: 872-672-597
+2022-05-17 13:38:16,624:INFO:GET/200/Task 1
+2022-05-17 13:38:16,650:INFO:127.0.0.1 - - [17/May/2022 13:38:16] "GET /task_1 HTTP/1.1" 200 -
+2022-05-17 13:38:20,511:INFO:GET/200/Task 3
+2022-05-17 13:38:23,482:INFO:127.0.0.1 - - [17/May/2022 13:38:23] "GET /task_3 HTTP/1.1" 200 -
+2022-05-17 13:38:52,807:INFO: * Detected change in '/Users/shivamraj/Documents/Project/server/utility_functions.py', reloading
+2022-05-17 13:38:53,348:INFO: * Restarting with stat
+2022-05-17 13:38:54,724:WARNING: * Debugger is active!
+2022-05-17 13:38:54,730:INFO: * Debugger PIN: 872-672-597
+2022-05-17 13:38:54,746:INFO:GET/200/Task 3
+2022-05-17 13:38:57,672:INFO:127.0.0.1 - - [17/May/2022 13:38:57] "GET /task_3 HTTP/1.1" 200 -
+2022-05-17 13:39:01,947:INFO:GET/200/Task 5
+2022-05-17 13:39:01,962:INFO:127.0.0.1 - - [17/May/2022 13:39:01] "GET /task_5 HTTP/1.1" 200 -
+2022-05-17 13:39:04,929:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:39:04,929:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:39:04,929:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=ae&format=json&limit=1&accept-language=en
+2022-05-17 13:39:04,931:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-17 13:39:07,244:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=ae&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-17 13:39:07,252:INFO:GET/200/Task 5 Country wise
+2022-05-17 13:39:07,253:INFO:127.0.0.1 - - [17/May/2022 13:39:07] "GET /task_5/ae HTTP/1.1" 200 -
+2022-05-17 13:39:09,834:INFO:GET/200/Task 6_1
+2022-05-17 13:39:09,835:INFO:127.0.0.1 - - [17/May/2022 13:39:09] "GET /task_6_1 HTTP/1.1" 200 -
+2022-05-17 13:39:13,777:INFO:GET/200/Task 7
+2022-05-17 13:39:13,792:INFO:127.0.0.1 - - [17/May/2022 13:39:13] "GET /task_7 HTTP/1.1" 200 -
+2022-05-17 13:39:16,436:INFO:GET/200/Task 7 Week Wise
+2022-05-17 13:39:16,439:INFO:127.0.0.1 - - [17/May/2022 13:39:16] "GET /task_7/12 HTTP/1.1" 200 -
+2022-05-17 13:39:20,139:INFO:127.0.0.1 - - [17/May/2022 13:39:20] "[33mGET /task_8 HTTP/1.1[0m" 404 -
+2022-05-17 13:39:25,219:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:39:25,219:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:39:25,219:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=london&format=json&limit=1&accept-language=en
+2022-05-17 13:39:25,220:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-17 13:39:27,114:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=london&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-17 13:39:27,144:INFO:GET/200/Task 7
+2022-05-17 13:39:27,149:INFO:127.0.0.1 - - [17/May/2022 13:39:27] "GET /task_8/london HTTP/1.1" 200 -
+2022-05-17 13:39:32,771:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:39:32,771:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:39:32,771:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=kabul&format=json&limit=1&accept-language=en
+2022-05-17 13:39:32,772:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-17 13:39:34,484:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=kabul&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-17 13:39:34,532:DEBUG:Starting new HTTPS connection (1): api.openweathermap.org:443
+2022-05-17 13:39:34,949:DEBUG:https://api.openweathermap.org:443 "GET /data/2.5/weather?APPID=ec6d3b0cbf0523623a3f25cdcdd96263&lang=en&q=kabul HTTP/1.1" 200 491
+2022-05-17 13:39:34,956:INFO:GET/200/Task 9 Country wise
+2022-05-17 13:39:34,958:INFO:127.0.0.1 - - [17/May/2022 13:39:34] "GET /task_9/kabul HTTP/1.1" 200 -
+2022-05-17 13:43:42,225:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-17 13:43:42,226:INFO: * Restarting with stat
+2022-05-17 13:43:43,362:WARNING: * Debugger is active!
+2022-05-17 13:43:43,380:INFO: * Debugger PIN: 872-672-597
+2022-05-17 13:43:46,729:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:43:46,729:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:43:46,729:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=kabul&format=json&limit=1&accept-language=en
+2022-05-17 13:43:46,731:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-17 13:43:48,759:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=kabul&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-17 13:43:48,773:DEBUG:Starting new HTTPS connection (1): api.openweathermap.org:443
+2022-05-17 13:43:49,417:DEBUG:https://api.openweathermap.org:443 "GET /data/2.5/weather?APPID=ec6d3b0cbf0523623a3f25cdcdd96263&lang=en&q=kabul HTTP/1.1" 200 491
+2022-05-17 13:43:49,439:INFO:GET/200/Task 9 Country wise
+2022-05-17 13:43:49,442:INFO:127.0.0.1 - - [17/May/2022 13:43:49] "GET /task_9/kabul HTTP/1.1" 200 -
+2022-05-17 13:43:52,403:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:43:52,403:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:43:52,403:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=patna&format=json&limit=1&accept-language=en
+2022-05-17 13:43:52,404:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-17 13:43:54,211:DEBUG:Incremented Retry for (url='/search?q=patna&format=json&limit=1&accept-language=en'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:43:54,212:WARNING:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=patna&format=json&limit=1&accept-language=en
+2022-05-17 13:43:54,213:DEBUG:Starting new HTTPS connection (2): nominatim.openstreetmap.org:443
+2022-05-17 13:43:55,896:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=patna&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-17 13:43:55,905:DEBUG:Starting new HTTPS connection (1): api.openweathermap.org:443
+2022-05-17 13:43:56,410:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:43:56,411:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:43:56,411:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=patna&format=json&limit=1&accept-language=en
+2022-05-17 13:43:56,412:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-17 13:43:56,453:DEBUG:https://api.openweathermap.org:443 "GET /data/2.5/weather?APPID=ec6d3b0cbf0523623a3f25cdcdd96263&lang=en&q=patna HTTP/1.1" 200 455
+2022-05-17 13:43:56,461:INFO:GET/200/Task 9 Country wise
+2022-05-17 13:43:56,463:INFO:127.0.0.1 - - [17/May/2022 13:43:56] "GET /task_9/patna HTTP/1.1" 200 -
+2022-05-17 13:43:58,198:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=patna&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-17 13:43:58,210:DEBUG:Starting new HTTPS connection (1): api.openweathermap.org:443
+2022-05-17 13:43:58,701:DEBUG:https://api.openweathermap.org:443 "GET /data/2.5/weather?APPID=ec6d3b0cbf0523623a3f25cdcdd96263&lang=en&q=patna HTTP/1.1" 200 455
+2022-05-17 13:43:58,711:INFO:GET/200/Task 9 Country wise
+2022-05-17 13:43:58,713:INFO:127.0.0.1 - - [17/May/2022 13:43:58] "GET /task_9/patna HTTP/1.1" 200 -
+2022-05-17 13:44:09,271:INFO:GET/200/Task 3
+2022-05-17 13:44:09,271:ERROR:name 'most_common_words' is not defined
+2022-05-17 13:44:09,276:INFO:127.0.0.1 - - [17/May/2022 13:44:09] "[35m[1mGET /task_3 HTTP/1.1[0m" 500 -
+2022-05-17 13:44:09,364:INFO:127.0.0.1 - - [17/May/2022 13:44:09] "GET /task_3?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2022-05-17 13:44:09,365:INFO:127.0.0.1 - - [17/May/2022 13:44:09] "GET /task_3?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2022-05-17 13:44:10,820:INFO:127.0.0.1 - - [17/May/2022 13:44:10] "GET /task_3?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2022-05-17 13:44:10,829:INFO:127.0.0.1 - - [17/May/2022 13:44:10] "[36mGET /task_3?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2022-05-17 13:44:40,585:INFO: * Detected change in '/Users/shivamraj/Documents/Project/server/app.py', reloading
+2022-05-17 13:44:40,919:INFO: * Restarting with stat
+2022-05-17 13:44:42,253:WARNING: * Debugger is active!
+2022-05-17 13:44:42,259:INFO: * Debugger PIN: 872-672-597
+2022-05-17 13:44:42,275:INFO:GET/200/Task 3
+2022-05-17 13:44:45,215:INFO:127.0.0.1 - - [17/May/2022 13:44:45] "GET /task_3 HTTP/1.1" 200 -
+2022-05-17 13:45:39,475:INFO: * Detected change in '/Users/shivamraj/Documents/Project/server/utility_functions.py', reloading
+2022-05-17 13:45:39,828:INFO: * Restarting with stat
+2022-05-17 13:45:41,207:WARNING: * Debugger is active!
+2022-05-17 13:45:41,212:INFO: * Debugger PIN: 872-672-597
+2022-05-17 13:45:41,228:INFO:GET/200/Task 3
+2022-05-17 13:45:44,161:INFO:127.0.0.1 - - [17/May/2022 13:45:44] "GET /task_3 HTTP/1.1" 200 -
+2022-05-17 13:45:52,738:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:45:52,738:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:45:52,738:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=india&format=json&limit=1&accept-language=en
+2022-05-17 13:45:52,739:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-17 13:45:54,739:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=india&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-17 13:45:54,745:INFO:GET/200/Task 4 Location Wise
+2022-05-17 13:45:54,983:INFO:127.0.0.1 - - [17/May/2022 13:45:54] "GET /task_4/india HTTP/1.1" 200 -
+2022-05-17 13:45:59,981:INFO:GET/200/Task 5
+2022-05-17 13:45:59,994:INFO:127.0.0.1 - - [17/May/2022 13:45:59] "GET /task_5 HTTP/1.1" 200 -
+2022-05-17 13:46:04,594:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:46:04,594:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-17 13:46:04,594:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=india&format=json&limit=1&accept-language=en
+2022-05-17 13:46:04,595:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-17 13:46:06,181:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=india&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-17 13:46:06,191:INFO:GET/200/Task 5 Country wise
+2022-05-17 13:46:06,193:INFO:127.0.0.1 - - [17/May/2022 13:46:06] "GET /task_5/india HTTP/1.1" 200 -
+2022-05-17 13:46:32,411:INFO: * Detected change in '/Users/shivamraj/Documents/Project/server/utility_functions.py', reloading
+2022-05-17 13:46:32,784:INFO: * Restarting with stat
+2022-05-17 13:46:34,066:WARNING: * Debugger is active!
+2022-05-17 13:46:34,071:INFO: * Debugger PIN: 872-672-597
+2022-05-17 13:46:37,929:INFO:GET/200/Task 3
+2022-05-17 13:46:40,654:INFO:127.0.0.1 - - [17/May/2022 13:46:40] "GET /task_3 HTTP/1.1" 200 -
+2022-05-17 13:46:53,598:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-17 13:46:53,599:INFO: * Restarting with stat
+2022-05-17 13:46:54,700:WARNING: * Debugger is active!
+2022-05-17 13:46:54,707:INFO: * Debugger PIN: 872-672-597
+2022-05-17 13:46:56,166:INFO:GET/200/Task 3
+2022-05-17 13:46:58,898:INFO:127.0.0.1 - - [17/May/2022 13:46:58] "GET /task_3 HTTP/1.1" 200 -
+2022-05-17 13:49:35,659:INFO: * Detected change in '/Users/shivamraj/Documents/Project/server/app.py', reloading
+2022-05-17 13:49:36,160:INFO: * Restarting with stat
+2022-05-17 13:49:37,460:WARNING: * Debugger is active!
+2022-05-17 13:49:37,465:INFO: * Debugger PIN: 872-672-597

@@ -2,11 +2,14 @@ import requests as r
 import json
 import pytz
 
-import pymongo
-
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["twitter_db"]
-col = db["age_weather_data"]
+# import pymongo
+#
+# client = pymongo.MongoClient("mongodb://localhost:27017/")
+# db = client["twitter_db"]
+# col = db["age_weather_data"]
+from database import Database
+db = Database()
+col = db.create_db_connection("age_weather_data")
 
 query = "http://covidsurvey.mit.edu:5000/query?gender=all&signal=community_risk_index"
 

@@ -1,11 +1,15 @@
 from iso3166 import countries
 from datetime import datetime
 import requests
-import pymongo
+# import pymongo
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["twitter_db"]
-col = db["disease_sh"]
+# client = pymongo.MongoClient("mongodb://localhost:27017/")
+# db = client["twitter_db"]
+# col = db["disease_sh"]
+
+from database import Database
+db = Database()
+col = db.create_db_connection("disease_sh")
 
 
 def update_week_diseaseSh():

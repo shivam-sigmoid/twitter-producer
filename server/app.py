@@ -1,7 +1,7 @@
-import json
-import bson
-import flask
-from flask import render_template
+import json #to import json module
+import bson #importing bson module, bson is the binary encoding of json like documents that MongoDB uses when storing documents in collection
+import flask #importing flask because it is python web framework that provides useful tools and features that make creating web application in python easier
+from flask import render_template #render_template is a flask function, which is used to generate output from a template file based on the Jinja2 engine that is found in the application's template folder
 from flask_pymongo import PyMongo
 import sys
 

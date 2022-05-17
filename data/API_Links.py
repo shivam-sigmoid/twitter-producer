@@ -1,18 +1,5 @@
-def measures_taken_url():
-    url = "http://covidsurvey.mit.edu:5000/query?country=all&signal=measures_taken"
-    return url
-
-
-def covid_funding_url():
-    url = "https://covidfunding.eiu.com/api/funds"
-    return url
-
-
-def disease_sh_url():
-    url = "https://disease.sh/v3/covid-19/historical"
-    return url
-
-
-def community_risk_index_url():
-    url = "http://covidsurvey.mit.edu:5000/query?gender=all&signal=community_risk_index"
-    return url
+Measures_Taken_URL = "http://covidsurvey.mit.edu:5000/query?country=all&signal=measures_taken"
+Covid_Funding_URL = "https://covidfunding.eiu.com/api/funds"
+Disease_SH_URL = "https://disease.sh/v3/covid-19/historical"
+Community_Risk_Index_URL = "http://covidsurvey.mit.edu:5000/query?gender=all&signal=community_risk_index"
+Mongo_Base_URL = "mongodb://localhost:27017/"

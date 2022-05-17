@@ -4,7 +4,8 @@ import pytz
 import sys
 
 sys.path.append("../")
-from data.API_Links import community_risk_index_url
+
+from data.API_Links import Community_Risk_Index_URL
 # import pymongo
 #
 # client = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -17,7 +18,7 @@ from database import Database
 db = Database()
 col = db.create_db_connection("age_weather_data")
 
-query = community_risk_index_url()
+query = Community_Risk_Index_URL
 
 # country=all&age=20-30
 # could be one of all,20-30,31-40,41-50,51-60,61-70, or 71-80, default: all

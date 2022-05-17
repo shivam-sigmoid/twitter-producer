@@ -2,8 +2,9 @@ from iso3166 import countries
 from datetime import datetime
 import requests
 import sys
+
 sys.path.append("../")
-from data.API_Links import disease_sh_url
+from data.API_Links import Disease_SH_URL
 # import pymongo
 
 # client = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -11,6 +12,7 @@ from data.API_Links import disease_sh_url
 # col = db["disease_sh"]
 
 from database import Database
+
 db = Database()
 col = db.create_db_connection("disease_sh")
 
@@ -32,7 +34,7 @@ def get_week_num(date):
 def get_data_api7():
     for c in countries:
         # URL = "https://disease.sh/v3/covid-19/historical"
-        URL = disease_sh_url()
+        URL = Disease_SH_URL
         lastdays = 60
         PARAMS = {'lastdays': lastdays}
         URL = URL + '/' + c.alpha3

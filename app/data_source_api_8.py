@@ -44,7 +44,9 @@ shares:
 import csv
 import calendar
 import pycountry
-import pymongo
+
+from database import Database
+# import pymongo
 
 # from geopy import Nominatim
 
@@ -52,11 +54,17 @@ mon_col = []
 q_col = []
 yr_col = []
 country_by_alpha3 = {country.alpha_3: country.name for country in pycountry.countries}
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["twitter_db"]
-col_1 = db["monthly_api_8"]
-col_2 = db["quarterly_api_8"]
-col_3 = db["yearly_api_8"]
+# client = pymongo.MongoClient("mongodb://localhost:27017/")
+# db = client["twitter_db"]
+# col_1 = db["monthly_api_8"]
+# col_2 = db["quarterly_api_8"]
+# col_3 = db["yearly_api_8"]
+
+
+db = Database()
+col_1 = db.create_db_connection("monthly_api_8")
+col_2 = db.create_db_connection("quarterly_api_8")
+col_3 = db.create_db_connection("yearly_api_8")
 
 
 # locator = Nominatim(user_agent="myGeocoder")

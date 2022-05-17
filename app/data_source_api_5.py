@@ -1,12 +1,15 @@
 import json
-
 import requests as r
 import pytz
-import pymongo
+# import pymongo
+from database import Database
+db = Database()
+col = db.create_db_connection("measures")
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["twitter_db"]
-col = db["measures"]
+# client = pymongo.MongoClient("mongodb://localhost:27017/")
+# db = client["twitter_db"]
+# col = db["measures"]
+
 
 response = r.get("http://covidsurvey.mit.edu:5000/query?country=all&signal=measures_taken")
 

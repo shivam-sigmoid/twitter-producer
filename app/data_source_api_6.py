@@ -1,11 +1,15 @@
 import json
 import requests as r
 
-import pymongo
+# import pymongo
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["twitter_db"]
-col = db["donation"]
+# client = pymongo.MongoClient("mongodb://localhost:27017/")
+# db = client["twitter_db"]
+# col = db["donation"]
+
+from database import Database
+db = Database()
+col = db.create_db_connection("donation")
 
 link = "https://covidfunding.eiu.com/api/funds"
 

@@ -1,0 +1,33 @@
+[2022-05-16 10:00:53,346] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [queued]>
+[2022-05-16 10:00:53,385] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [queued]>
+[2022-05-16 10:00:53,406] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:00:53,410] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-05-16 10:00:53,414] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:00:53,466] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): consumer_twitter_data> on 2022-05-14 18:00:00+00:00
+[2022-05-16 10:00:53,490] {standard_task_runner.py:52} INFO - Started process 212 to run task
+[2022-05-16 10:00:53,522] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'live_stream_Dag', 'consumer_twitter_data', 'scheduled__2022-05-14T18:00:00+00:00', '--job-id', '151', '--raw', '--subdir', 'DAGS_FOLDER/live_stream_dag.py', '--cfg-path', '/tmp/tmp2uj30b7w', '--error-file', '/tmp/tmpau5els19']
+[2022-05-16 10:00:53,528] {standard_task_runner.py:80} INFO - Job 151: Subtask consumer_twitter_data
+[2022-05-16 10:00:53,730] {task_command.py:369} INFO - Running <TaskInstance: live_stream_Dag.consumer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [running]> on host 6c2369487cbf
+[2022-05-16 10:00:54,638] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=live_stream_Dag
+AIRFLOW_CTX_TASK_ID=consumer_twitter_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-14T18:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-05-14T18:00:00+00:00
+[2022-05-16 10:00:54,644] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-16 10:00:54,648] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/scripts/consumer_tweets.py']
+[2022-05-16 10:00:54,698] {subprocess.py:85} INFO - Output:
+[2022-05-16 10:00:55,354] {subprocess.py:96} INFO - Command exited with return code -9
+[2022-05-16 10:00:55,522] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code -9.
+[2022-05-16 10:00:55,534] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=live_stream_Dag, task_id=consumer_twitter_data, execution_date=20220514T180000, start_date=20220516T100053, end_date=20220516T100055
+[2022-05-16 10:00:55,607] {standard_task_runner.py:97} ERROR - Failed to execute job 151 for task consumer_twitter_data (Bash command failed. The command returned a non-zero exit code -9.; 212)
+[2022-05-16 10:00:55,781] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-05-16 10:00:55,924] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

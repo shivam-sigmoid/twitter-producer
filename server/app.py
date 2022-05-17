@@ -1,7 +1,10 @@
-import json #to import json module
-import bson #importing bson module, bson is the binary encoding of json like documents that MongoDB uses when storing documents in collection
-import flask #importing flask because it is python web framework that provides useful tools and features that make creating web application in python easier
-from flask import render_template #render_template is a flask function, which is used to generate output from a template file based on the Jinja2 engine that is found in the application's template folder
+import json  # to import json module
+import \
+    bson  # importing bson module, bson is the binary encoding of json like documents that MongoDB uses when storing documents in collection
+import \
+    flask  # importing flask because it is python web framework that provides useful tools and features that make creating web application in python easier
+from flask import \
+    render_template  # render_template is a flask function, which is used to generate output from a template file based on the Jinja2 engine that is found in the application's template folder
 from flask_pymongo import PyMongo
 import sys
 
@@ -10,7 +13,7 @@ sys.path.append("../")
 from server.utility_functions import get_weather, get_country, most_common_words, get_task_6_data
 from server.pipelines import get_pipeline_task_1, get_pipeline_task_2, get_pipeline_task_2_date_wise, \
     get_pipeline_task_7, \
-    get_pipeline_task_7_week_wise, get_pipeline_task_6_1
+    get_pipeline_task_7_week_wise, get_pipeline_task_6_1, get_pipeline_8_country
 import logging
 
 
@@ -247,6 +250,39 @@ def task_7_all():
         logging.error(e)
 
 
+@app.route("/task_8/<loc>")
+def task_8_country(loc):
+    try:
+        country = get_country(loc)
+        p_yr, p_q, p_mon = get_pipeline_8_country(country)
+        yr_data = db.yearly_api_8.aggregate(p_yr)
+        q_data = db.quarterly_api_8.aggregate(p_q)
+        mon_data = db.monthly_api_8.aggregate(p_mon)
+        yr_data_dict = dict()
+        i = 1
+        for data in yr_data:
+            yr_data_dict[i] = {k: v for k, v in data.items()}
+            i += 1
+        q_data_dict = dict()
+        i = 1
+        for data in q_data:
+            q_data_dict[i] = {k: v for k, v in data.items()}
+            i += 1
+        mon_data_dict = dict()
+        i = 1
+        for data in mon_data:
+            mon_data_dict[i] = {k: v for k, v in data.items()}
+            i += 1
+        data_dict = dict()
+        data_dict['Monthly Analysis'] = mon_data_dict
+        data_dict['Quarterly Analysis'] = q_data_dict
+        data_dict['Yearly Analysis'] = yr_data_dict
+        logging.info("GET/200/Task 7")
+        return flask.jsonify(data_dict)
+    except Exception as e:
+        print(e)
+
+
 @app.route("/task_9/<country>")
 def task_9(country):
     try:
@@ -266,8 +302,6 @@ def task_9(country):
     except Exception as e:
         logging.error(e)
 
-
-# Add
 
 if __name__ == "__main__":
     logging.basicConfig(filename='../logs/system.log',

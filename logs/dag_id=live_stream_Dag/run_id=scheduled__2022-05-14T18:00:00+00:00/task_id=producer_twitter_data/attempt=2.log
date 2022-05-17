@@ -1,0 +1,43 @@
+[2022-05-16 10:01:02,377] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.producer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [queued]>
+[2022-05-16 10:01:02,392] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: live_stream_Dag.producer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [queued]>
+[2022-05-16 10:01:02,394] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:01:02,395] {taskinstance.py:1357} INFO - Starting attempt 2 of 2
+[2022-05-16 10:01:02,396] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-05-16 10:01:02,420] {taskinstance.py:1377} INFO - Executing <Task(BashOperator): producer_twitter_data> on 2022-05-14 18:00:00+00:00
+[2022-05-16 10:01:02,432] {standard_task_runner.py:52} INFO - Started process 429 to run task
+[2022-05-16 10:01:02,440] {standard_task_runner.py:79} INFO - Running: ['***', 'tasks', 'run', 'live_stream_Dag', 'producer_twitter_data', 'scheduled__2022-05-14T18:00:00+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/live_stream_dag.py', '--cfg-path', '/tmp/tmp_1ox41mv', '--error-file', '/tmp/tmp45x8aoxi']
+[2022-05-16 10:01:02,442] {standard_task_runner.py:80} INFO - Job 157: Subtask producer_twitter_data
+[2022-05-16 10:01:02,551] {task_command.py:369} INFO - Running <TaskInstance: live_stream_Dag.producer_twitter_data scheduled__2022-05-14T18:00:00+00:00 [running]> on host 6c2369487cbf
+[2022-05-16 10:01:04,902] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Airflow
+AIRFLOW_CTX_DAG_ID=live_stream_Dag
+AIRFLOW_CTX_TASK_ID=producer_twitter_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-05-14T18:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-05-14T18:00:00+00:00
+[2022-05-16 10:01:04,907] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-05-16 10:01:04,910] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'python3 /opt/***/dags/scripts/producer_tweets.py']
+[2022-05-16 10:01:04,927] {subprocess.py:85} INFO - Output:
+[2022-05-16 10:01:06,166] {subprocess.py:92} INFO - Traceback (most recent call last):
+[2022-05-16 10:01:06,168] {subprocess.py:92} INFO -   File "/opt/***/dags/scripts/producer_tweets.py", line 21, in <module>
+[2022-05-16 10:01:06,172] {subprocess.py:92} INFO -     producer = KafkaProducer(bootstrap_servers='host.docker.internal:9093')
+[2022-05-16 10:01:06,179] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/kafka/producer/kafka.py", line 383, in __init__
+[2022-05-16 10:01:06,182] {subprocess.py:92} INFO -     **self.config)
+[2022-05-16 10:01:06,185] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/kafka/client_async.py", line 244, in __init__
+[2022-05-16 10:01:06,187] {subprocess.py:92} INFO -     self.config['api_version'] = self.check_version(timeout=check_timeout)
+[2022-05-16 10:01:06,188] {subprocess.py:92} INFO -   File "/home/***/.local/lib/python3.7/site-packages/kafka/client_async.py", line 900, in check_version
+[2022-05-16 10:01:06,189] {subprocess.py:92} INFO -     raise Errors.NoBrokersAvailable()
+[2022-05-16 10:01:06,192] {subprocess.py:92} INFO - kafka.errors.NoBrokersAvailable: NoBrokersAvailable
+[2022-05-16 10:01:06,291] {subprocess.py:96} INFO - Command exited with return code 1
+[2022-05-16 10:01:06,338] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 195, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-05-16 10:01:06,354] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=live_stream_Dag, task_id=producer_twitter_data, execution_date=20220514T180000, start_date=20220516T100102, end_date=20220516T100106
+[2022-05-16 10:01:06,383] {standard_task_runner.py:97} ERROR - Failed to execute job 157 for task producer_twitter_data (Bash command failed. The command returned a non-zero exit code 1.; 429)
+[2022-05-16 10:01:06,441] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-05-16 10:01:06,502] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

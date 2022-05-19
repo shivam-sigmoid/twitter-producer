@@ -287,6 +287,7 @@ def task_8_country(loc):
 @app.route("/task_8/country/<country>/<year>")
 def task_8_country_year(country, year):
     try:
+        country = Utils.get_country(country)
         query = {"country": country, "year": int(year)}
         yr_data = db.yearly_api_8.find(query)
         yr_data_dict = dict()
@@ -303,6 +304,7 @@ def task_8_country_year(country, year):
 @app.route("/task_8/country/<country>/<year>/<par>")
 def task_8_country_year_par(country, year, par):
     try:
+        country = Utils.get_country(country)
         par_data_dict = dict()
         if par in ['Q1', 'Q2', 'Q3', 'Q4']:
             query = {"country": country, "year": int(year), "quarter": par}

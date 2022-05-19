@@ -571,3 +571,49 @@
 2022-05-19 12:00:59,218:INFO: * Detected change in '/Users/namballamukesh/Downloads/twitter-producer/server/app.py', reloading
 2022-05-19 12:01:00,384:WARNING: * Debugger is active!
 2022-05-19 12:01:00,388:INFO: * Debugger PIN: 290-819-864
+2022-05-19 12:05:22,889:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-19 12:05:22,889:INFO: * Restarting with stat
+2022-05-19 12:05:23,829:WARNING: * Debugger is active!
+2022-05-19 12:05:23,837:INFO: * Debugger PIN: 909-676-507
+2022-05-19 12:05:32,404:INFO:127.0.0.1 - - [19/May/2022 12:05:32] "GET / HTTP/1.1" 200 -
+2022-05-19 12:05:35,600:INFO:GET/200/Task 1
+2022-05-19 12:05:35,627:INFO:127.0.0.1 - - [19/May/2022 12:05:35] "GET /task_1 HTTP/1.1" 200 -
+2022-05-19 12:05:38,724:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-19 12:05:38,725:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-19 12:05:38,725:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=london&format=json&limit=1&accept-language=en
+2022-05-19 12:05:38,727:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-19 12:05:40,611:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=london&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-19 12:05:40,633:INFO:GET/200/Task 7
+2022-05-19 12:05:40,636:INFO:127.0.0.1 - - [19/May/2022 12:05:40] "GET /task_8/london HTTP/1.1" 200 -
+2022-05-19 12:05:40,695:INFO:127.0.0.1 - - [19/May/2022 12:05:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2022-05-19 12:06:59,175:INFO:GET/200/Task 8/country/year
+2022-05-19 12:06:59,176:INFO:127.0.0.1 - - [19/May/2022 12:06:59] "GET /task_8/country/India/2018 HTTP/1.1" 200 -
+2022-05-19 12:07:23,914:INFO:GET/200/Task 8/country/year/parameter
+2022-05-19 12:07:23,915:INFO:127.0.0.1 - - [19/May/2022 12:07:23] "GET /task_8/country/India/2018/July HTTP/1.1" 200 -
+2022-05-19 12:07:29,640:INFO:GET/200/Task 8/country/year/parameter
+2022-05-19 12:07:29,640:INFO:127.0.0.1 - - [19/May/2022 12:07:29] "GET /task_8/country/India/2018/Q2 HTTP/1.1" 200 -
+2022-05-19 12:10:29,022:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-19 12:10:29,023:INFO: * Restarting with stat
+2022-05-19 12:10:29,836:WARNING: * Debugger is active!
+2022-05-19 12:10:29,842:INFO: * Debugger PIN: 909-676-507
+2022-05-19 12:10:41,567:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-19 12:10:41,567:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-19 12:10:41,567:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=kolkata&format=json&limit=1&accept-language=en
+2022-05-19 12:10:41,569:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-19 12:10:43,142:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=kolkata&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-19 12:10:43,156:INFO:GET/200/Task 8/country/year/parameter
+2022-05-19 12:10:43,157:INFO:127.0.0.1 - - [19/May/2022 12:10:43] "GET /task_8/country/kolkata/2018/Q2 HTTP/1.1" 200 -
+2022-05-19 12:10:51,573:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-19 12:10:51,575:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-19 12:10:51,575:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=london&format=json&limit=1&accept-language=en
+2022-05-19 12:10:51,577:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-19 12:10:53,115:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=london&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-19 12:10:53,124:INFO:GET/200/Task 8/country/year/parameter
+2022-05-19 12:10:53,125:INFO:127.0.0.1 - - [19/May/2022 12:10:53] "GET /task_8/country/london/2018/Q2 HTTP/1.1" 200 -
+2022-05-19 12:11:01,883:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-19 12:11:01,884:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-19 12:11:01,884:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=london&format=json&limit=1&accept-language=en
+2022-05-19 12:11:01,885:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-19 12:11:03,456:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=london&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-19 12:11:03,465:INFO:GET/200/Task 8/country/year/parameter
+2022-05-19 12:11:03,466:INFO:127.0.0.1 - - [19/May/2022 12:11:03] "GET /task_8/country/london/2018/April HTTP/1.1" 200 -

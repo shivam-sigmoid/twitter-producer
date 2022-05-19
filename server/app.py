@@ -284,6 +284,148 @@ def task_8_country(loc):
         print(e)
 
 
+@app.route("/task_8/country/<country>/<year>")
+def task_8_country_year(country, year):
+    try:
+        query = {"country": country, "year": int(year)}
+        yr_data = db.yearly_api_8.find(query)
+        yr_data_dict = dict()
+        i = 1
+        for data in yr_data:
+            yr_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+            i += 1
+        logging.info("GET/200/Task 8/country/year")
+        return flask.jsonify(yr_data_dict)
+    except Exception as e:
+        logging.error(e)
+
+
+@app.route("/task_8/country/<country>/<year>/<par>")
+def task_8_country_year_par(country, year, par):
+    try:
+        par_data_dict = dict()
+        if par in ['Q1', 'Q2', 'Q3', 'Q4']:
+            query = {"country": country, "year": int(year), "quarter": par}
+            quart_data = db.quarterly_api_8.find(query)
+            i = 1
+            for data in quart_data:
+                par_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+                i += 1
+        else:
+            query = {"country": country, "year": int(year), "month_name": par}
+            mon_data = db.monthly_api_8.find(query)
+            i = 1
+            for data in mon_data:
+                par_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+                i += 1
+        logging.info("GET/200/Task 8/country/year/parameter")
+        return flask.jsonify(par_data_dict)
+    except Exception as e:
+        logging.error(e)
+
+
+@app.route("/task_8/year/<year>")
+def task_8_par(year):
+    try:
+        pipeline_yr = [
+            {"$match": {"year": int(year)}},
+            {"$sort": {"gdp": -1}}
+        ]
+        yr_data = db.yearly_api_8.aggregate(pipeline_yr)
+        yr_data_dict = dict()
+        i = 1
+        for data in yr_data:
+            yr_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+            i += 1
+        logging.info("GET/200/Task 8/year")
+        return flask.jsonify(yr_data_dict)
+    except Exception as e:
+        logging.error(e)
+
+
+@app.route("/task_8/month/<year>/<month>")
+def task_8_year_mon(year, month):
+    try:
+        pipeline_mon = [
+            {"$match": {"year": int(year), "month_name": month}},
+            {"$sort": {"share": -1}}
+        ]
+        mon_data = db.monthly_api_8.aggregate(pipeline_mon)
+        mon_data_dict = dict()
+        i = 1
+        for data in mon_data:
+            mon_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+            i += 1
+        logging.info("GET/200/Task 8/year/month")
+        return flask.jsonify(mon_data_dict)
+    except Exception as e:
+        logging.error(e)
+
+
+@app.route("/task_8/quarter/<year>/<quarter>")
+def task_8_year_quart(year, quarter):
+    try:
+        pipeline_quart = [
+            {"$match": {"year": int(year), "quarter": quarter}},
+            {"$sort": {"gdp": -1}}
+        ]
+        quart_data = db.quarterly_api_8.aggregate(pipeline_quart)
+        quart_data_dict = dict()
+        i = 1
+        for data in quart_data:
+            quart_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+            i += 1
+        logging.info("GET/200/Task 8/year/quarter")
+        return flask.jsonify(quart_data_dict)
+    except Exception as e:
+        logging.error(e)
+
+
+@app.route("/task_8/year")
+def task_8_year_all():
+    try:
+        yr_data = db.yearly_api_8.find()
+        yr_data_dict = dict()
+        i = 1
+        for data in yr_data:
+            yr_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+            i += 1
+        logging.info("GET/200/Task 8/year all")
+        return flask.jsonify(yr_data_dict)
+    except Exception as e:
+        logging.error(e)
+
+
+@app.route("/task_8/month")
+def task_8_year_mon_all():
+    try:
+        mon_data = db.monthly_api_8.find()
+        mon_data_dict = dict()
+        i = 1
+        for data in mon_data:
+            mon_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+            i += 1
+        logging.info("GET/200/Task 8/month all")
+        return flask.jsonify(mon_data_dict)
+    except Exception as e:
+        logging.error(e)
+
+
+@app.route("/task_8/quarter")
+def task_8_year_quart_all():
+    try:
+        quart_data = db.quarterly_api_8.find()
+        quart_data_dict = dict()
+        i = 1
+        for data in quart_data:
+            quart_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
+            i += 1
+        logging.info("GET/200/Task 8/quarter")
+        return flask.jsonify(quart_data_dict)
+    except Exception as e:
+        logging.error(e)
+
+
 @app.route("/task_9/<country>")
 def task_9(country):
     try:

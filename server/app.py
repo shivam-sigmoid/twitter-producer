@@ -8,7 +8,11 @@ import flask
 # render_template is a flask function, which is used to generate output from a
 # template file based on the Jinja2 engine that is found in the application's template folder
 from flask import render_template
+# flask_pymongo acts as bridge between Flask and Pymongo
+# pymongo connects to the MongoDB server running on port 27017 on localhost, to the database,
+# this database is exposed to db attributes
 from flask_pymongo import PyMongo
+# sys let us access system-specific parameters and function that are used to manipulate different parts of python runtime environment
 import sys
 
 sys.path.append("../")
@@ -40,7 +44,7 @@ app.config["MONGO_URI"] = "mongodb://localhost:27017/twitter_db"
 mongodb_client = PyMongo(app)
 db = mongodb_client.db
 
-
+# Home page
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -50,7 +54,7 @@ def home():
 # def documentation():
 #     return render_template("documentation.html")
 
-
+# by adding "/get_tweets", it will reflect all the tweets
 @app.route("/get_tweets")
 def get_tweets():
     tweets = db.tweets.find()
@@ -62,7 +66,7 @@ def get_tweets():
         i += 1
     return flask.jsonify(tweets_dict)
 
-
+# by adding "/get_tweets/<int:tweet_id>", it will find that specific tweet
 @app.route("/get_tweet/<int:tweet_id>")
 def get_tweet(tweet_id):
     query = {"id": str(tweet_id)}
@@ -74,7 +78,7 @@ def get_tweet(tweet_id):
         i += 1
     return flask.jsonify(tweets_dict)
 
-
+# by adding "/get_tweets_geo_enabled", it will reflect all the tweets which are geo enabled
 @app.route("/get_tweets_geo_enabled")
 def get_tweets_with_geo():
     query = {"geo": {"$exists": "true"}}

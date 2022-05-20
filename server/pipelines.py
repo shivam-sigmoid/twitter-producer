@@ -37,8 +37,9 @@ class Pipelines:
     @staticmethod
     def get_pipeline_task_6_1():
         pipeline = [
-            {"$group": {"_id": "$source", "CountOfDonations": {"$sum": 1},
-                        "TotalAmountInDollars": {"$sum": "$amount"}}},
+            {"$group": {"_id": "$purpose", "CountOfDonations": {"$sum": 1}, "TotalAmountInDollars": {"$sum": "$amount"},
+                        "doc": {"$first": "$$ROOT"}}},
+            {"$replaceRoot": {"newRoot": "$doc"}},
             {"$sort": {"TotalAmountInDollars": -1}},
             {"$limit": 10}
         ]

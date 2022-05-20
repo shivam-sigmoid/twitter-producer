@@ -15,6 +15,7 @@ sys.path.append("../")
 
 from server.pipelines import Pipelines
 from server.utility_functions import Utils
+from utils.data_security import decrypt_message
 import logging
 
 
@@ -89,7 +90,7 @@ def get_tweets_with_geo():
     return flask.jsonify(tweets_dict)
 
 
-@app.route("/task_1")
+@app.route("/get_tweets_per_country")
 def task_1():
     try:
         tweets = db.tweets.aggregate(Pipelines.get_pipeline_task_1())
@@ -100,13 +101,13 @@ def task_1():
             tweets_dict[i] = {k: v for k, v in tweet.items()}
             i += 1
         # print(tweets_dict)
-        logging.info("GET/200/Task 1")
+        logging.info("GET/200/get_tweets_per_country")
         return flask.jsonify(tweets_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_2")
+@app.route("/get_tweets_per_country_per_day")
 def task_2_all():
     try:
         tweets = db.tweets.aggregate(Pipelines.get_pipeline_task_2())
@@ -115,15 +116,15 @@ def task_2_all():
         for tweet in tweets:
             tweets_dict[i] = {k: v for k, v in tweet.items()}
             i += 1
-        logging.info("GET/200/Task 2")
+        logging.info("GET/200/get_tweets_per_country_per_day")
         return flask.jsonify(tweets_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_2/<raw_date>")
+@app.route("/get_tweets_per_country_day_wise/<raw_date>")
 def task_2(raw_date):
-    print(raw_date)
+    # print(raw_date)
     try:
         tweets = db.tweets.aggregate(Pipelines.get_pipeline_task_2_date_wise(raw_date))
         tweets_dict = dict()
@@ -131,36 +132,36 @@ def task_2(raw_date):
         for tweet in tweets:
             tweets_dict[i] = {k: v for k, v in tweet.items()}
             i += 1
-        logging.info("GET/200/Task 2 Date Wise")
+        logging.info("GET/200/get_tweets_per_country_day_wise")
         return flask.jsonify(tweets_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_3")
+@app.route("/get_most_occured_words")
 def task_3():
     try:
         tweets = db.tweets.find()
-        logging.info("GET/200/Task 3")
+        logging.info("GET/200/get_most_occured_words")
         return flask.jsonify(Utils.most_common_words(tweets))
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_4/<loc>")
+@app.route("/get_most_occured_words_per_country/<loc>")
 def task_4(loc):
     # print(loc)
     try:
         loc = Utils.get_country(loc)
         query = {"location": str(loc)}
         tweets = db.tweets.find(query)
-        logging.info("GET/200/Task 4 Location Wise")
+        logging.info("GET/200/get_most_occured_words_per_country")
         return flask.jsonify(Utils.most_common_words(tweets))
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_5")
+@app.route("/get_precautionary_measures")
 def task_5_all():
     try:
         infos = db.measures.find()
@@ -168,13 +169,13 @@ def task_5_all():
         for info in infos:
             data_list.append(info['country'])
             data_list.append(info['measures_taken'])
-        logging.info("GET/200/Task 5")
+        logging.info("GET/200/get_precautionary_measures")
         return flask.jsonify(data_list)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_5/<country>")
+@app.route("/get_precautionary_measures_country_wise/<country>")
 def task_5(country):
     try:
         cnt = Utils.get_country(country)
@@ -185,13 +186,13 @@ def task_5(country):
         data_list.append(cnt)
         for info in infos:
             data_list.append(info['measures_taken'])
-        logging.info("GET/200/Task 5 Country wise")
+        logging.info("GET/200/get_precautionary_measures_country_wise")
         return flask.jsonify(data_list)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_6")
+@app.route("/get_donations_who_data")
 def task_6():
     try:
         data_lst = Utils.get_task_6_data()
@@ -200,28 +201,28 @@ def task_6():
         for data in data_lst:
             response_data[i] = {k: v for k, v in data.items()}
             i += 1
-        logging.info("GET/200/Task 6")
+        logging.info("GET/200/get_donations_who_data")
         return flask.jsonify(response_data)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_6_1")
+@app.route("/get_donations_funding")
 def task_6_1():
     try:
         data_list = db.donation.aggregate(Pipelines.get_pipeline_task_6_1())
         response_data = dict()
         i = 1
         for data in data_list:
-            response_data[i] = {k: v for k, v in data.items()}
+            response_data[i] = {k: decrypt_message(v) if k == "source" else str(v) for k, v in data.items()}
             i += 1
-        logging.info("GET/200/Task 6_1")
+        logging.info("GET/200/get_donations_funding")
         return flask.jsonify(response_data)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_7/<int:week_num>")
+@app.route("/get_impacted_country_week_wise/<int:week_num>")
 def task_7(week_num):
     try:
         rankings = db.disease_sh.aggregate(Pipelines.get_pipeline_task_7_week_wise(week_num))
@@ -230,13 +231,13 @@ def task_7(week_num):
         for ranking in rankings:
             rankings_dict[i] = {k: v for k, v in ranking.items()}
             i += 1
-        logging.info("GET/200/Task 7 Week Wise")
+        logging.info("GET/200/get_impacted_country_week_wise")
         return flask.jsonify(rankings_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_7")
+@app.route("/get_impacted_country")
 def task_7_all():
     try:
         rankings = db.disease_sh.aggregate(Pipelines.get_pipeline_task_7())
@@ -245,13 +246,13 @@ def task_7_all():
         for ranking in rankings:
             rankings_dict[i] = {k: v for k, v in ranking.items()}
             i += 1
-        logging.info("GET/200/Task 7")
+        logging.info("GET/200/get_impacted_country")
         return flask.jsonify(rankings_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_8/<loc>")
+@app.route("/get_economy_per_country/<loc>")
 def task_8_country(loc):
     try:
         country = Utils.get_country(loc)
@@ -278,13 +279,13 @@ def task_8_country(loc):
         data_dict['Monthly Analysis'] = mon_data_dict
         data_dict['Quarterly Analysis'] = q_data_dict
         data_dict['Yearly Analysis'] = yr_data_dict
-        logging.info("GET/200/Task 7")
+        logging.info("GET/200/get_economy_per_country")
         return flask.jsonify(data_dict)
     except Exception as e:
         print(e)
 
 
-@app.route("/task_8/country/<country>/<year>")
+@app.route("/get_economy_per_country_per_year/<country>/<year>")
 def task_8_country_year(country, year):
     try:
         country = Utils.get_country(country)
@@ -295,13 +296,13 @@ def task_8_country_year(country, year):
         for data in yr_data:
             yr_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
             i += 1
-        logging.info("GET/200/Task 8/country/year")
+        logging.info("GET/200/get_economy_per_country_per_year")
         return flask.jsonify(yr_data_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_8/country/<country>/<year>/<par>")
+@app.route("/get_economy_per_country_per_period/<country>/<year>/<par>")
 def task_8_country_year_par(country, year, par):
     try:
         country = Utils.get_country(country)
@@ -320,13 +321,13 @@ def task_8_country_year_par(country, year, par):
             for data in mon_data:
                 par_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
                 i += 1
-        logging.info("GET/200/Task 8/country/year/parameter")
+        logging.info("GET/200/get_economy_per_country_per_period")
         return flask.jsonify(par_data_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_8/year/<year>")
+@app.route("/get_economy_per_year/<year>")
 def task_8_par(year):
     try:
         pipeline_yr = [
@@ -339,13 +340,13 @@ def task_8_par(year):
         for data in yr_data:
             yr_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
             i += 1
-        logging.info("GET/200/Task 8/year")
+        logging.info("GET/200/get_economy_per_year")
         return flask.jsonify(yr_data_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_8/month/<year>/<month>")
+@app.route("/get_economy_per_month/<year>/<month>")
 def task_8_year_mon(year, month):
     try:
         pipeline_mon = [
@@ -358,13 +359,13 @@ def task_8_year_mon(year, month):
         for data in mon_data:
             mon_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
             i += 1
-        logging.info("GET/200/Task 8/year/month")
+        logging.info("GET/200/get_economy_per_month")
         return flask.jsonify(mon_data_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_8/quarter/<year>/<quarter>")
+@app.route("/get_economy_per_quarter/<year>/<quarter>")
 def task_8_year_quart(year, quarter):
     try:
         pipeline_quart = [
@@ -377,13 +378,13 @@ def task_8_year_quart(year, quarter):
         for data in quart_data:
             quart_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
             i += 1
-        logging.info("GET/200/Task 8/year/quarter")
+        logging.info("GET/200/get_economy_per_quarter")
         return flask.jsonify(quart_data_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_8/year")
+@app.route("/get_economy_yearly")
 def task_8_year_all():
     try:
         yr_data = db.yearly_api_8.find()
@@ -392,13 +393,13 @@ def task_8_year_all():
         for data in yr_data:
             yr_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
             i += 1
-        logging.info("GET/200/Task 8/year all")
+        logging.info("GET/200/get_economy_yearly")
         return flask.jsonify(yr_data_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_8/month")
+@app.route("/get_economy_monthly")
 def task_8_year_mon_all():
     try:
         mon_data = db.monthly_api_8.find()
@@ -407,13 +408,13 @@ def task_8_year_mon_all():
         for data in mon_data:
             mon_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
             i += 1
-        logging.info("GET/200/Task 8/month all")
+        logging.info("GET/200/get_economy_monthly")
         return flask.jsonify(mon_data_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_8/quarter")
+@app.route("/get_economy_quarterly")
 def task_8_year_quart_all():
     try:
         quart_data = db.quarterly_api_8.find()
@@ -422,13 +423,13 @@ def task_8_year_quart_all():
         for data in quart_data:
             quart_data_dict[i] = {k: v for k, v in data.items() if k != '_id'}
             i += 1
-        logging.info("GET/200/Task 8/quarter")
+        logging.info("GET/200/get_economy_quarterly")
         return flask.jsonify(quart_data_dict)
     except Exception as e:
         logging.error(e)
 
 
-@app.route("/task_9/<country>")
+@app.route("/get_age_categorization_per_country_with_temperature/<country>")
 def task_9(country):
     try:
         cnt = Utils.get_country(country)
@@ -442,7 +443,7 @@ def task_9(country):
         data_list.append(weather_details)
         for info in infos:
             data_list.append(info['data'])
-        logging.info("GET/200/Task 9 Country wise")
+        logging.info("GET/200/get_age_categorization_per_country_with_temperature")
         return flask.jsonify(data_list)
     except Exception as e:
         logging.error(e)

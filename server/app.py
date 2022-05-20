@@ -15,6 +15,7 @@ sys.path.append("../")
 
 from server.pipelines import Pipelines
 from server.utility_functions import Utils
+from utils.data_security import decrypt_message
 import logging
 
 
@@ -213,7 +214,7 @@ def task_6_1():
         response_data = dict()
         i = 1
         for data in data_list:
-            response_data[i] = {k: v for k, v in data.items()}
+            response_data[i] = {k: decrypt_message(v) if k == "source" else str(v) for k, v in data.items()}
             i += 1
         logging.info("GET/200/Task 6_1")
         return flask.jsonify(response_data)

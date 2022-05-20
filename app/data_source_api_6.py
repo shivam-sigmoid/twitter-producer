@@ -3,6 +3,7 @@ import requests as r
 import sys
 sys.path.append("../")
 from data.API_Links import Covid_Funding_URL
+from utils.data_security import encrypt_message
 # import pymongo
 # client = pymongo.MongoClient("mongodb://localhost:27017/")
 # db = client["twitter_db"]
@@ -24,7 +25,11 @@ for key, value in json_data.items():
     for doc in value:
         # print(doc)
         try:
-            data_list.append(dict(doc))
+            d = dict(doc)
+            plain_text = d['source']
+            cipher_text = encrypt_message(plain_text)
+            d['source'] = cipher_text
+            data_list.append(d)
         except Exception:
             continue
 

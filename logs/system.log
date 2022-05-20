@@ -617,3 +617,114 @@
 2022-05-19 12:11:03,456:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=london&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
 2022-05-19 12:11:03,465:INFO:GET/200/Task 8/country/year/parameter
 2022-05-19 12:11:03,466:INFO:127.0.0.1 - - [19/May/2022 12:11:03] "GET /task_8/country/london/2018/April HTTP/1.1" 200 -
+2022-05-20 17:00:12,431:WARNING: * Debugger is active!
+2022-05-20 17:00:12,437:INFO: * Debugger PIN: 290-819-864
+2022-05-20 17:12:03,002:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-20 17:12:03,003:INFO: * Restarting with stat
+2022-05-20 17:12:04,322:WARNING: * Debugger is active!
+2022-05-20 17:12:04,329:INFO: * Debugger PIN: 290-819-864
+2022-05-20 17:12:27,586:INFO:GET/200/Task 6
+2022-05-20 17:12:27,588:INFO:127.0.0.1 - - [20/May/2022 17:12:27] "GET /task_6 HTTP/1.1" 200 -
+2022-05-20 17:12:54,519:INFO:GET/200/Task 6_1
+2022-05-20 17:12:54,521:INFO:127.0.0.1 - - [20/May/2022 17:12:54] "GET /task_6_1 HTTP/1.1" 200 -
+2022-05-20 18:09:09,479:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-20 18:09:09,480:INFO: * Restarting with stat
+2022-05-20 18:09:11,180:WARNING: * Debugger is active!
+2022-05-20 18:09:11,187:INFO: * Debugger PIN: 290-819-864
+2022-05-20 18:09:42,524:INFO:GET/200/Task 1
+2022-05-20 18:09:42,525:INFO:127.0.0.1 - - [20/May/2022 18:09:42] "GET /get_tweets_per_country HTTP/1.1" 200 -
+2022-05-20 18:10:13,078:INFO: * Detected change in '/Users/namballamukesh/Downloads/twitter-producer/server/app.py', reloading
+2022-05-20 18:10:13,404:INFO: * Restarting with stat
+2022-05-20 18:10:14,706:WARNING: * Debugger is active!
+2022-05-20 18:10:14,712:INFO: * Debugger PIN: 290-819-864
+2022-05-20 18:10:37,978:INFO:GET/200/get_tweets_per_country_per_day
+2022-05-20 18:10:37,979:INFO:127.0.0.1 - - [20/May/2022 18:10:37] "GET /get_tweets_per_country_per_day HTTP/1.1" 200 -
+2022-05-20 18:11:35,920:INFO:127.0.0.1 - - [20/May/2022 18:11:35] "[33mGET /get_tweets_per_country_day_wise HTTP/1.1[0m" 404 -
+2022-05-20 18:13:32,626:INFO:GET/200/get_most_occured_words
+2022-05-20 18:13:33,795:INFO:127.0.0.1 - - [20/May/2022 18:13:33] "GET /get_most_occured_words HTTP/1.1" 200 -
+2022-05-20 18:14:32,083:INFO:127.0.0.1 - - [20/May/2022 18:14:32] "[33mGET /get_most_occured_words_per_country HTTP/1.1[0m" 404 -
+2022-05-20 18:16:16,610:INFO:GET/200/get_precautionary_measures
+2022-05-20 18:16:16,611:INFO:127.0.0.1 - - [20/May/2022 18:16:16] "GET /get_precautionary_measures HTTP/1.1" 200 -
+2022-05-20 18:17:23,673:INFO:GET/200/get_donations_who_data
+2022-05-20 18:17:23,673:INFO:127.0.0.1 - - [20/May/2022 18:17:23] "GET /get_donations_who_data HTTP/1.1" 200 -
+2022-05-20 18:17:50,123:INFO:GET/200/get_donations_funding
+2022-05-20 18:17:50,124:INFO:127.0.0.1 - - [20/May/2022 18:17:50] "GET /get_donations_funding HTTP/1.1" 200 -
+2022-05-20 18:18:41,950:INFO:GET/200/get_impacted_country
+2022-05-20 18:18:41,951:INFO:127.0.0.1 - - [20/May/2022 18:18:41] "GET /get_impacted_country HTTP/1.1" 200 -
+2022-05-20 18:18:59,381:INFO:127.0.0.1 - - [20/May/2022 18:18:59] "[33mGET /get_impacted_country_week_wise HTTP/1.1[0m" 404 -
+2022-05-20 18:20:39,791:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:20:39,791:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:20:39,791:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=london&format=json&limit=1&accept-language=en
+2022-05-20 18:20:39,793:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-20 18:20:41,421:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=london&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-20 18:20:41,450:INFO:GET/200/get_economy_per_country
+2022-05-20 18:20:41,455:INFO:127.0.0.1 - - [20/May/2022 18:20:41] "GET /get_economy_per_country/london HTTP/1.1" 200 -
+2022-05-20 18:21:30,990:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:21:30,990:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:21:30,990:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=london&format=json&limit=1&accept-language=en
+2022-05-20 18:21:30,991:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-20 18:21:32,054:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=london&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-20 18:21:32,063:INFO:GET/200/get_economy_per_country_per_year
+2022-05-20 18:21:32,064:INFO:127.0.0.1 - - [20/May/2022 18:21:32] "GET /get_economy_per_country_per_year/london/2022 HTTP/1.1" 200 -
+2022-05-20 18:21:40,793:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:21:40,794:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:21:40,794:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=India&format=json&limit=1&accept-language=en
+2022-05-20 18:21:40,795:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-20 18:21:42,352:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=India&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-20 18:21:42,358:INFO:GET/200/get_economy_per_country_per_year
+2022-05-20 18:21:42,358:INFO:127.0.0.1 - - [20/May/2022 18:21:42] "GET /get_economy_per_country_per_year/India/2022 HTTP/1.1" 200 -
+2022-05-20 18:21:49,973:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:21:49,974:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:21:49,974:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=India&format=json&limit=1&accept-language=en
+2022-05-20 18:21:49,975:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-20 18:21:51,290:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=India&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-20 18:21:51,299:INFO:GET/200/get_economy_per_country_per_year
+2022-05-20 18:21:51,301:INFO:127.0.0.1 - - [20/May/2022 18:21:51] "GET /get_economy_per_country_per_year/India/2018 HTTP/1.1" 200 -
+2022-05-20 18:22:34,179:INFO:127.0.0.1 - - [20/May/2022 18:22:34] "[33mGET /get_economy_per_country_per_period/India/July HTTP/1.1[0m" 404 -
+2022-05-20 18:22:45,685:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:22:45,685:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:22:45,685:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=India&format=json&limit=1&accept-language=en
+2022-05-20 18:22:45,686:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-20 18:22:47,376:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=India&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-20 18:22:47,386:INFO:GET/200/get_economy_per_country_per_period
+2022-05-20 18:22:47,387:INFO:127.0.0.1 - - [20/May/2022 18:22:47] "GET /get_economy_per_country_per_period/India/2018/July HTTP/1.1" 200 -
+2022-05-20 18:23:51,440:INFO:GET/200/get_economy_per_year
+2022-05-20 18:23:51,442:INFO:127.0.0.1 - - [20/May/2022 18:23:51] "GET /get_economy_per_year/2018 HTTP/1.1" 200 -
+2022-05-20 18:24:20,056:INFO:127.0.0.1 - - [20/May/2022 18:24:20] "[33mGET /get_economy_per_year/2018/July HTTP/1.1[0m" 404 -
+2022-05-20 18:24:28,238:INFO:GET/200/get_economy_per_month
+2022-05-20 18:24:28,239:INFO:127.0.0.1 - - [20/May/2022 18:24:28] "GET /get_economy_per_month/2018/July HTTP/1.1" 200 -
+2022-05-20 18:25:54,142:INFO:GET/200/get_economy_per_quarter
+2022-05-20 18:25:54,144:INFO:127.0.0.1 - - [20/May/2022 18:25:54] "GET /get_economy_per_quarter/2018/Q1 HTTP/1.1" 200 -
+2022-05-20 18:26:15,058:INFO:GET/200/get_economy_yearly
+2022-05-20 18:26:15,062:INFO:127.0.0.1 - - [20/May/2022 18:26:15] "GET /get_economy_yearly HTTP/1.1" 200 -
+2022-05-20 18:26:35,682:INFO:GET/200/get_economy_monthly
+2022-05-20 18:26:35,701:INFO:127.0.0.1 - - [20/May/2022 18:26:35] "GET /get_economy_monthly HTTP/1.1" 200 -
+2022-05-20 18:27:18,012:INFO:GET/200/get_economy_quarterly
+2022-05-20 18:27:18,028:INFO:127.0.0.1 - - [20/May/2022 18:27:18] "GET /get_economy_quarterly HTTP/1.1" 200 -
+2022-05-20 18:33:42,804:INFO: * Detected change in '/Users/namballamukesh/Downloads/twitter-producer/server/app.py', reloading
+2022-05-20 18:33:43,158:INFO: * Restarting with stat
+2022-05-20 18:33:44,612:WARNING: * Debugger is active!
+2022-05-20 18:33:44,619:INFO: * Debugger PIN: 290-819-864
+2022-05-20 18:33:48,915:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:33:48,916:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:33:48,916:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=24&format=json&limit=1&accept-language=en
+2022-05-20 18:33:48,918:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-20 18:33:50,535:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=24&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-20 18:33:50,541:ERROR:'weather'
+2022-05-20 18:33:50,553:INFO:GET/200/get_age_categorization_per_country_with_temperature
+2022-05-20 18:33:50,554:INFO:127.0.0.1 - - [20/May/2022 18:33:50] "GET /get_age_categorization_per_country_with_temperature/24 HTTP/1.1" 200 -
+2022-05-20 18:35:36,083:INFO: * Detected change in '/Users/namballamukesh/Downloads/twitter-producer/server/app.py', reloading
+2022-05-20 18:35:36,473:INFO: * Restarting with stat
+2022-05-20 18:39:04,579:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-20 18:39:04,580:INFO: * Restarting with stat
+2022-05-20 18:39:05,962:WARNING: * Debugger is active!
+2022-05-20 18:39:05,968:INFO: * Debugger PIN: 290-819-864
+2022-05-20 18:39:19,305:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:39:19,305:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-20 18:39:19,305:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=london&format=json&limit=1&accept-language=en
+2022-05-20 18:39:19,307:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-20 18:39:20,592:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=london&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-20 18:39:20,613:INFO:GET/200/get_economy_per_country_year_wise
+2022-05-20 18:39:20,615:INFO:127.0.0.1 - - [20/May/2022 18:39:20] "GET /get_economy_per_country_year_wise/london HTTP/1.1" 200 -
+2022-05-20 18:39:56,437:INFO: * Detected change in '/Users/namballamukesh/Downloads/twitter-producer/server/app.py', reloading
+2022-05-20 18:39:57,029:INFO: * Restarting with stat

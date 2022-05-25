@@ -49,7 +49,7 @@ class Pipelines:
     def get_pipeline_task_7_week_wise(week_num):
         pipeline = [
             {"$match": {"week": week_num}},
-            {"$group": {"_id": {"Country": "$country"}, "rank": {"$sum": "$rank"}}},
+            {"$group": {"_id": {"Country": "$country"}, "rank": {"$avg": "$rank"}}},
             {"$sort": {"rank": -1}}
         ]
         return pipeline

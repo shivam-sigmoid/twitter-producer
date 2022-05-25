@@ -57,7 +57,7 @@ class Pipelines:
     @staticmethod
     def get_pipeline_task_7():
         pipeline = [
-            {"$group": {"_id": {"week": "$week", "Country": "$country"}, "rank": {"$sum": "$rank"}}},
+            {"$group": {"_id": {"week": "$week", "Country": "$country"}, "rank": {"$avg": "$rank"}}},
             {"$sort": {"rank": -1}}
         ]
         return pipeline

@@ -785,3 +785,62 @@
 2022-05-24 18:34:22,760:INFO:127.0.0.1 - - [24/May/2022 18:34:22] "GET /get_tweets_per_country HTTP/1.1" 200 -
 2022-05-24 18:34:32,066:INFO:GET/200/get_economy_yearly
 2022-05-24 18:34:32,070:INFO:127.0.0.1 - - [24/May/2022 18:34:32] "GET /get_economy_yearly HTTP/1.1" 200 -
+2022-05-25 08:27:20,576:INFO: * Running on http://127.0.0.1:5005 (Press CTRL+C to quit)
+2022-05-25 08:27:20,577:INFO: * Restarting with stat
+2022-05-25 08:27:21,775:WARNING: * Debugger is active!
+2022-05-25 08:27:21,782:INFO: * Debugger PIN: 130-510-763
+2022-05-25 08:28:07,670:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:28:07,670:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:28:07,670:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=India&format=json&limit=1&accept-language=en
+2022-05-25 08:28:07,672:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-25 08:28:09,151:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=India&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-25 08:28:09,154:ERROR:'weather'
+2022-05-25 08:28:09,161:INFO:GET/200/get_age_categorization_per_country_with_temperature
+2022-05-25 08:28:09,163:INFO:127.0.0.1 - - [25/May/2022 08:28:09] "GET /get_age_categorization_per_country_with_temperature/India HTTP/1.1" 200 -
+2022-05-25 08:30:06,058:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:30:06,058:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:30:06,059:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=India&format=json&limit=1&accept-language=en
+2022-05-25 08:30:06,059:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-25 08:30:06,966:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=India&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-25 08:30:06,972:ERROR:'weather'
+2022-05-25 08:30:06,975:INFO:GET/200/get_age_categorization_per_country_with_temperature
+2022-05-25 08:30:06,977:INFO:127.0.0.1 - - [25/May/2022 08:30:06] "GET /get_age_categorization_per_country_with_temperature/India HTTP/1.1" 200 -
+2022-05-25 08:31:41,638:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:31:41,638:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:31:41,639:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=India&format=json&limit=1&accept-language=en
+2022-05-25 08:31:41,639:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-25 08:31:41,765:INFO: * Detected change in '/Users/namballamukesh/Downloads/twitter-producer/server/app.py', reloading
+2022-05-25 08:31:42,300:INFO: * Restarting with stat
+2022-05-25 08:31:43,507:WARNING: * Debugger is active!
+2022-05-25 08:31:43,513:INFO: * Debugger PIN: 130-510-763
+2022-05-25 08:31:43,528:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:31:43,528:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:31:43,528:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=India&format=json&limit=1&accept-language=en
+2022-05-25 08:31:43,528:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-25 08:31:44,510:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=India&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-25 08:31:44,516:ERROR:'weather'
+2022-05-25 08:31:44,526:INFO:GET/200/get_age_categorization_per_country_with_temperature
+2022-05-25 08:31:44,528:INFO:127.0.0.1 - - [25/May/2022 08:31:44] "GET /get_age_categorization_per_country_with_temperature/India HTTP/1.1" 200 -
+2022-05-25 08:32:03,033:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:32:03,033:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 08:32:03,034:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=In&format=json&limit=1&accept-language=en
+2022-05-25 08:32:03,035:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-25 08:32:04,029:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=In&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-25 08:32:04,034:ERROR:'weather'
+2022-05-25 08:32:04,039:INFO:GET/200/get_age_categorization_per_country_with_temperature
+2022-05-25 08:32:04,041:INFO:127.0.0.1 - - [25/May/2022 08:32:04] "GET /get_age_categorization_per_country_with_temperature/In HTTP/1.1" 200 -
+2022-05-25 08:33:19,262:INFO: * Detected change in '/Users/namballamukesh/Downloads/twitter-producer/server/app.py', reloading
+2022-05-25 08:33:19,675:INFO: * Restarting with stat
+2022-05-25 08:33:20,909:WARNING: * Debugger is active!
+2022-05-25 08:33:20,915:INFO: * Debugger PIN: 130-510-763
+2022-05-25 12:10:52,329:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 12:10:52,330:DEBUG:Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+2022-05-25 12:10:52,330:DEBUG:Nominatim.geocode: https://nominatim.openstreetmap.org/search?q=Hyderabad&format=json&limit=1&accept-language=en
+2022-05-25 12:10:52,331:DEBUG:Starting new HTTPS connection (1): nominatim.openstreetmap.org:443
+2022-05-25 12:10:54,357:DEBUG:Incremented Retry for (url='/search?q=Hyderabad&format=json&limit=1&accept-language=en'): Retry(total=1, connect=None, read=None, redirect=None, status=None)
+2022-05-25 12:10:54,357:WARNING:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=Hyderabad&format=json&limit=1&accept-language=en
+2022-05-25 12:10:54,358:DEBUG:Starting new HTTPS connection (2): nominatim.openstreetmap.org:443
+2022-05-25 12:10:55,503:DEBUG:https://nominatim.openstreetmap.org:443 "GET /search?q=Hyderabad&format=json&limit=1&accept-language=en HTTP/1.1" 200 None
+2022-05-25 12:10:55,506:ERROR:'weather'
+2022-05-25 12:10:55,522:INFO:GET/200/get_age_categorization_per_country_with_temperature
+2022-05-25 12:10:55,524:INFO:127.0.0.1 - - [25/May/2022 12:10:55] "GET /get_age_categorization_per_country_with_temperature/Hyderabad HTTP/1.1" 200 -

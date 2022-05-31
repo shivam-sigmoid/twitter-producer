@@ -18,7 +18,7 @@ col = db.create_db_connection("disease_sh")
 
 
 def update_week_diseaseSh():
-    db.disease_sh.update_many(
+    col.update_many(
         {},
         [
             {"$set": {"week": {"$week": "$date"}}}

@@ -1,8 +1,8 @@
 import pytest
 import sys
+
 sys.path.append("../")
 from server.app import app
-
 
 books = [
     {
@@ -83,18 +83,30 @@ def test_get_all_books():
 #         resp = app.test_client().get('/get_tweets')
 #         assert resp.status_code == 200
 #
-#     def test_task_1(self):
-#         resp = app.test_client().get('/task_1')
+#     def test_get_tweets_per_country(self):
+#         resp = app.test_client().get('/get_tweets_per_country')
 #         assert resp.status_code == 200
 #
-#     def test_task_2(self):
-#         resp = app.test_client().get('/task_2')
+#     def test_get_tweets_per_country_per_day(self):
+#         resp = app.test_client().get('/get_tweets_per_country_per_day')
 #         assert resp.status_code == 200
 #
-#     def test_task_5(self):
-#         resp = app.test_client().get('/task_5')
+#     def test_get_precautionary_measures(self):
+#         resp = app.test_client().get('/get_precautionary_measures')
 #         assert resp.status_code == 200
 #
-#     def test_task_7(self):
-#         resp = app.test_client().get('/task_7')
+#     def test_get_most_occured_words(self):
+#         resp = app.test_client().get('/get_most_occured_words')
+#         assert resp.status_code == 200
+#
+#     def test_get_donations_who_data(self):
+#         resp = app.test_client().get('/get_donations_who_data')
+#         assert resp.status_code == 200
+#
+#     def test_get_donations_funding(self):
+#         resp = app.test_client().get('/get_donations_funding')
+#         assert resp.status_code == 200
+#
+#     def test_get_impacted_country(self):
+#         resp = app.test_client().get('/get_impacted_country')
 #         assert resp.status_code == 200
